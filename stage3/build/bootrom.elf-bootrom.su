@@ -1,0 +1,3 @@
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\bootrom.c:6:13:put_byte	0	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\bootrom.c:14:17:get_word	32	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\bootrom.c:28:6:boot_main	64	static

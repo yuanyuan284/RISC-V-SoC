@@ -1,0 +1,114 @@
+============================================================
+   Tang Dynasty, V5.6.119222
+      Copyright (c) 2012-2024 Anlogic Inc.
+   Executable = D:/TD_5.6.5_Release_119.222/bin/td_commands_prompt.exe
+   Built at =   17:28:21 May 30 2024
+   Run by =     yuanj
+   Run Date =   Sat Oct 10 01:36:14 2026
+
+   Run on =     DESKTOP-RBEAPOF
+============================================================
+RUN-1002 : start command "list_bram -help"
+USR-1002 : list_bram -h -help -device <string> -cable <integer>
+RUN-1002 : start command "rdbk_bram -help"
+USR-1002 : rdbk_bram -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "rdbk_bram18 -help"
+USR-1002 : rdbk_bram18 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "rdbk_bram20 -help"
+USR-1002 : rdbk_bram20 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -axis -total_dev <integer> -cur_dev <integer> -bypass <string> -chip <string>
+RUN-1002 : start command "rdbk_bram32 -help"
+USR-1002 : rdbk_bram32 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram -help"
+USR-1002 : write_bram -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram18 -help"
+USR-1002 : write_bram18 -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram20 -help"
+USR-1002 : write_bram20 -h -help -bram <string> -input <string> -device <string> -cable <integer> -logic -axis -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram32 -help"
+USR-1002 : write_bram32 -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "export_program_log -help"
+USR-8011 ERROR: export_program_log: invalid option -help.
+USR-1002 : export_program_log -svf <string>
+RUN-1002 : start command "get_config_param -help"
+USR-8011 ERROR: get_config_param: invalid option -help.
+USR-1002 : get_config_param option_name
+RUN-1002 : start command "get_device_param -help"
+USR-1002 : get_device_param -h -help param_name
+RUN-1002 : start command "get_param -help"
+USR-1002 : get_param step_name param_name -run <string> -help
+RUN-1002 : start command "list_bram -help"
+USR-1002 : list_bram -h -help -device <string> -cable <integer>
+RUN-1002 : start command "print_frame -help"
+RUN-1002 : start command "program -help"
+USR-1002 : program -h -help -mode <string> -s -p -spd <integer> -output <string> -input <string> -error_max <integer> -cable <integer> -r -ss -sps
+RUN-1002 : start command "program_dualboot -help"
+USR-1002 : program_dualboot -h -help -mode <string> -spd <integer> -output <string> -input <string> -start_addr <string> -cable <integer>
+RUN-1002 : start command "program_dualbootef -help"
+USR-1002 : program_dualbootef -h -help -mode <string> -spd <integer> -output <string> -input <string> -start_addr <string> -cable <integer> -chip <string> -is_ef3 -golden_lock -is_sf1 -is_al4030
+RUN-1002 : start command "program_efuse -help"
+USR-8011 ERROR: program_efuse: invalid option -help.
+RUN-1002 : start command "program_encrypt_key -help"
+USR-8011 ERROR: program_encrypt_key: invalid option -help.
+RUN-1002 : start command "program_featureef -help"
+USR-1002 : program_featureef -h -help -mode <string> -spd <integer> -output <string> -input <string> -cable <integer> -chip <string> -is_ef3 -is_sf1 -is_al4030
+RUN-1002 : start command "program_key_lock -help"
+USR-8011 ERROR: program_key_lock: invalid option -help.
+RUN-1002 : start command "program_multibootef -help"
+USR-1002 : program_multibootef -h -help -mode <string> -spd <integer> -output <string> -input <string> -start_addr <string> -cable <integer> -chip <string> -is_ef3 -is_sf1 -is_al4030
+RUN-1002 : start command "program_spi -help"
+USR-1002 : program_spi -h -help -mode <string> -spd <integer> -output <string> -input <string> -elf  -start_addr <string> -data_length <integer> -bin -rdbk <string> -cable <integer> -ef3 -sf1 -al4030 -chip <string>
+RUN-1002 : start command "program_spibin -help"
+USR-1002 : program_spibin -h -help -mode <string> -spd <integer> -output <string> -input <string> -start_addr <string> -cable <integer> -chip <string> -is_ef3 -is_sf1 -is_al4030
+RUN-1002 : start command "program_spidir -help"
+USR-1002 : program_spidir -h -help -mode <string> -spd <integer> -output <string> -input <string> -data_length <integer> -start_addr <string> -bin -rdbk <string> -sec <integer> -cable <integer>
+RUN-1002 : start command "program_spidircustom -help"
+USR-1002 : program_spidircustom -h -help -mode <string> -spd <integer> -output <string> -input <string> -data_length <integer> -start_addr <string> -bin -rdbk <string> -sec <integer> -cable <integer>
+RUN-1002 : start command "program_spief -help"
+USR-1002 : program_spief -h -help -mode <string> -spd <integer> -output <string> -input <string> -start_addr <string> -data_length <integer> -bin -rdbk <string> -cable <integer> -chip <string> -is_ef3 -is_sf1 -is_al4030 -golden_lock
+RUN-1002 : start command "program_svf -help"
+USR-1002 : program_svf -h -help -svf <string> -rdbk <string> -spd <integer> -cable <integer>
+RUN-1002 : start command "rdbk_bram -help"
+USR-1002 : rdbk_bram -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "rdbk_bram18 -help"
+USR-1002 : rdbk_bram18 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "rdbk_bram20 -help"
+USR-1002 : rdbk_bram20 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -axis -total_dev <integer> -cur_dev <integer> -bypass <string> -chip <string>
+RUN-1002 : start command "rdbk_bram32 -help"
+USR-1002 : rdbk_bram32 -h -help -bram <string> -dir <string> -device <string> -out -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "read_param -help"
+USR-1002 : read_param file_name -help
+RUN-1002 : start command "read_sram -help"
+USR-8011 ERROR: read_sram: invalid option -help.
+USR-1002 : read_sram -level <integer> -total <integer> -output <string> -row_num <integer> -cable <integer>
+RUN-1002 : start command "report_param -help"
+USR-1002 : report_param -h -help -step <string> -detail -file <string>
+RUN-1002 : start command "set_device_param -help"
+USR-1002 : set_device_param -h -help param_name param_value
+RUN-1002 : start command "set_param -help"
+USR-1002 : set_param step_name param_name param_value -run <string> -help -projmngr
+RUN-1002 : start command "set_user_params -help"
+RUN-1002 : start command "update_pll_param -help"
+USR-1002 : update_pll_param -help -module <string> -inst <string> -debug
+RUN-1002 : start command "write_bram -help"
+USR-1002 : write_bram -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram18 -help"
+USR-1002 : write_bram18 -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram20 -help"
+USR-1002 : write_bram20 -h -help -bram <string> -input <string> -device <string> -cable <integer> -logic -axis -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_bram32 -help"
+USR-1002 : write_bram32 -h -help -bram <string> -input <string> -device <string> -cable <integer> -total_dev <integer> -cur_dev <integer> -bypass <string>
+RUN-1002 : start command "write_param -help"
+USR-1002 : write_param file_name -help
+RUN-1002 : start command "gen_aes_key_svf -help"
+RUN-1002 : start command "merge_files_for_svf -help"
+USR-1002 : merge_files_for_svf -h -help -bit <string> -hex <string> -output <string> -header <string> -start_addr <string>
+RUN-1002 : start command "program_svf -help"
+USR-1002 : program_svf -h -help -svf <string> -rdbk <string> -spd <integer> -cable <integer>
+RUN-1002 : start command "svfgen -help"
+USR-1002 : svfgen -h -help -scan_mode <string> -level <integer> -total <integer> -svf <string> -bas <string> -bit <string> -bin <string> -bin2 <string> -hex <string> -hex2 <string>  -opt <string> -tool <string> -len_mode <string> -bg_mode <string> -rf_mode <string> -bypass <string> -merge <list> -programn_pin_low -verify -freq <string> -golden_lock -enable_loop -verify_partial -size <string>  -flashsize <integer> -dis_hir_hdr_tir_tdr -boundary_reg <string> -chip <string> -start_addr <string> -num <integer> -tde -aje -full -mode <string> -usrdata_addr <string> -usrdata <string> -no_id_check -spi_qe_cmd <string> -spi_qe_data <string> -debug -flow <string> -non_burst -stateholdio -using_64k_erase -statehold_bypass_mode <string> -g <list>
+RUN-1002 : start command "compile_watcher -help"
+USR-1002 : compile_watcher -h -help -ucode <string>
+RUN-1002 : start command "config_chipwatcher -help"
+USR-1002 : config_chipwatcher -h -help -sp -sync -dir <string> file_name
+RUN-1002 : start command "export_chipwatcher -help"
+USR-1002 : export_chipwatcher -h -help -sp -dir <string> file_name

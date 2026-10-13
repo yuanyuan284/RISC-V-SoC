@@ -1,0 +1,15 @@
+<chipwatcher project_name="stage2_watch_probe" bit_file="stage2_watch_probe.bit" bid_file="stage2_watch_probe_inst.bid" chip_name="EF2L45LG144B">
+    <instance name="auto_chipwatcher_0" id="0" enabled="yes">
+        <clock clk_name="clk_ref" polarity="posedge"/>
+        <config bram_name="auto_chipwatcher_0_logicbram" sample_depth="128"/>
+        <signal_vec>
+            <trigger_nets><net name="tx"/></trigger_nets>
+            <data_nets><net name="tx"/></data_nets>
+            <watcher_nodes><net name="tx" op="equal" trigger="enable"/></watcher_nodes>
+        </signal_vec>
+        <trigger name="auto_chipwatcher_0_trigger" position="pre">
+            <condition level="1" enabled="yes" type="basic_and">tx == low</condition>
+            <log></log>
+        </trigger>
+    </instance>
+</chipwatcher>

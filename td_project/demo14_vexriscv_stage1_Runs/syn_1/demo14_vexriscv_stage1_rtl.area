@@ -1,0 +1,44 @@
+standard
+***Report Model: design_top_wrapper Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+Gate Statistics
+#Basic gates             1801
+  #and                    134
+  #nand                     0
+  #or                      23
+  #nor                      0
+  #xor                      3
+  #xnor                     0
+  #buf                      0
+  #not                     37
+  #bufif1                   0
+  #MX21                   746
+  #FADD                     0
+  #DFF                    858
+  #LATCH                    0
+#MACRO_ADD                 25
+#MACRO_EQ                  15
+#MACRO_MUX               1167
+#MACRO_OTHERS              10
+
+Report Hierarchy Area:
++------------------------------------------------------------+
+|Instance        |Module             |gates  |seq    |macros |
++------------------------------------------------------------+
+|top             |design_top_wrapper |943    |858    |50     |
+|  cpu0          |VexRiscv           |766    |352    |12     |
+|  u_intercon    |soc_wb_intercon    |21     |0      |8      |
+|  u_jtag_loader |jtag_wb_loader     |39     |340    |7      |
+|  u_ram         |wb_ram             |6      |33     |4      |
+|  u_rom         |wb_ram             |2      |33     |4      |
+|  u_sys_pll     |sys_pll            |0      |0      |1      |
+|  u_uart        |uart_wb            |100    |80     |14     |
+|    tx0         |uart_tx            |26     |31     |6      |
+|    tx0_fifo    |fifo               |39     |23     |7      |
++------------------------------------------------------------+

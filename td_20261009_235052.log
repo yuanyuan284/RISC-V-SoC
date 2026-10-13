@@ -1,0 +1,16 @@
+============================================================
+   Tang Dynasty, V5.6.119222
+      Copyright (c) 2012-2024 Anlogic Inc.
+   Executable = D:/TD_5.6.5_Release_119.222/bin/td_commands_prompt.exe
+   Built at =   17:28:21 May 30 2024
+   Run by =     yuanj
+   Run Date =   Fri Oct  9 23:50:52 2026
+
+   Run on =     DESKTOP-RBEAPOF
+============================================================
+RUN-1002 : start command "program_svf -help"
+USR-1002 : program_svf -h -help -svf <string> -rdbk <string> -spd <integer> -cable <integer>
+RUN-1002 : start command "config_chipwatcher -help"
+USR-1002 : config_chipwatcher -h -help -sp -sync -dir <string> file_name
+RUN-1002 : start command "export_chipwatcher -help"
+USR-1002 : export_chipwatcher -h -help -sp -dir <string> file_name

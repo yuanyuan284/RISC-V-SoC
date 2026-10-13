@@ -1,0 +1,903 @@
+ef2_4
+13 3426 2726 1368 626 3678 0 1
+40.142 -2.145 watch_probe_top ef2_4 EF2L45LG144B Detail NA 8 14
+clock: clk_ref
+13 2932 222 2
+Setup check
+23 3
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+23 95.142000 40 3
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+25 95.142000 102.440000 7.298000 6 6
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[0] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_102.b[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_87 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_91 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_95 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_105.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_62.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+73 95.257000 102.440000 7.183000 5 5
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[4] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.b[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_91 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_95 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_105.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_62.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_83.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_83.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7
+119 95.290000 102.440000 7.150000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[7] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.a[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_95 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_105.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_62.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[14] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[11]_syn_7.e[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+163 95.349000 34 3
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+165 95.349000 102.440000 7.091000 5 5
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[0] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_102.b[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_87 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_91 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+211 95.490000 102.440000 6.950000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[4] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.b[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_91 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7
+255 95.544000 102.440000 6.896000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[6] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_91 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_104.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[8] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[8]_syn_7.e[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+299 95.493000 30 3
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[14]_syn_58.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+301 95.493000 102.440000 6.947000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[0] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_102.b[0]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_87 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[3]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_88.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_88.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+345 95.743000 102.440000 6.697000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[2] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_102.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_87 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[3]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95.e[0]
+
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_88.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_88.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95
+389 95.893000 102.440000 6.547000 4 4
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[1] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_102.a[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_87 cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/add0_syn_103.fci
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b2[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b[3]_syn_7.b[1]
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long_b1[3] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95.e[0]
+
+
+
+Hold check
+433 3
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_88
+435 0.342000 1 1
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_85.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_88
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_85.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_88
+437 0.342000 2.135000 2.477000 0 1
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[9] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_88.mi[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+475 0.359000 1 1
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_95.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+477 0.359000 2.135000 2.494000 0 1
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[5] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95.mi[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+515 0.359000 1 1
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk->cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg0_syn_91.clk
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95
+517 0.359000 2.135000 2.494000 0 1
+cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/addr_long[4] cw_top/wrapper_cwc_top/trigger_inst/emb_ctrl_inst/reg1_syn_95.mi[0]
+
+
+
+
+clock: jtck
+555 528 230 4
+Setup check
+565 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+565 96.243000 12 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+567 96.243000 102.440000 6.197000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+609 96.243000 102.440000 6.197000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+651 96.336000 102.440000 6.104000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+693 96.294000 12 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+695 96.294000 102.440000 6.146000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+737 96.294000 102.440000 6.146000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+779 96.387000 102.440000 6.053000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+821 96.315000 12 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+823 96.315000 102.440000 6.125000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+865 96.315000 102.440000 6.125000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+907 96.408000 102.440000 6.032000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[1]
+
+
+
+Hold check
+949 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_123
+951 0.225000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_123
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_123
+953 0.225000 2.295000 2.520000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[24] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_123.mi[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121
+991 0.225000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121
+993 0.225000 2.295000 2.520000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[5] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121.mi[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106
+1031 0.225000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_121.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106
+1033 0.225000 2.295000 2.520000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[6] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_106.mi[1]
+
+
+
+Recovery check
+1071 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+1073 98.170000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+1075 98.170000 102.256000 4.086000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1113 98.170000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1115 98.170000 102.256000 4.086000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+1153 98.170000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+1155 98.170000 102.256000 4.086000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.sr
+
+
+
+Removal check
+1193 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+1195 0.066000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+1197 0.066000 2.468000 2.534000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+1235 0.066000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+1237 0.066000 2.468000 2.534000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+1275 0.161000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk->cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+1277 0.161000 2.487000 2.648000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.sr
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+1315 2 2 2
+Recovery check
+1326 1
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+1328 97.030000 1 1
+Timing path: u.jrstn->cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+u.jrstn
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+1330 97.030000 101.833000 4.803000 0 1
+u_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.sr
+
+
+
+Removal check
+1366 1
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+1368 -2.145000 1 1
+Timing path: u.jrstn->cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+u.jrstn
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5
+1370 -2.145000 3.019000 0.874000 0 1
+u_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.sr
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+1406 58 38 2
+Setup check
+1416 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+1416 45.166000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+1418 45.166000 52.237000 7.071000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+1456 45.166000 52.237000 7.071000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+1494 45.217000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+1496 45.217000 52.237000 7.020000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+1534 45.217000 52.237000 7.020000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+1572 45.238000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+1574 45.238000 52.237000 6.999000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+1612 45.238000 52.237000 6.999000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[0]
+
+
+
+Hold check
+1650 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+1652 48.045000 1 1
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5
+1654 48.045000 -47.207000 0.838000 0 1
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.mi[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+1690 49.337000 1 1
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+1692 49.337000 -47.550000 1.787000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+1730 49.337000 1 1
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117
+1732 49.337000 -47.550000 1.787000 2 2
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_117.a[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+1770 28 28 2
+Setup check
+1780 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_115
+1780 46.293000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_115
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_115
+1782 46.293000 52.237000 5.944000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_115.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_112
+1820 46.293000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_112
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_112
+1822 46.293000 52.237000 5.944000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_112.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+1860 46.311000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+1862 46.311000 52.237000 5.926000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127.ce
+
+
+
+Hold check
+1900 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+1902 48.485000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+1904 48.485000 -47.207000 1.278000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+1942 48.485000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+1944 48.485000 -47.207000 1.278000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+1982 48.628000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+1984 48.628000 -47.207000 1.421000 1 2
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2022 84 64 2
+Setup check
+2032 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+2032 45.164000 2 2
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+2034 45.164000 52.237000 7.073000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[1]
+
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103
+2072 45.164000 52.237000 7.073000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_103.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+2110 45.215000 2 2
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+2112 45.215000 52.237000 7.022000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[1]
+
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101
+2150 45.215000 52.237000 7.022000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_101.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+2188 45.236000 2 2
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+2190 45.236000 52.237000 7.001000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[1]
+
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111
+2228 45.236000 52.237000 7.001000 2 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_111.a[0]
+
+
+
+Hold check
+2266 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+2268 48.540000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97
+2270 48.540000 -47.207000 1.333000 1 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_97.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+2308 48.540000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94
+2310 48.540000 -47.207000 1.333000 1 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_94.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+2348 48.683000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118
+2350 48.683000 -47.207000 1.476000 1 2
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_118.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2388 2 2 2
+Setup check
+2398 1
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+2398 47.133000 1 1
+Timing path: u.jtdi->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+u.jtdi
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+2400 47.133000 51.990000 4.857000 0 1
+u_syn_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127.mi[0]
+
+
+
+Hold check
+2436 1
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+2438 48.137000 1 1
+Timing path: u.jtdi->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+u.jtdi
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127
+2440 48.137000 -47.207000 0.930000 0 1
+u_syn_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_127.mi[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2476 28 28 2
+Setup check
+2486 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_120
+2486 47.119000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_120
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_120
+2488 47.119000 51.990000 4.871000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_120.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+2524 47.119000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+u.jupdate
+cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+2526 47.119000 51.990000 4.871000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_125
+2562 47.128000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_125
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_125
+2564 47.128000 51.990000 4.862000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_125.ce
+
+
+
+Hold check
+2600 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+2602 47.984000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93
+2604 47.984000 -47.207000 0.777000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_117
+2640 48.016000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_117
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_117
+2642 48.016000 -47.207000 0.809000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_117.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_108
+2678 48.026000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_108
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_108
+2680 48.026000 -47.207000 0.819000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_108.ce
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+2716 6 2 2
+Setup check
+2726 1
+Endpoint: u.jtdo[1]
+2726 40.142000 3 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+u.jtdo[1]
+2728 40.142000 46.000000 5.858000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+u.jtdo[1]
+2769 40.235000 46.000000 5.765000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.clk
+u.jtdo[1]
+2810 41.301000 46.000000 4.699000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2[0] cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[1]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+2847 1
+Endpoint: u.jtdo[1]
+2849 53.456000 3 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.clk
+u.jtdo[1]
+2851 53.456000 -49.900000 3.556000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2[0] cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[1]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+u.jtdo[1]
+2888 54.141000 -49.900000 4.241000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.clk
+u.jtdo[1]
+2929 54.211000 -49.900000 4.311000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_10.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+2970 2 2 2
+Setup check
+2980 1
+Endpoint: u.jtdo[0]
+2980 41.188000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_124.clk->u.jtdo[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_124.clk
+u.jtdo[0]
+2982 41.188000 46.000000 4.812000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[0] cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.c[0]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+3019 1
+Endpoint: u.jtdo[0]
+3021 53.521000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_124.clk->u.jtdo[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_124.clk
+u.jtdo[0]
+3023 53.521000 -49.900000 3.621000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[0] cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.c[0]
+u_syn_7 u.jtdo[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3060 2 2 2
+Setup check
+3071 1
+Endpoint: u.jtdo[1]
+3071 89.268000 1 1
+Timing path: u.jscanen[1]->u.jtdo[1]
+u.jscanen[1]
+u.jtdo[1]
+3073 89.268000 96.000000 6.732000 2 3
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+3110 1
+Endpoint: u.jtdo[1]
+3112 1.821000 1 1
+Timing path: u.jscanen[1]->u.jtdo[1]
+u.jscanen[1]
+u.jtdo[1]
+3114 1.821000 0.100000 1.921000 2 3
+u_syn_4 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3151 2 2 2
+Setup check
+3162 1
+Endpoint: u.jtdo[0]
+3162 89.064000 1 1
+Timing path: u.jscanen[0]->u.jtdo[0]
+u.jscanen[0]
+u.jtdo[0]
+3164 89.064000 96.000000 6.936000 2 3
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.d[0]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+3201 1
+Endpoint: u.jtdo[0]
+3203 1.950000 1 1
+Timing path: u.jscanen[0]->u.jtdo[0]
+u.jscanen[0]
+u.jtdo[0]
+3205 1.950000 0.100000 2.050000 2 3
+u_syn_3 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.d[0]
+u_syn_7 u.jtdo[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3242 2 2 2
+Setup check
+3253 1
+Endpoint: u.jtdo[1]
+3253 89.266000 1 1
+Timing path: u.jshift->u.jtdo[1]
+u.jshift
+u.jtdo[1]
+3255 89.266000 96.000000 6.734000 2 3
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+3292 1
+Endpoint: u.jtdo[1]
+3294 1.806000 1 1
+Timing path: u.jshift->u.jtdo[1]
+u.jshift
+u.jtdo[1]
+3296 1.806000 0.100000 1.906000 2 3
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2_reg_syn_5.d[1]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3333 2 2 2
+Setup check
+3344 1
+Endpoint: u.jtdo[0]
+3344 88.995000 1 1
+Timing path: u.jshift->u.jtdo[0]
+u.jshift
+u.jtdo[0]
+3346 88.995000 96.000000 7.005000 2 3
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.d[0]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+3383 1
+Endpoint: u.jtdo[0]
+3385 1.998000 1 1
+Timing path: u.jshift->u.jtdo[0]
+u.jshift
+u.jtdo[0]
+3387 1.998000 0.100000 2.098000 2 3
+u_syn_5 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_93.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/rst_reg_syn_5.d[0]
+u_syn_7 u.jtdo[0]
+
+
+
+
+
+Timing group statistics: 
+	Clock constraints: 
+	  Clock Name                                  Min Period     Max Freq           Skew      Fanout            TNS
+	  clk_ref (10.000MHz)                            4.858ns     205.846MHz        0.262ns        62        0.000ns
+	  jtck (10.000MHz)                              19.716ns      50.720MHz        0.066ns        45        0.000ns
+	Minimum input arrival time before clock: 3.073ns
+	Maximum output required time after clock: 3.239ns
+	Maximum combinational path delay: 3.005ns
+

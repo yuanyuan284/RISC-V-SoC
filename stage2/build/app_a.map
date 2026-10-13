@@ -1,0 +1,67 @@
+
+Discarded input sections
+
+ .comment       0x00000000       0x34 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x80000000         0x00000380         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+LOAD C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+
+.text           0x80000000       0x90
+ *(.text.start)
+ .text.start    0x80000000       0x34 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+                0x80000000                _start
+ *(.text*)
+ .text          0x80000034        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+ .text          0x80000034        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+ .text.startup  0x80000034       0x44 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+                0x80000034                main
+ *(.rodata*)
+ .rodata.str1.4
+                0x80000078       0x18 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+
+.rela.dyn       0x80000090        0x0
+ .rela.text.start
+                0x80000090        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+
+.data           0x80000090        0x0
+ *(.data*)
+ .data          0x80000090        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+ .data          0x80000090        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+ *(.sdata*)
+
+.bss            0x80000090        0x0
+                0x80000090                        . = ALIGN (0x4)
+                0x80000090                        _bss_start = .
+ *(.bss*)
+ .bss           0x80000090        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+ .bss           0x80000090        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+ *(.sbss*)
+ *(COMMON)
+                0x80000090                        . = ALIGN (0x4)
+                0x80000090                        _bss_end = .
+                0x80000400                        _stack_top = 0x80000400
+
+/DISCARD/
+ *(.comment)
+ *(.eh_frame*)
+OUTPUT(app_a.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2a
+ .riscv.attributes
+                0x00000000       0x28 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccsswycY.o
+ .riscv.attributes
+                0x00000028       0x2a C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\yuanj\AppData\Local\Packages\sandbox.{505339b1-05f0-424b-aa20-3b4a413ed615}\AC\Temp\ccBDSxEt.o

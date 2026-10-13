@@ -1,0 +1,1400 @@
+=========================================================================================================
+Auto created by Tang Dynasty v5.6.119222
+   Copyright (c) 2012-2024 Anlogic Inc.
+Sun Oct 11 15:41:10 2026
+=========================================================================================================
+
+
+Top Model:                stage2_watcher_top                                              
+Device:                   ef2_4                                                           
+Timing Constraint File:   D:/demo14_vexriscv_stage1_resource_safe_fixed/user_source/constraint_source/uart.sdc
+STA Level:                Detail                                                          
+Speed Grade:              NA                                                              
+
+=========================================================================================================
+Timing constraint:        clock: clk_ref                                                  
+Clock = clk_ref, period 100ns, rising at 0ns, falling at 50ns
+
+70 endpoints analyzed totally, and 70 paths analyzed
+0 errors detected : 0 setup errors (TNS = 0.000), 0 hold errors (TNS = 0.000)
+Minimum period is 2.819ns
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/reg0_syn_85 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     97.181 ns                                                       
+ Start Point:             core/reg2_syn_14.clk (rising edge triggered by clock clk_ref)   
+ End Point:               core/reg0_syn_85.sr (rising edge triggered by clock clk_ref)    
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.569ns  (logic 0.232ns, net 2.337ns, 9% logic)                 
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.660       1.660                    
+ core/reg2_syn_14.clk (clk_ref_dup_1)                        net                     1.602       3.262      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       3.262
+---------------------------------------------------------------------------------------------------------
+ core/reg2_syn_14.q[1]                                       clk2q                   0.146 r     3.408
+ core/reg0_syn_85.sr (core/reset_sync[2])                    net  (fanout = 9)       2.337 r     5.745      ../rtl/stage2_top.v(7)
+ core/reg0_syn_85                                            path2reg                0.086       5.831
+ Arrival time                                                                        5.831                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.493       1.493                    
+ core/reg0_syn_85.clk (clk_ref_dup_1)                        net                     1.440       2.933      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                100.000     102.933
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.187     102.746
+ clock uncertainty                                                                  -0.000     102.746
+ clock recovergence pessimism                                                        0.266     103.012
+ Required time                                                                     103.012            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              97.181ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/decode_RS1[9]_syn_59 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     97.218 ns                                                       
+ Start Point:             core/reg0_syn_88.clk (rising edge triggered by clock clk_ref)   
+ End Point:               core/cpu/decode_RS1[9]_syn_59.ce (rising edge triggered by clock clk_ref)
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.603ns  (logic 0.289ns, net 2.314ns, 11% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.660       1.660                    
+ core/reg0_syn_88.clk (clk_ref_dup_1)                        net                     1.602       3.262      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       3.262
+---------------------------------------------------------------------------------------------------------
+ core/reg0_syn_88.q[1]                                       clk2q                   0.146 r     3.408
+ core/cpu/decode_RS1[9]_syn_59.ce (core/count[15])           net  (fanout = 10)      2.314 r     5.722      ../rtl/stage2_top.v(8)
+ core/cpu/decode_RS1[9]_syn_59                               path2reg                0.143       5.865
+ Arrival time                                                                        5.865                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.493       1.493                    
+ core/cpu/decode_RS1[9]_syn_59.clk (clk_ref_dup_1)           net                     1.440       2.933      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                100.000     102.933
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116     102.817
+ clock uncertainty                                                                  -0.000     102.817
+ clock recovergence pessimism                                                        0.266     103.083
+ Required time                                                                     103.083            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              97.218ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/reg0_syn_91 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     97.218 ns                                                       
+ Start Point:             core/reg0_syn_88.clk (rising edge triggered by clock clk_ref)   
+ End Point:               core/reg0_syn_91.ce (rising edge triggered by clock clk_ref)    
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.603ns  (logic 0.289ns, net 2.314ns, 11% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.660       1.660                    
+ core/reg0_syn_88.clk (clk_ref_dup_1)                        net                     1.602       3.262      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       3.262
+---------------------------------------------------------------------------------------------------------
+ core/reg0_syn_88.q[1]                                       clk2q                   0.146 r     3.408
+ core/reg0_syn_91.ce (core/count[15])                        net  (fanout = 10)      2.314 r     5.722      ../rtl/stage2_top.v(8)
+ core/reg0_syn_91                                            path2reg                0.143       5.865
+ Arrival time                                                                        5.865                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.493       1.493                    
+ core/reg0_syn_91.clk (clk_ref_dup_1)                        net                     1.440       2.933      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                100.000     102.933
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116     102.817
+ clock uncertainty                                                                  -0.000     102.817
+ clock recovergence pessimism                                                        0.266     103.083
+ Required time                                                                     103.083            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              97.218ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Hold checks:
+---------------------------------------------------------------------------------------------------------
+Paths for end point core/reg0_syn_94 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.325 ns                                                        
+ Start Point:             core/cpu/decode_RS1[9]_syn_59.clk (rising edge triggered by clock clk_ref)
+ End Point:               core/reg0_syn_94.mi[1] (rising edge triggered by clock clk_ref) 
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.434ns  (logic 0.208ns, net 0.226ns, 47% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.184       1.184                    
+ core/cpu/decode_RS1[9]_syn_59.clk (clk_ref_dup_1)           net                     1.300       2.484      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       2.484
+---------------------------------------------------------------------------------------------------------
+ core/cpu/decode_RS1[9]_syn_59.q[0]                          clk2q                   0.109 r     2.593
+ core/reg0_syn_94.mi[1] (core/count[0])                      net  (fanout = 1)       0.226 r     2.819      ../rtl/stage2_top.v(8)
+ core/reg0_syn_94                                            path2reg1               0.099       2.918
+ Arrival time                                                                        2.918                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.302       1.302                    
+ core/reg0_syn_94.clk (clk_ref_dup_1)                        net                     1.427       2.729      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                  0.000       2.729
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.061       2.790
+ clock uncertainty                                                                   0.000       2.790
+ clock recovergence pessimism                                                       -0.197       2.593
+ Required time                                                                       2.593            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.325ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/reg0_syn_97 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.335 ns                                                        
+ Start Point:             core/reg0_syn_101.clk (rising edge triggered by clock clk_ref)  
+ End Point:               core/reg0_syn_97.mi[1] (rising edge triggered by clock clk_ref) 
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.444ns  (logic 0.208ns, net 0.236ns, 46% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.184       1.184                    
+ core/reg0_syn_101.clk (clk_ref_dup_1)                       net                     1.300       2.484      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       2.484
+---------------------------------------------------------------------------------------------------------
+ core/reg0_syn_101.q[0]                                      clk2q                   0.109 r     2.593
+ core/reg0_syn_97.mi[1] (core/count[4])                      net  (fanout = 1)       0.236 r     2.829      ../rtl/stage2_top.v(8)
+ core/reg0_syn_97                                            path2reg1               0.099       2.928
+ Arrival time                                                                        2.928                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.302       1.302                    
+ core/reg0_syn_97.clk (clk_ref_dup_1)                        net                     1.427       2.729      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                  0.000       2.729
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.061       2.790
+ clock uncertainty                                                                   0.000       2.790
+ clock recovergence pessimism                                                       -0.197       2.593
+ Required time                                                                       2.593            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.335ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/reg0_syn_97 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.344 ns                                                        
+ Start Point:             core/cpu/decode_RS1[23]_syn_56.clk (rising edge triggered by clock clk_ref)
+ End Point:               core/reg0_syn_97.mi[0] (rising edge triggered by clock clk_ref) 
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.434ns  (logic 0.208ns, net 0.226ns, 47% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.184       1.184                    
+ core/cpu/decode_RS1[23]_syn_56.clk (clk_ref_dup_1)          net                     1.300       2.484      ../rtl/stage2_top.v(186)
+ launch clock edge                                                                   0.000       2.484
+---------------------------------------------------------------------------------------------------------
+ core/cpu/decode_RS1[23]_syn_56.q[0]                         clk2q                   0.109 r     2.593
+ core/reg0_syn_97.mi[0] (core/count[6])                      net  (fanout = 1)       0.226 r     2.819      ../rtl/stage2_top.v(8)
+ core/reg0_syn_97                                            path2reg0               0.099       2.918
+ Arrival time                                                                        2.918                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ clk_ref                                                                             0.000       0.000                    
+ clk_ref_syn_2.ipad                                          hier                    0.000       0.000                    
+ clk_ref_syn_2.di                                            cell (PAD)              1.302       1.302                    
+ core/reg0_syn_97.clk (clk_ref_dup_1)                        net                     1.427       2.729      ../rtl/stage2_top.v(186)
+ capture clock edge                                                                  0.000       2.729
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.061       2.790
+ clock uncertainty                                                                   0.000       2.790
+ clock recovergence pessimism                                                       -0.216       2.574
+ Required time                                                                       2.574            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.344ns          
+
+---------------------------------------------------------------------------------------------------------
+
+
+=========================================================================================================
+Timing constraint:        clock: core/pll/pll_inst.clkc[0]                                
+Clock = core/pll/pll_inst.clkc[0], period 33.333ns, rising at 0ns, falling at 16.666ns
+
+0 endpoints analyzed totally, and 0 paths analyzed
+0 errors detected : 0 setup errors (TNS = 0), 0 hold errors (TNS = 0)
+Minimum period is 0ns
+---------------------------------------------------------------------------------------------------------
+
+
+=========================================================================================================
+Timing constraint:        clock: core/pll/pll_inst.clkc[1]                                
+Clock = core/pll/pll_inst.clkc[1], period 40ns, rising at 0ns, falling at 20ns
+
+5264 endpoints analyzed totally, and 814878 paths analyzed
+0 errors detected : 0 setup errors (TNS = 0.000), 0 hold errors (TNS = 0.000)
+Minimum period is 16.715ns
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/reg12_syn_191 (935 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     23.285 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_191.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.536ns  (logic 5.628ns, net 10.908ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/reg12_syn_191.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    18.064                    
+ core/cpu/reg12_syn_191                                      path2reg                0.087      18.151
+ Arrival time                                                                       18.151                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_191.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.285ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.285 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_191.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.536ns  (logic 5.628ns, net 10.908ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[0] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/reg12_syn_191.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    18.064                    
+ core/cpu/reg12_syn_191                                      path2reg                0.087      18.151
+ Arrival time                                                                       18.151                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_191.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.285ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.356 ns                                                       
+ Start Point:             core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_191.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.465ns  (logic 5.716ns, net 10.749ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (core/cpu/clk) net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.q[0]    clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.b[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[13]) net  (fanout = 1)       0.704 r     2.465      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.451 r     2.916
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.715                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.063
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.888                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.339
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.828                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.102
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.579                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.006
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.528      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     7.971
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.137                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.784
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.360      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.574
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.063                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.506
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.226                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.440
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.622      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.049
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.869      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.312
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.877      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.304
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.733      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.007
+ core/cpu/reg12_syn_191.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    17.993                    
+ core/cpu/reg12_syn_191                                      path2reg                0.087      18.080
+ Arrival time                                                                       18.080                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_191.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.356ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/reg12_syn_193 (935 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     23.285 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_193.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.536ns  (logic 5.628ns, net 10.908ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/reg12_syn_193.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    18.064                    
+ core/cpu/reg12_syn_193                                      path2reg                0.087      18.151
+ Arrival time                                                                       18.151                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_193.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.285ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.285 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_193.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.536ns  (logic 5.628ns, net 10.908ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[0] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/reg12_syn_193.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    18.064                    
+ core/cpu/reg12_syn_193                                      path2reg                0.087      18.151
+ Arrival time                                                                       18.151                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_193.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.285ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.356 ns                                                       
+ Start Point:             core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_193.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.465ns  (logic 5.716ns, net 10.749ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (core/cpu/clk) net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.q[0]    clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.b[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[13]) net  (fanout = 1)       0.704 r     2.465      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.451 r     2.916
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.715                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.063
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.888                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.339
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.828                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.102
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.579                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.006
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.528      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     7.971
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.137                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.784
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.360      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.574
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.063                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.506
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.226                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.440
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.622      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.049
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.869      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.312
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.877      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.304
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.733      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.007
+ core/cpu/reg12_syn_193.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.986 r    17.993                    
+ core/cpu/reg12_syn_193                                      path2reg                0.087      18.080
+ Arrival time                                                                       18.080                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_193.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.356ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12 (935 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (setup check):     23.290 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.531ns  (logic 5.628ns, net 10.903ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.981 r    18.059                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12 path2reg                0.087      18.146
+ Arrival time                                                                       18.146                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.clk (core/cpu/clk) net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.290ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.290 ns                                                       
+ Start Point:             core/cpu/reg20_syn_222.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.531ns  (logic 5.628ns, net 10.903ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg20_syn_222.clk (core/cpu/clk)                   net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/reg20_syn_222.q[0]                                 clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.c[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[20]) net  (fanout = 1)       0.863 r     2.624      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.363 r     2.987
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.786                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.134
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.959                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.410
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.899                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.173
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.650                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.077
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.599      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     8.042
+ core/cpu/_zz_63__n_syn_537.a[0] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.208                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.855
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.431      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.645
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.134                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.577
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.297                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.511
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.693      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.120
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.940      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.383
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.948      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.375
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.804      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.078
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.981 r    18.059                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12 path2reg                0.087      18.146
+ Arrival time                                                                       18.146                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.clk (core/cpu/clk) net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.290ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (setup check):     23.361 ns                                                       
+ Start Point:             core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         16.460ns  (logic 5.716ns, net 10.744ns, 34% logic)              
+ Logic Levels:            14 ( LUT5=5 LUT4=4 LUT3=3 LUT2=2 )                              
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.clk (core/cpu/clk) net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/execute_BranchPlugin_branch_src1[15]_syn_5.q[0]    clk2q                   0.146 r     1.761
+ core/cpu/reg39_syn_204.b[1] (core/cpu/dBus_cmd_halfPipe_regs_payload_address[13]) net  (fanout = 1)       0.704 r     2.465      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(1290)
+ core/cpu/reg39_syn_204.f[1]                                 cell (LUT4)             0.451 r     2.916
+ core/cpu/reg28_syn_223.b[1] (core/cpu/_zz_63__n_syn_56)     net  (fanout = 1)       0.799 r     3.715                    
+ core/cpu/reg28_syn_223.f[1]                                 cell (LUT4)             0.348 r     4.063
+ core/cpu/_zz_63__n_syn_461.b[0] (core/cpu/_zz_63__n_syn_58) net  (fanout = 1)       0.825 r     4.888                    
+ core/cpu/_zz_63__n_syn_461.f[0]                             cell (LUT5)             0.451 r     5.339
+ core/cpu/_zz_63__n_syn_525.d[1] (core/cpu/_zz_63__n_syn_62) net  (fanout = 3)       0.489 r     5.828                    
+ core/cpu/_zz_63__n_syn_525.f[1]                             cell (LUT2)             0.274 r     6.102
+ core/cpu/_zz_63__n_syn_561.a[1] (core/cpu/_zz_63__n_syn_66) net  (fanout = 2)       0.477 r     6.579                    
+ core/cpu/_zz_63__n_syn_561.f[1]                             cell (LUT3)             0.427 r     7.006
+ core/cpu/_zz_63__n_syn_471.a[1] (core/ram_select)           net  (fanout = 34)      0.522 r     7.528      ../rtl/stage2_top.v(131)
+ core/cpu/_zz_63__n_syn_471.f[1]                             cell (LUT5)             0.443 r     7.971
+ core/cpu/_zz_63__n_syn_537.a[1] (core/cpu/_zz_63__n_syn_163) net  (fanout = 2)       0.166 r     8.137                    
+ core/cpu/_zz_63__n_syn_537.fx[0]                            cell (LUT5)             0.647 r     8.784
+ core/cpu/_zz_250_[31]_syn_5.d[0] (core/ack)                 net  (fanout = 2)       0.576 r     9.360      ../rtl/stage2_top.v(136)
+ core/cpu/_zz_250_[31]_syn_5.f[0]                            cell (LUT2)             0.214 r     9.574
+ core/cpu/execute_BRANCH_DO_syn_277.a[0] (core/cpu/_zz_63__n_syn_214) net  (fanout = 2)       0.489 r    10.063                    
+ core/cpu/execute_BRANCH_DO_syn_277.f[0]                     cell (LUT5)             0.443 r    10.506
+ core/cpu/_zz_63__n_syn_477.d[1] (core/cpu/memory_arbitration_haltItself_n2) net  (fanout = 1)       0.720 r    11.226                    
+ core/cpu/_zz_63__n_syn_477.f[1]                             cell (LUT4)             0.214 r    11.440
+ core/cpu/_zz_63__n_syn_499.a[1] (core/cpu/memory_arbitration_haltItself) net  (fanout = 202)     1.182 r    12.622      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(864)
+ core/cpu/_zz_63__n_syn_499.f[1]                             cell (LUT4)             0.427 r    13.049
+ core/cpu/reg52_syn_186.a[0] (core/cpu/execute_arbitration_isStuck) net  (fanout = 111)     0.820 r    13.869      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(859)
+ core/cpu/reg52_syn_186.f[0]                                 cell (LUT5)             0.443 r    14.312
+ core/cpu/_zz_63__n_syn_487.a[1] (core/cpu/IBusCachedPlugin_iBusRsp_output_ready) net  (fanout = 15)      0.565 r    14.877      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(982)
+ core/cpu/_zz_63__n_syn_487.f[1]                             cell (LUT3)             0.427 r    15.304
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.d[1] (core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready) net  (fanout = 61)      1.429 r    16.733      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(964)
+ core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n_syn_5.f[1]      cell (LUT3)             0.274 r    17.007
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.ce (core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n) net  (fanout = 20)      0.981 r    17.988                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12 path2reg                0.087      18.075
+ Arrival time                                                                       18.075                  (14 lvl)      
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_b[31]_syn_12.clk (core/cpu/clk) net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell setup                                                                         -0.116      41.336
+ clock uncertainty                                                                  -0.000      41.336
+ clock recovergence pessimism                                                        0.100      41.436
+ Required time                                                                      41.436            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              23.361ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Hold checks:
+---------------------------------------------------------------------------------------------------------
+Paths for end point core/cpu/IBusCachedPlugin_cache/ramread0_syn_9 (9 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.087 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg5_syn_217.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[0] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.335ns  (logic 0.109ns, net 0.226ns, 32% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_217.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_217.q[1]           clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[0] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[19]) net  (fanout = 3)       0.226 r     1.709      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.709
+ Arrival time                                                                        1.709                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.087ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.206 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg5_syn_230.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[4] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.454ns  (logic 0.109ns, net 0.345ns, 24% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_230.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_230.q[1]           clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[4] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[23]) net  (fanout = 3)       0.345 r     1.828      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.828
+ Arrival time                                                                        1.828                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.206ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.260 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg5_syn_233.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[8] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.508ns  (logic 0.109ns, net 0.399ns, 21% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_233.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_233.q[0]           clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[8] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[27]) net  (fanout = 3)       0.399 r     1.882      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.882
+ Arrival time                                                                        1.882                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.260ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/IBusCachedPlugin_cache/ramread0_syn_9 (8 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.097 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg5_syn_217.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[4] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.345ns  (logic 0.109ns, net 0.236ns, 31% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_217.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_217.q[0]           clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[4] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[14]) net  (fanout = 3)       0.236 r     1.719      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.719
+ Arrival time                                                                        1.719                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.097ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.132 ns                                                        
+ Start Point:             core/cpu/_zz_63__n_syn_523.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[5] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.380ns  (logic 0.109ns, net 0.271ns, 28% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/_zz_63__n_syn_523.clk (core/cpu/clk)               net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/_zz_63__n_syn_523.q[0]                             clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[5] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[15]) net  (fanout = 3)       0.271 r     1.754      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.754
+ Arrival time                                                                        1.754                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.132ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.246 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg5_syn_221.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[7] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.494ns  (logic 0.109ns, net 0.385ns, 22% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_221.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg5_syn_221.q[1]           clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dia[7] (core/cpu/IBusCachedPlugin_cache/lineLoader_address[17]) net  (fanout = 3)       0.385 r     1.868      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(103)
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9              path2reg (EMB)          0.000       1.868
+ Arrival time                                                                        1.868                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.246ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/IBusCachedPlugin_cache/ramread1_syn_39 (10 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (hold check):      0.104 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/lineLoader_write_tag_0_valid_syn_5.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[3] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.352ns  (logic 0.109ns, net 0.243ns, 30% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/lineLoader_write_tag_0_valid_syn_5.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/lineLoader_write_tag_0_valid_syn_5.q[0] clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[3] (core/cpu/IBusCachedPlugin_cache/lineLoader_wordIndex[0]) net  (fanout = 8)       0.243 r     1.726      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(113)
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39             path2reg (EMB)          0.000       1.726
+ Arrival time                                                                        1.726                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.104ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.226 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg7_syn_19.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[5] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.474ns  (logic 0.109ns, net 0.365ns, 22% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg7_syn_19.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg7_syn_19.q[0]            clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[5] (core/cpu/IBusCachedPlugin_cache/lineLoader_wordIndex[2]) net  (fanout = 6)       0.365 r     1.848      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(113)
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39             path2reg (EMB)          0.000       1.848
+ Arrival time                                                                        1.848                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.226ns          
+
+---------------------------------------------------------------------------------------------------------
+
+ Slack (hold check):      0.226 ns                                                        
+ Start Point:             core/cpu/IBusCachedPlugin_cache/reg7_syn_19.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[4] (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.474ns  (logic 0.109ns, net 0.365ns, 22% logic)                
+ Logic Levels:            1 ( EMB=1 )                                                     
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/reg7_syn_19.clk (core/cpu/clk) net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/cpu/IBusCachedPlugin_cache/reg7_syn_19.q[1]            clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[4] (core/cpu/IBusCachedPlugin_cache/lineLoader_wordIndex[1]) net  (fanout = 7)       0.365 r     1.848      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(113)
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39             path2reg (EMB)          0.000       1.848
+ Arrival time                                                                        1.848                  (1 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.clka (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell hold                                                                           0.200       1.709
+ clock uncertainty                                                                   0.000       1.709
+ clock recovergence pessimism                                                       -0.087       1.622
+ Required time                                                                       1.622            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.226ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Recovery checks:
+---------------------------------------------------------------------------------------------------------
+Paths for end point core/cpu/reg12_syn_176 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (recovery check):  37.050 ns                                                       
+ Start Point:             core/ram/read_data_b2[27]_syn_41.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/reg12_syn_176.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.587ns  (logic 0.232ns, net 2.355ns, 8% logic)                 
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/ram/read_data_b2[27]_syn_41.clk (core/cpu/clk)         net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/ram/read_data_b2[27]_syn_41.q[0]                       clk2q                   0.146 r     1.761
+ core/cpu/reg12_syn_176.sr (core/reset_pipe[1]_dup_140)      net  (fanout = 32)      2.355 r     4.116      ../rtl/stage2_top.v(18)
+ core/cpu/reg12_syn_176                                      path2reg                0.086       4.202
+ Arrival time                                                                        4.202                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/reg12_syn_176.clk (core/cpu/clk)                   net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell recovery                                                                      -0.300      41.152
+ clock uncertainty                                                                  -0.000      41.152
+ clock recovergence pessimism                                                        0.100      41.252
+ Required time                                                                      41.252            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              37.050ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/decode_RS1[7]_syn_53 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (recovery check):  37.348 ns                                                       
+ Start Point:             core/cpu/decode_RS2[0]_syn_47.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/decode_RS1[7]_syn_53.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.289ns  (logic 0.232ns, net 2.057ns, 10% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/decode_RS2[0]_syn_47.clk (core/cpu/clk)            net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/decode_RS2[0]_syn_47.q[0]                          clk2q                   0.146 r     1.761
+ core/cpu/decode_RS1[7]_syn_53.sr (core/reset_pipe[1]_dup_135) net  (fanout = 33)      2.057 r     3.818      ../rtl/stage2_top.v(18)
+ core/cpu/decode_RS1[7]_syn_53                               path2reg                0.086       3.904
+ Arrival time                                                                        3.904                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/decode_RS1[7]_syn_53.clk (core/cpu/clk)            net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell recovery                                                                      -0.300      41.152
+ clock uncertainty                                                                  -0.000      41.152
+ clock recovergence pessimism                                                        0.100      41.252
+ Required time                                                                      41.252            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              37.348ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/_zz_63__n_syn_495 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (recovery check):  37.348 ns                                                       
+ Start Point:             core/cpu/decode_RS2[0]_syn_47.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/_zz_63__n_syn_495.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Slow                                                            
+ Data Path Delay:         2.289ns  (logic 0.232ns, net 2.057ns, 10% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/decode_RS2[0]_syn_47.clk (core/cpu/clk)            net                     1.615       1.615      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.615
+---------------------------------------------------------------------------------------------------------
+ core/cpu/decode_RS2[0]_syn_47.q[0]                          clk2q                   0.146 r     1.761
+ core/cpu/_zz_63__n_syn_495.sr (core/reset_pipe[1]_dup_135)  net  (fanout = 33)      2.057 r     3.818      ../rtl/stage2_top.v(18)
+ core/cpu/_zz_63__n_syn_495                                  path2reg                0.086       3.904
+ Arrival time                                                                        3.904                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/_zz_63__n_syn_495.clk (core/cpu/clk)               net                     1.452       1.452      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                 40.000      41.452
+---------------------------------------------------------------------------------------------------------
+ cell recovery                                                                      -0.300      41.152
+ clock uncertainty                                                                  -0.000      41.152
+ clock recovergence pessimism                                                        0.100      41.252
+ Required time                                                                      41.252            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                              37.348ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Removal checks:
+---------------------------------------------------------------------------------------------------------
+Paths for end point core/cpu/_zz_63__n_syn_525 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (removal check):   0.147 ns                                                        
+ Start Point:             core/ram/read_data_b2[27]_syn_41.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/_zz_63__n_syn_525.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.429ns  (logic 0.161ns, net 0.268ns, 37% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/ram/read_data_b2[27]_syn_41.clk (core/cpu/clk)         net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/ram/read_data_b2[27]_syn_41.q[0]                       clk2q                   0.109 r     1.483
+ core/cpu/_zz_63__n_syn_525.sr (core/reset_pipe[1]_dup_140)  net  (fanout = 32)      0.268 r     1.751      ../rtl/stage2_top.v(18)
+ core/cpu/_zz_63__n_syn_525                                  path2reg                0.052       1.803
+ Arrival time                                                                        1.803                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/_zz_63__n_syn_525.clk (core/cpu/clk)               net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell removal                                                                        0.253       1.762
+ clock uncertainty                                                                   0.000       1.762
+ clock recovergence pessimism                                                       -0.106       1.656
+ Required time                                                                       1.656            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.147ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/write_data[20]_syn_5 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (removal check):   0.147 ns                                                        
+ Start Point:             core/ram/read_data_b2[27]_syn_41.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/write_data[20]_syn_5.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.429ns  (logic 0.161ns, net 0.268ns, 37% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/ram/read_data_b2[27]_syn_41.clk (core/cpu/clk)         net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/ram/read_data_b2[27]_syn_41.q[0]                       clk2q                   0.109 r     1.483
+ core/write_data[20]_syn_5.sr (core/reset_pipe[1]_dup_140)   net  (fanout = 32)      0.268 r     1.751      ../rtl/stage2_top.v(18)
+ core/write_data[20]_syn_5                                   path2reg                0.052       1.803
+ Arrival time                                                                        1.803                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/write_data[20]_syn_5.clk (core/cpu/clk)                net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell removal                                                                        0.253       1.762
+ clock uncertainty                                                                   0.000       1.762
+ clock recovergence pessimism                                                       -0.106       1.656
+ Required time                                                                       1.656            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.147ns          
+
+---------------------------------------------------------------------------------------------------------
+
+Paths for end point core/cpu/IBusCachedPlugin_cache/lineLoader_cmdSent_reg_syn_5 (1 paths)
+---------------------------------------------------------------------------------------------------------
+ Slack (removal check):   0.251 ns                                                        
+ Start Point:             core/ram/read_data_b2[27]_syn_41.clk (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ End Point:               core/cpu/IBusCachedPlugin_cache/lineLoader_cmdSent_reg_syn_5.sr (rising edge triggered by clock core/pll/pll_inst.clkc[1])
+ Clock group:             clk_ref                                                         
+ Process:                 Fast                                                            
+ Data Path Delay:         0.552ns  (logic 0.161ns, net 0.391ns, 29% logic)                
+ Logic Levels:            0                                                               
+
+ Point                                                       Type                     Incr        Path      Info          
+---------------------------------------------------------------------------------------------------------
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/ram/read_data_b2[27]_syn_41.clk (core/cpu/clk)         net                     1.374       1.374      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ launch clock edge                                                                   0.000       1.374
+---------------------------------------------------------------------------------------------------------
+ core/ram/read_data_b2[27]_syn_41.q[0]                       clk2q                   0.109 r     1.483
+ core/cpu/IBusCachedPlugin_cache/lineLoader_cmdSent_reg_syn_5.sr (core/reset_pipe[1]_dup_140) net  (fanout = 32)      0.391 r     1.874      ../rtl/stage2_top.v(18)
+ core/cpu/IBusCachedPlugin_cache/lineLoader_cmdSent_reg_syn_5 path2reg                0.052       1.926
+ Arrival time                                                                        1.926                  (0 lvl)       
+
+ source latency                                                                      0.000       0.000                    
+ core/pll/pll_inst.clkc[1]                                                           0.000       0.000                    
+ core/cpu/IBusCachedPlugin_cache/lineLoader_cmdSent_reg_syn_5.clk (core/cpu/clk) net                     1.509       1.509      ../../../fpga-3-softcores-master/vendor/vexriscv/VexRiscv.v(359)
+ capture clock edge                                                                  0.000       1.509
+---------------------------------------------------------------------------------------------------------
+ cell removal                                                                        0.253       1.762
+ clock uncertainty                                                                   0.000       1.762
+ clock recovergence pessimism                                                       -0.087       1.675
+ Required time                                                                       1.675            
+---------------------------------------------------------------------------------------------------------
+ Slack                                                                               0.251ns          
+
+---------------------------------------------------------------------------------------------------------
+
+
+=========================================================================================================
+Timing summary:                                                                           
+---------------------------------------------------------------------------------------------------------
+Constraint path number: 814948 (STA coverage = 99.80%)
+Timing violations: 0 setup errors, and 0 hold errors.
+Minimal setup slack: 23.285, minimal hold slack: 0.087
+
+Timing group statistics: 
+	Clock constraints: 
+	  Clock Name                                  Min Period     Max Freq           Skew      Fanout            TNS
+	  core/pll/pll_inst.clkc[1] (25.000MHz)         16.715ns      59.827MHz        0.262ns       983        0.000ns
+	  clk_ref (10.000MHz)                            2.819ns     354.736MHz        0.416ns        12        0.000ns
+	Minimum input arrival time before clock: no constraint path
+	Maximum output required time after clock: no constraint path
+	Maximum combinational path delay: no constraint path
+
+---------------------------------------------------------------------------------------------------------

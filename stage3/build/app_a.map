@@ -1,0 +1,1482 @@
+Archive member included to satisfy reference by file (symbol)
+
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                              (_printf_float)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (_printf_common)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o (printf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o (setvbuf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o (snprintf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o) (memchr)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o (strstr)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (_localeconv_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o (_impure_ptr)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+                              C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o (__errno)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o) (__retarget_lock_acquire_recursive)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (strlen)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (_dtoa_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o) (_free_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o) (malloc)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o) (_malloc_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o) (__malloc_lock)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (_Balloc)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o) (_svfprintf_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o) (_vfprintf_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o) (_fflush_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o) (__sglue)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o) (__sfvwrite_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o) (_fwalk_sglue)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o) (__swhatbuf_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o) (__sread)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o) (__swbuf_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o) (__swsetup_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o) (__global_locale)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o) (_close_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o) (errno)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o) (_fstat_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o) (_isatty_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o) (_lseek_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o) (_read_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o) (_sbrk_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o) (_write_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memmove.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o) (memmove)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memset.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o) (memset)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memcpy-asm.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (memcpy)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strcmp.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o) (strcmp)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__assert_func)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o) (_calloc_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o) (__ascii_mbtowc)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o) (_realloc_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o) (__ascii_wctomb)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o) (_ctype_)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o) (fiprintf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o) (abort)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o) (_malloc_usable_size_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o) (raise)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o) (_kill_r)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__adddf3)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__divdf3)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (__eqdf2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__gtdf2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (__ledf2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__muldf3)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__subdf3)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (__unorddf2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__fixdfsi)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__floatsidf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o) (__floatunsidf)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o) (__trunctfdf2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o) (__clzsi2)
+D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                              D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o) (__clz_tab)
+
+Discarded input sections
+
+ .comment       0x00000000       0x34 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .comment       0x00000000       0x34 C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .comment       0x00000000       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x80000000         0x0000f000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+LOAD C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+LOAD C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a
+START GROUP
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a
+LOAD D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libgloss_nano.a
+END GROUP
+
+.text           0x80000000     0xa3ec
+ *(.text.start)
+ .text.start    0x80000000       0x34 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+                0x80000000                _start
+ *(.text*)
+ .text          0x80000034        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .text          0x80000034        0x0 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .text.startup  0x80000034      0x224 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+                0x80000034                main
+ .text          0x80000258      0x1a4 C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+                0x80000258                _write
+                0x800002c8                _sbrk
+                0x80000334                _fstat
+                0x80000344                _isatty
+                0x80000350                _close
+                0x80000378                _lseek
+                0x800003a0                _read
+                0x800003c8                _getpid
+                0x800003d0                _kill
+                0x800003f8                _exit
+ .text          0x800003fc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .text.__cvt    0x800003fc      0x180 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                0x800003fc                __cvt
+ .text.__exponent
+                0x8000057c       0xc0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                0x8000057c                __exponent
+ .text._printf_float
+                0x8000063c      0x774 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                0x8000063c                _printf_float
+ .text          0x80000db0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .text._printf_common
+                0x80000db0      0x1b4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x80000db0                _printf_common
+ .text._printf_i
+                0x80000f64      0x39c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x80000f64                _printf_i
+ .text          0x80001300        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .text._printf_r
+                0x80001300       0x44 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+                0x80001300                _iprintf_r
+                0x80001300                _printf_r
+ .text.printf   0x80001344       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+                0x80001344                iprintf
+                0x80001344                printf
+ .text          0x80001398        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .text.setvbuf  0x80001398      0x280 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+                0x80001398                setvbuf
+ .text          0x80001618        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .text._snprintf_r
+                0x80001618       0xa8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+                0x80001618                _snprintf_r
+                0x80001618                _sniprintf_r
+ .text.snprintf
+                0x800016c0       0xb4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+                0x800016c0                sniprintf
+                0x800016c0                snprintf
+ .text          0x80001774        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .text.memchr   0x80001774       0x24 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+                0x80001774                memchr
+ .text          0x80001798        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .text.strstr   0x80001798       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+                0x80001798                strstr
+ .text          0x800017e4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .text.__localeconv_l
+                0x800017e4        0x8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+                0x800017e4                __localeconv_l
+ .text._localeconv_r
+                0x800017ec        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+                0x800017ec                _localeconv_r
+ .text.localeconv
+                0x800017f8        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+                0x800017f8                localeconv
+ .text          0x80001804        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .text          0x80001804        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .text.__errno  0x80001804        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+                0x80001804                __errno
+ .text          0x80001810        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_init
+                0x80001810        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001810                __retarget_lock_init
+ .text.__retarget_lock_init_recursive
+                0x80001814        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001814                __retarget_lock_init_recursive
+ .text.__retarget_lock_close
+                0x80001818        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001818                __retarget_lock_close
+ .text.__retarget_lock_close_recursive
+                0x8000181c        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000181c                __retarget_lock_close_recursive
+ .text.__retarget_lock_acquire
+                0x80001820        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001820                __retarget_lock_acquire
+ .text.__retarget_lock_acquire_recursive
+                0x80001824        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001824                __retarget_lock_acquire_recursive
+ .text.__retarget_lock_try_acquire
+                0x80001828        0x8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001828                __retarget_lock_try_acquire
+ .text.__retarget_lock_try_acquire_recursive
+                0x80001830        0x8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001830                __retarget_lock_try_acquire_recursive
+ .text.__retarget_lock_release
+                0x80001838        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x80001838                __retarget_lock_release
+ .text.__retarget_lock_release_recursive
+                0x8000183c        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000183c                __retarget_lock_release_recursive
+ .text          0x80001840        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .text.strlen   0x80001840       0x1c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+                0x80001840                strlen
+ .text          0x8000185c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .text.quorem   0x8000185c      0x1dc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .text._dtoa_r  0x80001a38     0x1340 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+                0x80001a38                _dtoa_r
+ .text          0x80002d78        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .text._free_r  0x80002d78      0x108 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+                0x80002d78                _free_r
+ .text          0x80002e80        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .text.malloc   0x80002e80       0x14 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+                0x80002e80                malloc
+ .text.free     0x80002e94       0x14 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+                0x80002e94                free
+ .text          0x80002ea8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .text.sbrk_aligned
+                0x80002ea8       0x98 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .text._malloc_r
+                0x80002f40      0x1e0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+                0x80002f40                _malloc_r
+ .text          0x80003120        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .text.__malloc_lock
+                0x80003120       0x10 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+                0x80003120                __malloc_lock
+ .text.__malloc_unlock
+                0x80003130       0x10 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+                0x80003130                __malloc_unlock
+ .text          0x80003140        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .text._Balloc  0x80003140      0x104 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003140                _Balloc
+ .text._Bfree   0x80003244       0x98 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003244                _Bfree
+ .text.__multadd
+                0x800032dc      0x12c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800032dc                __multadd
+ .text.__s2b    0x80003408      0x13c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003408                __s2b
+ .text.__hi0bits
+                0x80003544       0x64 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003544                __hi0bits
+ .text.__lo0bits
+                0x800035a8       0xac D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800035a8                __lo0bits
+ .text.__i2b    0x80003654       0x5c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003654                __i2b
+ .text.__multiply
+                0x800036b0      0x22c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800036b0                __multiply
+ .text.__pow5mult
+                0x800038dc      0x160 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800038dc                __pow5mult
+ .text.__lshift
+                0x80003a3c      0x18c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003a3c                __lshift
+ .text.__mcmp   0x80003bc8       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003bc8                __mcmp
+ .text.__mdiff  0x80003c1c      0x218 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003c1c                __mdiff
+ .text.__ulp    0x80003e34       0x58 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003e34                __ulp
+ .text.__b2d    0x80003e8c      0x108 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003e8c                __b2d
+ .text.__d2b    0x80003f94      0x15c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80003f94                __d2b
+ .text.__ratio  0x800040f0       0xc0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800040f0                __ratio
+ .text._mprec_log10
+                0x800041b0       0xa0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800041b0                _mprec_log10
+ .text.__copybits
+                0x80004250       0x70 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x80004250                __copybits
+ .text.__any_on
+                0x800042c0       0x68 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x800042c0                __any_on
+ .text          0x80004328        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .text.__ssputs_r
+                0x80004328      0x188 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x80004328                __ssputs_r
+ .text.__ssprint_r
+                0x800044b0      0x1dc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x800044b0                __ssprint_r
+ .text._svfprintf_r
+                0x8000468c      0x3a0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x8000468c                _svfiprintf_r
+                0x8000468c                _svfprintf_r
+ .text          0x80004a2c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .text.__sfputc_r
+                0x80004a2c       0x40 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .text.__sfputs_r
+                0x80004a6c       0x78 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                0x80004a6c                __sfputs_r
+ .text.__sprint_r
+                0x80004ae4       0x40 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                0x80004ae4                __sprint_r
+ .text._vfprintf_r
+                0x80004b24      0x414 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                0x80004b24                _vfprintf_r
+                0x80004b24                _vfiprintf_r
+ .text.vfprintf
+                0x80004f38       0x1c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                0x80004f38                vfprintf
+                0x80004f38                vfiprintf
+ .text          0x80004f54        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .text.__sflush_r
+                0x80004f54      0x1cc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+                0x80004f54                __sflush_r
+ .text._fflush_r
+                0x80005120       0xb4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+                0x80005120                _fflush_r
+ .text.fflush   0x800051d4       0x38 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+                0x800051d4                fflush
+ .text          0x8000520c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.std      0x8000520c       0xd8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.stdio_exit_handler
+                0x800052e4       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.cleanup_stdio
+                0x80005304       0x7c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.__fp_lock
+                0x80005380       0x44 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.__fp_unlock
+                0x800053c4       0x44 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.global_stdio_init.part.0
+                0x80005408       0x68 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .text.__sfp_lock_acquire
+                0x80005470       0x10 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x80005470                __sfp_lock_acquire
+ .text.__sfp_lock_release
+                0x80005480       0x10 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x80005480                __sfp_lock_release
+ .text.__sfp    0x80005490      0x140 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x80005490                __sfp
+ .text.__sinit  0x800055d0       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x800055d0                __sinit
+ .text.__fp_lock_all
+                0x80005624       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x80005624                __fp_lock_all
+ .text.__fp_unlock_all
+                0x80005658       0x34 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x80005658                __fp_unlock_all
+ .text          0x8000568c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .text.__sfvwrite_r
+                0x8000568c      0x494 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+                0x8000568c                __sfvwrite_r
+ .text          0x80005b20        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .text._fwalk_sglue
+                0x80005b20       0xa8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+                0x80005b20                _fwalk_sglue
+ .text          0x80005bc8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .text.__swhatbuf_r
+                0x80005bc8       0x90 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+                0x80005bc8                __swhatbuf_r
+ .text.__smakebuf_r
+                0x80005c58       0xd8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+                0x80005c58                __smakebuf_r
+ .text          0x80005d30        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .text.__sread  0x80005d30       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                0x80005d30                __sread
+ .text.__seofread
+                0x80005d84        0x8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                0x80005d84                __seofread
+ .text.__swrite
+                0x80005d8c       0x8c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                0x80005d8c                __swrite
+ .text.__sseek  0x80005e18       0x5c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                0x80005e18                __sseek
+ .text.__sclose
+                0x80005e74        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+                0x80005e74                __sclose
+ .text          0x80005e80        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .text.__swbuf_r
+                0x80005e80      0x10c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+                0x80005e80                __swbuf_r
+ .text.__swbuf  0x80005f8c       0x18 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+                0x80005f8c                __swbuf
+ .text          0x80005fa4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .text.__swsetup_r
+                0x80005fa4      0x128 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+                0x80005fa4                __swsetup_r
+ .text          0x800060cc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .text._setlocale_r
+                0x800060cc       0x88 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                0x800060cc                _setlocale_r
+ .text.__locale_mb_cur_max
+                0x80006154        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                0x80006154                __locale_mb_cur_max
+ .text.setlocale
+                0x80006160       0x18 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                0x80006160                setlocale
+ .text          0x80006178        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .text._close_r
+                0x80006178       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+                0x80006178                _close_r
+ .text          0x800061c4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .text._reclaim_reent
+                0x800061c4      0x1ac D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+                0x800061c4                _reclaim_reent
+ .text          0x80006370        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .text._fstat_r
+                0x80006370       0x50 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+                0x80006370                _fstat_r
+ .text          0x800063c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .text._isatty_r
+                0x800063c0       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+                0x800063c0                _isatty_r
+ .text          0x8000640c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .text._lseek_r
+                0x8000640c       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+                0x8000640c                _lseek_r
+ .text          0x80006460        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .text._read_r  0x80006460       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+                0x80006460                _read_r
+ .text          0x800064b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .text._sbrk_r  0x800064b4       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+                0x800064b4                _sbrk_r
+ .text          0x80006500        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .text._write_r
+                0x80006500       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+                0x80006500                _write_r
+ .text          0x80006554       0x3c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memmove.o)
+                0x80006554                memmove
+ .text          0x80006590       0x1c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memset.o)
+                0x80006590                memset
+ .text          0x800065ac       0x24 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memcpy-asm.o)
+                0x800065ac                memcpy
+ .text          0x800065d0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strcmp.o)
+                0x800065d0                strcmp
+ .text          0x800065f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .text.__assert_func
+                0x800065f0       0x58 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+                0x800065f0                __assert_func
+ .text.__assert
+                0x80006648       0x18 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+                0x80006648                __assert
+ .text          0x80006660        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .text._calloc_r
+                0x80006660       0x64 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+                0x80006660                _calloc_r
+ .text          0x800066c4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .text._mbtowc_r
+                0x800066c4        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+                0x800066c4                _mbtowc_r
+ .text.__ascii_mbtowc
+                0x800066d0       0x5c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+                0x800066d0                __ascii_mbtowc
+ .text          0x8000672c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .text._realloc_r
+                0x8000672c       0xd4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+                0x8000672c                _realloc_r
+ .text          0x80006800        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .text._wctomb_r
+                0x80006800        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+                0x80006800                _wctomb_r
+ .text.__ascii_wctomb
+                0x8000680c       0x30 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+                0x8000680c                __ascii_wctomb
+ .text          0x8000683c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .text          0x8000683c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .text._fprintf_r
+                0x8000683c       0x38 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+                0x8000683c                _fiprintf_r
+                0x8000683c                _fprintf_r
+ .text.fprintf  0x80006874       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+                0x80006874                fiprintf
+                0x80006874                fprintf
+ .text          0x800068c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .text.abort    0x800068c0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+                0x800068c0                abort
+ .text          0x800068e0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .text._malloc_usable_size_r
+                0x800068e0       0x1c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+                0x800068e0                _malloc_usable_size_r
+ .text          0x800068fc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .text._init_signal_r
+                0x800068fc       0x60 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x800068fc                _init_signal_r
+ .text._signal_r
+                0x8000695c       0x8c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x8000695c                _signal_r
+ .text._raise_r
+                0x800069e8       0xb0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x800069e8                _raise_r
+ .text.__sigtramp_r
+                0x80006a98       0x98 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x80006a98                __sigtramp_r
+ .text.raise    0x80006b30       0x14 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x80006b30                raise
+ .text.signal   0x80006b44       0x18 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x80006b44                signal
+ .text._init_signal
+                0x80006b5c       0x10 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x80006b5c                _init_signal
+ .text.__sigtramp
+                0x80006b6c       0x14 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+                0x80006b6c                __sigtramp
+ .text          0x80006b80        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .text._kill_r  0x80006b80       0x50 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+                0x80006b80                _kill_r
+ .text._getpid_r
+                0x80006bd0        0x8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+                0x80006bd0                _getpid_r
+ .text          0x80006bd8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .text.__adddf3
+                0x80006bd8      0xb5c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+                0x80006bd8                __adddf3
+ .text          0x80007734        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .text.__divdf3
+                0x80007734      0x908 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                0x80007734                __divdf3
+ .text          0x8000803c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .text.__eqdf2  0x8000803c       0x90 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+                0x8000803c                __nedf2
+                0x8000803c                __eqdf2
+ .text          0x800080cc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .text.__gedf2  0x800080cc      0x110 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+                0x800080cc                __gedf2
+                0x800080cc                __gtdf2
+ .text          0x800081dc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .text.__ledf2  0x800081dc      0x118 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+                0x800081dc                __ledf2
+                0x800081dc                __ltdf2
+ .text          0x800082f4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .text.__muldf3
+                0x800082f4      0x7b4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+                0x800082f4                __muldf3
+ .text          0x80008aa8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .text.__subdf3
+                0x80008aa8      0xb54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+                0x80008aa8                __subdf3
+ .text          0x800095fc        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .text.__unorddf2
+                0x800095fc       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+                0x800095fc                __unorddf2
+ .text          0x80009650        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .text.__fixdfsi
+                0x80009650       0x80 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+                0x80009650                __fixdfsi
+ .text          0x800096d0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .text.__floatsidf
+                0x800096d0       0xe4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+                0x800096d0                __floatsidf
+ .text          0x800097b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .text.__floatunsidf
+                0x800097b4       0xa4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                0x800097b4                __floatunsidf
+ .text          0x80009858        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .text.__trunctfdf2
+                0x80009858      0x3d0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+                0x80009858                __trunctfdf2
+ .text          0x80009c28        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .text.__clzsi2
+                0x80009c28       0x88 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                0x80009c28                __clzsi2
+ .text          0x80009cb0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ *(.rodata*)
+ .rodata.str1.4
+                0x80009cb0      0x30f C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+                                 0xc1 (size before relaxing)
+ *fill*         0x80009fbf        0x1 
+ .rodata.cst8   0x80009fc0       0x58 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+                                  0x8 (size before relaxing)
+ .rodata        0x8000a018       0x14 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .rodata._printf_float.str1.4
+                0x8000a02c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                                 0x12 (size before relaxing)
+ .rodata._printf_i.str1.4
+                0x8000a02c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                                 0x25 (size before relaxing)
+ .rodata._printf_i
+                0x8000a02c       0x58 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .rodata._dtoa_r.str1.4
+                0x8000a084        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+                                 0xf9 (size before relaxing)
+ .rodata._Balloc.str1.4
+                0x8000a084        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                                 0xd2 (size before relaxing)
+ .rodata.__multadd.str1.4
+                0x8000a084        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                                 0x11 (size before relaxing)
+ .rodata.p05.0  0x8000a084        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .rodata.__mprec_tinytens
+                0x8000a090       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x8000a090                __mprec_tinytens
+ .rodata.__mprec_bigtens
+                0x8000a0b8       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x8000a0b8                __mprec_bigtens
+ .rodata.__mprec_tens
+                0x8000a0e0       0xc8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                0x8000a0e0                __mprec_tens
+ .rodata._svfprintf_r.str1.4
+                0x8000a1a8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+                                 0x13 (size before relaxing)
+ .rodata._vfprintf_r.str1.4
+                0x8000a1a8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+                                 0x13 (size before relaxing)
+ .rodata._setlocale_r.str1.4
+                0x8000a1a8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                                  0xd (size before relaxing)
+ .rodata.str1.4
+                0x8000a1a8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                                  0x2 (size before relaxing)
+ .rodata.__assert_func.str1.4
+                0x8000a1a8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+                                 0x43 (size before relaxing)
+ .rodata._ctype_
+                0x8000a1a8      0x101 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+                0x8000a1a8                _ctype_
+ *fill*         0x8000a2a9        0x3 
+ .rodata.__divdf3
+                0x8000a2ac       0x40 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .rodata.__clz_tab
+                0x8000a2ec      0x100 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                0x8000a2ec                __clz_tab
+ *(.srodata*)
+ .srodata.cst8  0x8000a3ec        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                                  0x8 (size before relaxing)
+ .srodata.cst8  0x8000a3ec        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+                                 0x48 (size before relaxing)
+ .srodata.cst8  0x8000a3ec        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+                                 0x10 (size before relaxing)
+
+.rela.dyn       0x8000a3ec        0x0
+ .rela.text.start
+                0x8000a3ec        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .rela.text     0x8000a3ec        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .rela.text._svfprintf_r
+                0x8000a3ec        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .rela.text._vfprintf_r
+                0x8000a3ec        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+
+.data           0x8000a3ec      0x1cc
+ *(.data*)
+ .data          0x8000a3ec        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .data          0x8000a3ec        0x4 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .data          0x8000a3f0        0x0 C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .data          0x8000a3f0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .data._impure_data
+                0x8000a3f0       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+                0x8000a3f0                _impure_data
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .data          0x8000a43c        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .data.__sglue  0x8000a43c        0xc D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x8000a43c                __sglue
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .data          0x8000a448        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .data.__global_locale
+                0x8000a448      0x16c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                0x8000a448                __global_locale
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memmove.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memset.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memcpy-asm.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strcmp.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .data          0x8000a5b4        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ *(.sdata*)
+ .sdata._impure_ptr
+                0x8000a5b4        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+                0x8000a5b4                _impure_ptr
+
+.bss            0x8000a5b8      0x174
+                0x8000a5b8                        . = ALIGN (0x4)
+                0x8000a5b8                        _bss_start = .
+ *(.bss*)
+ .bss           0x8000a5b8        0x0 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .bss           0x8000a5b8        0x4 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .bss           0x8000a5bc        0x4 C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .bss           0x8000a5c0        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .bss.__sf      0x8000a5c0      0x138 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x8000a5c0                __sf
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memmove.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memset.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memcpy-asm.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strcmp.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .bss           0x8000a6f8        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+ *(.sbss*)
+ .sbss.__lock___arc4random_mutex
+                0x8000a6f8        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a6f8                __lock___arc4random_mutex
+ *fill*         0x8000a6f9        0x3 
+ .sbss.__lock___dd_hash_mutex
+                0x8000a6fc        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a6fc                __lock___dd_hash_mutex
+ *fill*         0x8000a6fd        0x3 
+ .sbss.__lock___tz_mutex
+                0x8000a700        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a700                __lock___tz_mutex
+ *fill*         0x8000a701        0x3 
+ .sbss.__lock___env_recursive_mutex
+                0x8000a704        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a704                __lock___env_recursive_mutex
+ *fill*         0x8000a705        0x3 
+ .sbss.__lock___malloc_recursive_mutex
+                0x8000a708        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a708                __lock___malloc_recursive_mutex
+ *fill*         0x8000a709        0x3 
+ .sbss.__lock___at_quick_exit_mutex
+                0x8000a70c        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a70c                __lock___at_quick_exit_mutex
+ *fill*         0x8000a70d        0x3 
+ .sbss.__lock___atexit_recursive_mutex
+                0x8000a710        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a710                __lock___atexit_recursive_mutex
+ *fill*         0x8000a711        0x3 
+ .sbss.__lock___sfp_recursive_mutex
+                0x8000a714        0x1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+                0x8000a714                __lock___sfp_recursive_mutex
+ *fill*         0x8000a715        0x3 
+ .sbss.__malloc_sbrk_start
+                0x8000a718        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+                0x8000a718                __malloc_sbrk_start
+ .sbss.__malloc_free_list
+                0x8000a71c        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+                0x8000a71c                __malloc_free_list
+ .sbss.__stdio_exit_handler
+                0x8000a720        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+                0x8000a720                __stdio_exit_handler
+ .sbss._PathLocale
+                0x8000a724        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+                0x8000a724                _PathLocale
+ .sbss.errno    0x8000a728        0x4 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+                0x8000a728                errno
+ *(COMMON)
+                0x8000a72c                        . = ALIGN (0x4)
+                0x8000a72c                        _bss_end = .
+                0x8000a730                        . = ALIGN (0x10)
+                0x8000a730                        _heap_start = .
+                0x8000b800                        _heap_end = 0x8000b800
+                0x00000001                        ASSERT (((_heap_start + 0x1000) <= _heap_end), Need at least 4 KiB heap before memory test)
+
+.memtest        0x8000b800     0x3800
+ *(.memtest)
+ .memtest       0x8000b800     0x3800 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+                0x8000f000                        _stack_bottom = 0x8000f000
+                0x80010000                        _stack_top = 0x80010000
+
+/DISCARD/
+ *(.comment)
+ *(.eh_frame*)
+OUTPUT(app_a.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2a
+ .riscv.attributes
+                0x00000000       0x28 C:\Users\yuanj\AppData\Local\Temp\ccCloxK9.o
+ .riscv.attributes
+                0x00000028       0x2a C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .riscv.attributes
+                0x00000052       0x2a C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+ .riscv.attributes
+                0x0000007c       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .riscv.attributes
+                0x000000a6       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .riscv.attributes
+                0x000000d0       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .riscv.attributes
+                0x000000fa       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .riscv.attributes
+                0x00000124       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .riscv.attributes
+                0x0000014e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .riscv.attributes
+                0x00000178       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .riscv.attributes
+                0x000001a2       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .riscv.attributes
+                0x000001cc       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .riscv.attributes
+                0x000001f6       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .riscv.attributes
+                0x00000220       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .riscv.attributes
+                0x0000024a       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .riscv.attributes
+                0x00000274       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .riscv.attributes
+                0x0000029e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .riscv.attributes
+                0x000002c8       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .riscv.attributes
+                0x000002f2       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .riscv.attributes
+                0x0000031c       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .riscv.attributes
+                0x00000346       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .riscv.attributes
+                0x00000370       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .riscv.attributes
+                0x0000039a       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .riscv.attributes
+                0x000003c4       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .riscv.attributes
+                0x000003ee       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .riscv.attributes
+                0x00000418       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .riscv.attributes
+                0x00000442       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .riscv.attributes
+                0x0000046c       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .riscv.attributes
+                0x00000496       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .riscv.attributes
+                0x000004c0       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .riscv.attributes
+                0x000004ea       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .riscv.attributes
+                0x00000514       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .riscv.attributes
+                0x0000053e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .riscv.attributes
+                0x00000568       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .riscv.attributes
+                0x00000592       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .riscv.attributes
+                0x000005bc       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .riscv.attributes
+                0x000005e6       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .riscv.attributes
+                0x00000610       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .riscv.attributes
+                0x0000063a       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .riscv.attributes
+                0x00000664       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .riscv.attributes
+                0x0000068e       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memmove.o)
+ .riscv.attributes
+                0x000006b6       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memset.o)
+ .riscv.attributes
+                0x000006de       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memcpy-asm.o)
+ .riscv.attributes
+                0x00000706       0x28 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strcmp.o)
+ .riscv.attributes
+                0x0000072e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .riscv.attributes
+                0x00000758       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .riscv.attributes
+                0x00000782       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .riscv.attributes
+                0x000007ac       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .riscv.attributes
+                0x000007d6       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .riscv.attributes
+                0x00000800       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .riscv.attributes
+                0x0000082a       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .riscv.attributes
+                0x00000854       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .riscv.attributes
+                0x0000087e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .riscv.attributes
+                0x000008a8       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .riscv.attributes
+                0x000008d2       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .riscv.attributes
+                0x000008fc       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .riscv.attributes
+                0x00000926       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .riscv.attributes
+                0x00000950       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .riscv.attributes
+                0x0000097a       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .riscv.attributes
+                0x000009a4       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .riscv.attributes
+                0x000009ce       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .riscv.attributes
+                0x000009f8       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .riscv.attributes
+                0x00000a22       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .riscv.attributes
+                0x00000a4c       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .riscv.attributes
+                0x00000a76       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .riscv.attributes
+                0x00000aa0       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .riscv.attributes
+                0x00000aca       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .riscv.attributes
+                0x00000af4       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .riscv.attributes
+                0x00000b1e       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\yuanj\AppData\Local\Temp\ccVZEBpK.o
+ .note.GNU-stack
+                0x00000000        0x0 C:\Users\yuanj\AppData\Local\Temp\ccAH5Uqs.o
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_float.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-printf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-setvbuf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-snprintf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-memchr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strstr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-localeconv.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-impure.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-errno.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lock.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-strlen.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-dtoa.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-freer.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-malloc.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mallocr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mlock.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mprec.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-svfprintf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-nano-vfprintf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fflush.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-findfp.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fvwrite.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fwalk.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-makebuf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-stdio.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wbuf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wsetup.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-locale.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-closer.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reent.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fstatr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-isattyr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-lseekr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-readr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-sbrkr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-writer.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-assert.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-callocr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-mbtowc_r.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-reallocr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-wctomb_r.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-ctype_.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-fprintf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-abort.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-msizer.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signal.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/../../../../riscv-none-elf/lib/rv32im/ilp32\libc_nano.a(libc_a-signalr.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .note.GNU-stack
+                0x00000000        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_info     0x00000000     0x3159
+ .debug_info    0x00000000      0x562 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_info    0x00000562      0x79a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_info    0x00000cfc      0x250 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_info    0x00000f4c      0x25e D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_info    0x000011aa      0x25e D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_info    0x00001408      0x7ab D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_info    0x00001bb3      0x562 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_info    0x00002115      0x231 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_info    0x00002346      0x1e7 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_info    0x0000252d      0x289 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_info    0x000027b6      0x27e D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_info    0x00002a34      0x4cb D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_info    0x00002eff      0x168 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_info    0x00003067       0xf2 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_abbrev   0x00000000     0x1302
+ .debug_abbrev  0x00000000      0x195 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_abbrev  0x00000195      0x182 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_abbrev  0x00000317      0x170 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_abbrev  0x00000487      0x172 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_abbrev  0x000005f9      0x172 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_abbrev  0x0000076b      0x194 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_abbrev  0x000008ff      0x195 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_abbrev  0x00000a94      0x15e D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_abbrev  0x00000bf2      0x159 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_abbrev  0x00000d4b      0x173 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_abbrev  0x00000ebe      0x172 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_abbrev  0x00001030      0x183 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_abbrev  0x000011b3       0xd9 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x0000128c       0x76 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_loclists
+                0x00000000     0x81a6
+ .debug_loclists
+                0x00000000     0x2223 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_loclists
+                0x00002223     0x199d D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_loclists
+                0x00003bc0       0xda D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_loclists
+                0x00003c9a      0x1d3 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_loclists
+                0x00003e6d      0x1d9 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_loclists
+                0x00004046     0x11c1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_loclists
+                0x00005207     0x2260 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_loclists
+                0x00007467       0x9d D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_loclists
+                0x00007504      0x135 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_loclists
+                0x00007639      0x1a8 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_loclists
+                0x000077e1      0x172 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_loclists
+                0x00007953      0x770 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_loclists
+                0x000080c3       0xe3 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+
+.debug_aranges  0x00000000      0x1b8
+ .debug_aranges
+                0x00000000       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_aranges
+                0x00000020       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_aranges
+                0x00000040       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_aranges
+                0x00000060       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_aranges
+                0x00000080       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_aranges
+                0x000000a0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_aranges
+                0x000000c0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_aranges
+                0x000000e0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_aranges
+                0x00000100       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_aranges
+                0x00000120       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_aranges
+                0x00000140       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_aranges
+                0x00000160       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_aranges
+                0x00000180       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x000001a0       0x18 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_rnglists
+                0x00000000      0xe52
+ .debug_rnglists
+                0x00000000      0x3ad D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_rnglists
+                0x000003ad      0x1b1 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_rnglists
+                0x0000055e       0x35 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_rnglists
+                0x00000593       0x52 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_rnglists
+                0x000005e5       0x4a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_rnglists
+                0x0000062f      0x1b3 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_rnglists
+                0x000007e2      0x3a7 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_rnglists
+                0x00000b89       0x2e D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_rnglists
+                0x00000bb7       0x2c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_rnglists
+                0x00000be3       0x99 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_rnglists
+                0x00000c7c       0x72 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_rnglists
+                0x00000cee      0x13a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_rnglists
+                0x00000e28       0x2a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+
+.debug_line     0x00000000     0xa54f
+ .debug_line    0x00000000     0x2935 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_line    0x00002935     0x19eb D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_line    0x00004320      0x263 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_line    0x00004583      0x428 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_line    0x000049ab      0x43a D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_line    0x00004de5     0x14e3 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_line    0x000062c8     0x29a6 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_line    0x00008c6e      0x1cd D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_line    0x00008e3b      0x29b D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_line    0x000090d6      0x371 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_line    0x00009447      0x30b D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_line    0x00009752      0xc55 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_line    0x0000a3a7      0x15f D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+ .debug_line    0x0000a506       0x49 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+
+.debug_str      0x00000000      0x782
+ .debug_str     0x00000000      0x782 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+                                0x2c3 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                                0x385 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+                                0x1d5 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+                                0x1f9 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+                                0x1f9 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+                                0x3dd (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+                                0x2c3 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+                                0x1d8 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+                                0x1d0 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+                                0x26d (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                                0x268 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+                                0x380 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                                0x1f3 (size before relaxing)
+ .debug_str     0x00000782        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                                0x1d6 (size before relaxing)
+
+.debug_line_str
+                0x00000000      0xb0f
+ .debug_line_str
+                0x00000000      0xb0f D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+                                0x23f (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+                                0x249 (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+                                0x24b (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+                                0x24b (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+                                0x24b (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+                                0x249 (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+                                0x23f (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+                                0x251 (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+                                0x24b (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+                                0x24f (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+                                0x253 (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+                                0x24e (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)
+                                0x232 (size before relaxing)
+ .debug_line_str
+                0x00000b0f        0x0 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clz.o)
+                                0x232 (size before relaxing)
+
+.debug_frame    0x00000000      0x2f0
+ .debug_frame   0x00000000       0x58 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(adddf3.o)
+ .debug_frame   0x00000058       0x90 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(divdf3.o)
+ .debug_frame   0x000000e8       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(eqdf2.o)
+ .debug_frame   0x00000108       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(gedf2.o)
+ .debug_frame   0x00000128       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(ledf2.o)
+ .debug_frame   0x00000148       0x54 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(muldf3.o)
+ .debug_frame   0x0000019c       0x4c D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(subdf3.o)
+ .debug_frame   0x000001e8       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(unorddf2.o)
+ .debug_frame   0x00000208       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(fixdfsi.o)
+ .debug_frame   0x00000228       0x38 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatsidf.o)
+ .debug_frame   0x00000260       0x38 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(floatunsidf.o)
+ .debug_frame   0x00000298       0x38 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(trunctfdf2.o)
+ .debug_frame   0x000002d0       0x20 D:/risc-v/toolchain/xpack-riscv-none-elf-gcc-15.2.0-1/bin/../lib/gcc/riscv-none-elf/15.2.0/rv32im/ilp32\libgcc.a(_clzsi2.o)

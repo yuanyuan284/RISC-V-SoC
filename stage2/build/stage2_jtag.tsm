@@ -1,0 +1,917 @@
+ef2_4
+13 3273 285 851 7654 596478 0 0
+22.429 0.140 stage2_jtag_top ef2_4 EF2L45LG144B Detail NA 9 11
+clock: clk_ref
+13 70 70 2
+Setup check
+23 3
+Endpoint: core/reg0_syn_101
+23 97.562000 1 1
+Timing path: core/reg2_syn_15.clk->core/reg0_syn_101
+core/reg2_syn_15.clk
+core/reg0_syn_101
+25 97.562000 103.012000 5.450000 0 1
+core/reset_sync[2] core/reg0_syn_101.sr
+
+
+Endpoint: core/reg0_syn_84
+63 97.562000 1 1
+Timing path: core/reg2_syn_15.clk->core/reg0_syn_84
+core/reg2_syn_15.clk
+core/reg0_syn_84
+65 97.562000 103.012000 5.450000 0 1
+core/reset_sync[2] core/reg0_syn_84.sr
+
+
+Endpoint: core/reg0_syn_97
+103 98.070000 1 1
+Timing path: core/reg2_syn_15.clk->core/reg0_syn_97
+core/reg2_syn_15.clk
+core/reg0_syn_97
+105 98.070000 103.012000 4.942000 0 1
+core/reset_sync[2] core/reg0_syn_97.sr
+
+
+
+Hold check
+143 3
+Endpoint: core/cpu/decode_RS1[18]_syn_56
+145 0.325000 1 1
+Timing path: core/reg0_syn_84.clk->core/cpu/decode_RS1[18]_syn_56
+core/reg0_syn_84.clk
+core/cpu/decode_RS1[18]_syn_56
+147 0.325000 2.593000 2.918000 0 1
+core/count[4] core/cpu/decode_RS1[18]_syn_56.mi[0]
+
+
+Endpoint: core/reg0_syn_84
+185 0.325000 1 1
+Timing path: core/reg0_syn_93.clk->core/reg0_syn_84
+core/reg0_syn_93.clk
+core/reg0_syn_84
+187 0.325000 2.593000 2.918000 0 1
+core/count[3] core/reg0_syn_84.mi[1]
+
+
+Endpoint: core/cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_16
+225 0.344000 1 1
+Timing path: core/reg0_syn_87.clk->core/cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_16
+core/reg0_syn_87.clk
+core/cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_16
+227 0.344000 2.574000 2.918000 0 1
+core/count[14] core/cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_16.mi[0]
+
+
+
+
+clock: core/pll/pll_inst.clkc[0]
+267 0 0 0
+
+clock: core/pll/pll_inst.clkc[1]
+275 587572 5518 4
+Setup check
+285 3
+Endpoint: core/cpu/reg12_syn_321
+285 22.429000 1006 3
+Timing path: core/ram/memory_n3_syn_159.clk->core/cpu/reg12_syn_321
+core/ram/memory_n3_syn_159.clk
+core/cpu/reg12_syn_321
+287 22.429000 41.436000 19.007000 15 15
+core/data_owner core/cpu/_zz_63__n_syn_451.d[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.d[1]
+
+Timing path: core/cpu/reg20_syn_214.clk->core/cpu/reg12_syn_321
+core/cpu/reg20_syn_214.clk
+core/cpu/reg12_syn_321
+349 22.607000 41.436000 18.829000 15 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[13] core/cpu/_zz_63__n_syn_451.b[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.d[1]
+
+Timing path: core/cpu/reg20_syn_219.clk->core/cpu/reg12_syn_321
+core/cpu/reg20_syn_219.clk
+core/cpu/reg12_syn_321
+411 22.674000 41.436000 18.762000 15 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[26] core/cpu/dBus_cmd_halfPipe_regs_payload_wr_reg_syn_8.c[1]
+core/cpu/_zz_63__n_syn_72 core/cpu/_zz_63__n_syn_525.a[1]
+core/cpu/_zz_63__n_syn_76 core/cpu/_zz_63__n_syn_481.b[1]
+core/cpu/_zz_63__n_syn_80 core/cpu/_zz_63__n_syn_508.a[1]
+core/cpu/_zz_63__n_syn_82 core/cpu/_zz_63__n_syn_435.a[0]
+core/uart_select core/cpu/_zz_63__n_syn_437.b[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.d[1]
+
+
+Endpoint: core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+473 22.524000 574 3
+Timing path: core/ram/memory_n3_syn_159.clk->core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+core/ram/memory_n3_syn_159.clk
+core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+475 22.524000 41.436000 18.912000 14 15
+core/data_owner core/cpu/_zz_63__n_syn_451.d[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14.ce
+
+Timing path: core/cpu/reg20_syn_214.clk->core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+core/cpu/reg20_syn_214.clk
+core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+537 22.702000 41.436000 18.734000 14 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[13] core/cpu/_zz_63__n_syn_451.b[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14.ce
+
+Timing path: core/cpu/reg20_syn_219.clk->core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+core/cpu/reg20_syn_219.clk
+core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14
+599 22.769000 41.436000 18.667000 14 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[26] core/cpu/dBus_cmd_halfPipe_regs_payload_wr_reg_syn_8.c[1]
+core/cpu/_zz_63__n_syn_72 core/cpu/_zz_63__n_syn_525.a[1]
+core/cpu/_zz_63__n_syn_76 core/cpu/_zz_63__n_syn_481.b[1]
+core/cpu/_zz_63__n_syn_80 core/cpu/_zz_63__n_syn_508.a[1]
+core/cpu/_zz_63__n_syn_82 core/cpu/_zz_63__n_syn_435.a[0]
+core/uart_select core/cpu/_zz_63__n_syn_437.b[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/IBusCachedPlugin_fetchPc_pc[24]_syn_14.ce
+
+
+Endpoint: core/cpu/reg12_syn_321
+661 22.552000 1018 3
+Timing path: core/ram/memory_n3_syn_159.clk->core/cpu/reg12_syn_321
+core/ram/memory_n3_syn_159.clk
+core/cpu/reg12_syn_321
+663 22.552000 41.436000 18.884000 15 15
+core/data_owner core/cpu/_zz_63__n_syn_451.d[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.a[0]
+
+Timing path: core/cpu/reg20_syn_214.clk->core/cpu/reg12_syn_321
+core/cpu/reg20_syn_214.clk
+core/cpu/reg12_syn_321
+725 22.730000 41.436000 18.706000 15 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[13] core/cpu/_zz_63__n_syn_451.b[0]
+core/cpu/_zz_63__n_syn_58 core/cpu/_zz_63__n_syn_451.b[1]
+core/cpu/_zz_63__n_syn_60 core/cpu/_zz_63__n_syn_459.b[1]
+core/cpu/_zz_63__n_syn_64 core/cpu/_zz_63__n_syn_527.d[1]
+core/cpu/_zz_63__n_syn_68 core/cpu/_zz_63__n_syn_532.a[0]
+core/ram_select core/cpu/_zz_63__n_syn_437.a[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.a[0]
+
+Timing path: core/cpu/reg20_syn_219.clk->core/cpu/reg12_syn_321
+core/cpu/reg20_syn_219.clk
+core/cpu/reg12_syn_321
+787 22.797000 41.436000 18.639000 15 15
+core/cpu/dBus_cmd_halfPipe_regs_payload_address[26] core/cpu/dBus_cmd_halfPipe_regs_payload_wr_reg_syn_8.c[1]
+core/cpu/_zz_63__n_syn_72 core/cpu/_zz_63__n_syn_525.a[1]
+core/cpu/_zz_63__n_syn_76 core/cpu/_zz_63__n_syn_481.b[1]
+core/cpu/_zz_63__n_syn_80 core/cpu/_zz_63__n_syn_508.a[1]
+core/cpu/_zz_63__n_syn_82 core/cpu/_zz_63__n_syn_435.a[0]
+core/uart_select core/cpu/_zz_63__n_syn_437.b[1]
+core/cpu/_zz_63__n_syn_141 core/cpu/_zz_63__n_syn_439.a[1]
+core/ack core/cpu/_zz_63__n_syn_517.d[0]
+core/cpu/_zz_63__n_syn_192 core/cpu/_zz_250_[28]_syn_5.a[0]
+core/cpu/memory_arbitration_haltItself_n2 core/cpu/memory_MulDivIterativePlugin_div_needRevert_n1_syn_74.d[0]
+core/cpu/memory_arbitration_haltItself core/cpu/_zz_63__n_syn_499.a[0]
+core/cpu/execute_arbitration_isStuck core/cpu/reg35_syn_183.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_output_ready core/cpu/reg35_syn_196.a[0]
+core/cpu/IBusCachedPlugin_iBusRsp_stages_2_input_ready core/cpu/reg12_syn_300.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b_n core/cpu/reg12_syn_321.a[0]
+
+
+
+Hold check
+849 3
+Endpoint: core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+851 0.140000 9 3
+Timing path: core/cpu/_zz_63__n_syn_477.clk->core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+core/cpu/_zz_63__n_syn_477.clk
+core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+853 0.140000 1.622000 1.762000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[19] core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[0]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_226.clk->core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+core/cpu/IBusCachedPlugin_cache/reg5_syn_226.clk
+core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+887 0.208000 1.622000 1.830000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[27] core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[8]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_233.clk->core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+core/cpu/IBusCachedPlugin_cache/reg5_syn_233.clk
+core/cpu/IBusCachedPlugin_cache/ramread0_syn_9
+921 0.216000 1.622000 1.838000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[22] core/cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[3]
+
+
+Endpoint: core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+955 0.216000 10 3
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+957 0.216000 1.622000 1.838000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[11] core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[12]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_207.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+core/cpu/IBusCachedPlugin_cache/reg5_syn_207.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+991 0.270000 1.622000 1.892000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[6] core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[7]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_210.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+core/cpu/IBusCachedPlugin_cache/reg5_syn_210.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_39
+1025 0.412000 1.622000 2.034000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[8] core/cpu/IBusCachedPlugin_cache/ramread1_syn_39.addra[9]
+
+
+Endpoint: core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+1059 0.216000 10 3
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+1061 0.216000 1.622000 1.838000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[11] core/cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[12]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+core/cpu/IBusCachedPlugin_cache/reg5_syn_213.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+1095 0.226000 1.622000 1.848000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_address[10] core/cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[11]
+
+Timing path: core/cpu/IBusCachedPlugin_cache/reg7_syn_20.clk->core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+core/cpu/IBusCachedPlugin_cache/reg7_syn_20.clk
+core/cpu/IBusCachedPlugin_cache/ramread1_syn_9
+1129 0.503000 1.622000 2.125000 1 1
+core/cpu/IBusCachedPlugin_cache/lineLoader_wordIndex[1] core/cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[4]
+
+
+
+Recovery check
+1163 3
+Endpoint: core/cpu/reg53_syn_163
+1165 35.896000 2 2
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/reg53_syn_163
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/reg53_syn_163
+1167 35.896000 41.252000 5.356000 1 2
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/reg53_syn_163.sr
+
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/reg53_syn_163
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/reg53_syn_163
+1203 35.972000 41.252000 5.280000 1 2
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/reg53_syn_163.sr
+
+
+Endpoint: core/cpu/reg12_syn_318
+1239 36.035000 3 3
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/reg12_syn_318
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/reg12_syn_318
+1241 36.035000 41.252000 5.217000 2 3
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/reg12_syn_330.d[0]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[31] core/cpu/reg12_syn_318.sr
+
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/reg12_syn_318
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/reg12_syn_318
+1279 36.111000 41.252000 5.141000 2 3
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/reg12_syn_330.d[0]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[31] core/cpu/reg12_syn_318.sr
+
+Timing path: core/jtag$loader/o_boot_from_ram_reg_syn_12.clk->core/cpu/reg12_syn_318
+core/jtag$loader/o_boot_from_ram_reg_syn_12.clk
+core/cpu/reg12_syn_318
+1317 36.858000 41.252000 4.394000 1 2
+core/jtag$loader/o_boot_from_ram core/cpu/reg12_syn_330.c[0]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[31] core/cpu/reg12_syn_318.sr
+
+
+Endpoint: core/cpu/reg12_syn_321
+1353 36.084000 3 3
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/reg12_syn_321
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/reg12_syn_321
+1355 36.084000 41.252000 5.168000 2 3
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/reg12_syn_330.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[29] core/cpu/reg12_syn_321.sr
+
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/reg12_syn_321
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/reg12_syn_321
+1393 36.160000 41.252000 5.092000 2 3
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/reg12_syn_330.d[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[29] core/cpu/reg12_syn_321.sr
+
+Timing path: core/jtag$loader/o_boot_from_ram_reg_syn_12.clk->core/cpu/reg12_syn_321
+core/jtag$loader/o_boot_from_ram_reg_syn_12.clk
+core/cpu/reg12_syn_321
+1431 36.907000 41.252000 4.345000 1 2
+core/jtag$loader/o_boot_from_ram core/cpu/reg12_syn_330.c[1]
+core/cpu/IBusCachedPlugin_fetchPc_pcReg_b1[29] core/cpu/reg12_syn_321.sr
+
+
+
+Removal check
+1467 3
+Endpoint: core/cpu/_zz_63__n_syn_463
+1469 1.112000 2 2
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/_zz_63__n_syn_463
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/_zz_63__n_syn_463
+1471 1.112000 1.675000 2.787000 1 2
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/_zz_63__n_syn_463.sr
+
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/_zz_63__n_syn_463
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/_zz_63__n_syn_463
+1507 1.157000 1.675000 2.832000 1 2
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/_zz_63__n_syn_463.sr
+
+
+Endpoint: core/cpu/decode_RS1[25]_syn_53
+1543 1.112000 2 2
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/decode_RS1[25]_syn_53
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/decode_RS1[25]_syn_53
+1545 1.112000 1.675000 2.787000 1 2
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/decode_RS1[25]_syn_53.sr
+
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/decode_RS1[25]_syn_53
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/decode_RS1[25]_syn_53
+1581 1.157000 1.675000 2.832000 1 2
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/decode_RS1[25]_syn_53.sr
+
+
+Endpoint: core/cpu/_zz_63__n_syn_435
+1617 1.112000 2 2
+Timing path: core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk->core/cpu/_zz_63__n_syn_435
+core/uart/rx0/r_prescaler_counter_b[4]_syn_8.clk
+core/cpu/_zz_63__n_syn_435
+1619 1.112000 1.675000 2.787000 1 2
+core/reset_pipe[1]_dup_140 core/jtag$loader/reg5_syn_160.d[1]
+core/cpu/reset core/cpu/_zz_63__n_syn_435.sr
+
+Timing path: core/jtag$loader/o_hold_reset_reg_syn_15.clk->core/cpu/_zz_63__n_syn_435
+core/jtag$loader/o_hold_reset_reg_syn_15.clk
+core/cpu/_zz_63__n_syn_435
+1655 1.157000 1.675000 2.832000 1 2
+core/jtag$loader/o_hold_reset core/jtag$loader/reg5_syn_160.c[1]
+core/cpu/reset core/cpu/_zz_63__n_syn_435.sr
+
+
+
+
+clock: jtck
+1691 7568 826 2
+Setup check
+1701 3
+Endpoint: core/jtag$loader/reg9_syn_94
+1701 47.274000 1 1
+Timing path: core/jtag$loader/add0_syn_62.clk->core/jtag$loader/reg9_syn_94
+core/jtag$loader/add0_syn_62.clk
+core/jtag$loader/reg9_syn_94
+1703 47.274000 52.476000 5.202000 2 2
+core/jtag$loader/reset_tck_sync[1]_dup_28 core/jtag$loader/reg9_syn_88.c[1]
+core/jtag$loader/mux24_syn_14 core/jtag$loader/reg9_syn_94.a[1]
+
+
+Endpoint: core/jtag$loader/reg9_syn_94
+1743 47.274000 1 1
+Timing path: core/jtag$loader/add0_syn_62.clk->core/jtag$loader/reg9_syn_94
+core/jtag$loader/add0_syn_62.clk
+core/jtag$loader/reg9_syn_94
+1745 47.274000 52.476000 5.202000 2 2
+core/jtag$loader/reset_tck_sync[1]_dup_28 core/jtag$loader/reg9_syn_88.c[1]
+core/jtag$loader/mux24_syn_14 core/jtag$loader/reg9_syn_94.a[0]
+
+
+Endpoint: core/jtag$loader/reg9_syn_97
+1785 47.422000 1 1
+Timing path: core/jtag$loader/add0_syn_62.clk->core/jtag$loader/reg9_syn_97
+core/jtag$loader/add0_syn_62.clk
+core/jtag$loader/reg9_syn_97
+1787 47.422000 52.476000 5.054000 2 2
+core/jtag$loader/reset_tck_sync[1]_dup_28 core/jtag$loader/reg9_syn_88.c[1]
+core/jtag$loader/mux24_syn_14 core/jtag$loader/reg9_syn_97.a[0]
+
+
+
+Hold check
+1827 3
+Endpoint: core/jtag$loader/reg10_syn_412
+1829 0.225000 1 1
+Timing path: core/jtag$loader/reg10_syn_406.clk->core/jtag$loader/reg10_syn_412
+core/jtag$loader/reg10_syn_406.clk
+core/jtag$loader/reg10_syn_412
+1831 0.225000 2.295000 2.520000 0 1
+core/jtag$loader/shift_reg[29] core/jtag$loader/reg10_syn_412.mi[0]
+
+
+Endpoint: core/jtag$loader/reg10_syn_409
+1869 0.225000 1 1
+Timing path: core/jtag$loader/reg10_syn_412.clk->core/jtag$loader/reg10_syn_409
+core/jtag$loader/reg10_syn_412.clk
+core/jtag$loader/reg10_syn_409
+1871 0.225000 2.295000 2.520000 0 1
+core/jtag$loader/shift_reg[31] core/jtag$loader/reg10_syn_409.mi[0]
+
+
+Endpoint: core/jtag$loader/reg10_syn_371
+1909 0.225000 1 1
+Timing path: core/jtag$loader/reg10_syn_350.clk->core/jtag$loader/reg10_syn_371
+core/jtag$loader/reg10_syn_350.clk
+core/jtag$loader/reg10_syn_371
+1911 0.225000 2.295000 2.520000 0 1
+core/jtag$loader/shift_reg[66] core/jtag$loader/reg10_syn_371.mi[1]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+1949 396 382 2
+Setup check
+1959 3
+Endpoint: core/jtag$loader/reg0_syn_336
+1959 42.583000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/reg0_syn_336
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/reg0_syn_336
+1961 42.583000 52.237000 9.654000 4 5
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_336.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_254
+2005 42.667000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/reg0_syn_254
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/reg0_syn_254
+2007 42.667000 52.237000 9.570000 4 5
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_254.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_251
+2051 42.667000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/reg0_syn_251
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/reg0_syn_251
+2053 42.667000 52.237000 9.570000 4 5
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_251.ce
+
+
+
+Hold check
+2097 3
+Endpoint: core/jtag$loader/valid_tck_reg_syn_98
+2099 48.225000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/valid_tck_reg_syn_98
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/valid_tck_reg_syn_98
+2101 48.225000 -47.207000 1.018000 1 1
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[0]
+
+
+Endpoint: core/jtag$loader/valid_tck_reg_syn_98
+2137 48.694000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/valid_tck_reg_syn_98
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/valid_tck_reg_syn_98
+2139 48.694000 -47.207000 1.487000 1 2
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_98.ce
+
+
+Endpoint: core/jtag$loader/reg8_syn_409
+2177 48.698000 1 1
+Timing path: core/jtag$u_config.jscanen[1]->core/jtag$loader/reg8_syn_409
+core/jtag$u_config.jscanen[1]
+core/jtag$loader/reg8_syn_409
+2179 48.698000 -47.207000 1.491000 1 2
+core/jtag$jscanen[1] core/jtag$loader/valid_tck_reg_syn_98.d[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/reg8_syn_409.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2217 396 382 2
+Setup check
+2227 3
+Endpoint: core/jtag$loader/reg0_syn_336
+2227 42.411000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/reg0_syn_336
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/reg0_syn_336
+2229 42.411000 52.237000 9.826000 4 5
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_336.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_254
+2273 42.495000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/reg0_syn_254
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/reg0_syn_254
+2275 42.495000 52.237000 9.742000 4 5
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_254.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_251
+2319 42.495000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/reg0_syn_251
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/reg0_syn_251
+2321 42.495000 52.237000 9.742000 4 5
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_251.ce
+
+
+
+Hold check
+2365 3
+Endpoint: core/jtag$loader/valid_tck_reg_syn_98
+2367 48.373000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/valid_tck_reg_syn_98
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/valid_tck_reg_syn_98
+2369 48.373000 -47.207000 1.166000 1 1
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[0]
+
+
+Endpoint: core/jtag$loader/valid_tck_reg_syn_98
+2405 48.850000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/valid_tck_reg_syn_98
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/valid_tck_reg_syn_98
+2407 48.850000 -47.207000 1.643000 1 2
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_98.ce
+
+
+Endpoint: core/jtag$loader/reg8_syn_409
+2445 48.854000 1 1
+Timing path: core/jtag$u_config.jscanen[0]->core/jtag$loader/reg8_syn_409
+core/jtag$u_config.jscanen[0]
+core/jtag$loader/reg8_syn_409
+2447 48.854000 -47.207000 1.647000 1 2
+core/jtag$jscanen[0] core/jtag$loader/valid_tck_reg_syn_98.b[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/reg8_syn_409.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2485 224 224 2
+Setup check
+2495 3
+Endpoint: core/jtag$loader/reg10_syn_415
+2495 44.986000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/reg10_syn_415
+core/jtag$u_config.jshift
+core/jtag$loader/reg10_syn_415
+2497 44.986000 52.237000 7.251000 2 3
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+core/jtag$loader/response_shift_b2[67] core/jtag$loader/mux19_syn_350.d[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_415.ce
+
+
+Endpoint: core/jtag$loader/reg10_syn_440
+2537 44.986000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/reg10_syn_440
+core/jtag$u_config.jshift
+core/jtag$loader/reg10_syn_440
+2539 44.986000 52.237000 7.251000 2 3
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+core/jtag$loader/response_shift_b2[67] core/jtag$loader/mux19_syn_350.d[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_440.ce
+
+
+Endpoint: core/jtag$loader/reg10_syn_377
+2579 45.019000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/reg10_syn_377
+core/jtag$u_config.jshift
+core/jtag$loader/reg10_syn_377
+2581 45.019000 52.237000 7.218000 2 3
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+core/jtag$loader/response_shift_b2[67] core/jtag$loader/mux19_syn_350.d[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_377.ce
+
+
+
+Hold check
+2621 3
+Endpoint: core/jtag$loader/valid_tck_reg_syn_98
+2623 48.259000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/valid_tck_reg_syn_98
+core/jtag$u_config.jshift
+core/jtag$loader/valid_tck_reg_syn_98
+2625 48.259000 -47.207000 1.052000 1 1
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+
+
+Endpoint: core/jtag$loader/reg8_syn_396
+2661 48.759000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/reg8_syn_396
+core/jtag$u_config.jshift
+core/jtag$loader/reg8_syn_396
+2663 48.759000 -47.207000 1.552000 2 2
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+core/jtag$loader/response_shift_b2[67] core/jtag$loader/reg8_syn_396.d[1]
+
+
+Endpoint: core/jtag$loader/reg8_syn_396
+2701 48.759000 1 1
+Timing path: core/jtag$u_config.jshift->core/jtag$loader/reg8_syn_396
+core/jtag$u_config.jshift
+core/jtag$loader/reg8_syn_396
+2703 48.759000 -47.207000 1.552000 2 2
+core/jtag$jshift core/jtag$loader/valid_tck_reg_syn_98.c[0]
+core/jtag$loader/response_shift_b2[67] core/jtag$loader/reg8_syn_396.d[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2741 2 2 2
+Setup check
+2751 1
+Endpoint: core/jtag$loader/reg10_syn_426
+2751 47.279000 1 1
+Timing path: core/jtag$u_config.jtdi->core/jtag$loader/reg10_syn_426
+core/jtag$u_config.jtdi
+core/jtag$loader/reg10_syn_426
+2753 47.279000 51.990000 4.711000 0 1
+core/jtag$loader/i_jtag_tdi core/jtag$loader/reg10_syn_426.mi[0]
+
+
+
+Hold check
+2789 1
+Endpoint: core/jtag$loader/reg10_syn_426
+2791 47.988000 1 1
+Timing path: core/jtag$u_config.jtdi->core/jtag$loader/reg10_syn_426
+core/jtag$u_config.jtdi
+core/jtag$loader/reg10_syn_426
+2793 47.988000 -47.207000 0.781000 0 1
+core/jtag$loader/i_jtag_tdi core/jtag$loader/reg10_syn_426.mi[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2829 246 246 2
+Setup check
+2839 3
+Endpoint: core/jtag$loader/reg0_syn_336
+2839 42.339000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg0_syn_336
+core/jtag$u_config.jupdate
+core/jtag$loader/reg0_syn_336
+2841 42.339000 52.237000 9.898000 4 5
+core/jtag$jupdate core/jtag$loader/valid_tck_reg_syn_98.c[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_336.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_254
+2885 42.423000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg0_syn_254
+core/jtag$u_config.jupdate
+core/jtag$loader/reg0_syn_254
+2887 42.423000 52.237000 9.814000 4 5
+core/jtag$jupdate core/jtag$loader/valid_tck_reg_syn_98.c[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_254.ce
+
+
+Endpoint: core/jtag$loader/reg0_syn_251
+2931 42.423000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg0_syn_251
+core/jtag$u_config.jupdate
+core/jtag$loader/reg0_syn_251
+2933 42.423000 52.237000 9.814000 4 5
+core/jtag$jupdate core/jtag$loader/valid_tck_reg_syn_98.c[1]
+core/jtag$loader/i_jtag_update core/jtag$loader/valid_tck_reg_syn_100.a[1]
+core/jtag$loader/valid_tck_reg_syn_9 core/jtag$loader/error_tck_reg_syn_5.a[0]
+core/jtag$loader/valid_tck_reg_syn_13 core/jtag$loader/reg10_syn_403.a[1]
+core/jtag$loader/commit_tck_i1_syn_3 core/jtag$loader/reg0_syn_251.ce
+
+
+
+Hold check
+2977 3
+Endpoint: core/jtag$loader/reg10_syn_344
+2979 48.828000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg10_syn_344
+core/jtag$u_config.jupdate
+core/jtag$loader/reg10_syn_344
+2981 48.828000 -47.207000 1.621000 1 2
+core/jtag$jupdate core/jtag$loader/mux19_syn_350.c[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_344.ce
+
+
+Endpoint: core/jtag$loader/reg10_syn_380
+3019 48.828000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg10_syn_380
+core/jtag$u_config.jupdate
+core/jtag$loader/reg10_syn_380
+3021 48.828000 -47.207000 1.621000 1 2
+core/jtag$jupdate core/jtag$loader/mux19_syn_350.c[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_380.ce
+
+
+Endpoint: core/jtag$loader/reg10_syn_426
+3059 48.861000 1 1
+Timing path: core/jtag$u_config.jupdate->core/jtag$loader/reg10_syn_426
+core/jtag$u_config.jupdate
+core/jtag$loader/reg10_syn_426
+3061 48.861000 -47.207000 1.654000 1 2
+core/jtag$jupdate core/jtag$loader/mux19_syn_350.c[1]
+core/jtag$loader/mux19_syn_104 core/jtag$loader/reg10_syn_426.ce
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+3099 2 2 2
+Setup check
+3109 1
+Endpoint: core/jtag$u_config.jtdo[1]
+3109 42.060000 1 1
+Timing path: core/jtag$loader/reg8_syn_393.clk->core/jtag$u_config.jtdo[1]
+core/jtag$loader/reg8_syn_393.clk
+core/jtag$u_config.jtdo[1]
+3111 42.060000 46.000000 3.940000 0 1
+core/jtag$loader/response_shift[0] core/jtag$u_config.jtdo[1]
+
+
+
+Hold check
+3146 1
+Endpoint: core/jtag$u_config.jtdo[1]
+3148 52.929000 1 1
+Timing path: core/jtag$loader/reg8_syn_393.clk->core/jtag$u_config.jtdo[1]
+core/jtag$loader/reg8_syn_393.clk
+core/jtag$u_config.jtdo[1]
+3150 52.929000 -49.900000 3.029000 0 1
+core/jtag$loader/response_shift[0] core/jtag$u_config.jtdo[1]
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+3185 2 2 2
+Setup check
+3195 1
+Endpoint: core/jtag$u_config.jtdo[0]
+3195 42.060000 1 1
+Timing path: core/jtag$loader/reg8_syn_393.clk->core/jtag$u_config.jtdo[0]
+core/jtag$loader/reg8_syn_393.clk
+core/jtag$u_config.jtdo[0]
+3197 42.060000 46.000000 3.940000 0 1
+core/jtag$loader/response_shift[0] core/jtag$u_config.jtdo[0]
+
+
+
+Hold check
+3232 1
+Endpoint: core/jtag$u_config.jtdo[0]
+3234 52.929000 1 1
+Timing path: core/jtag$loader/reg8_syn_393.clk->core/jtag$u_config.jtdo[0]
+core/jtag$loader/reg8_syn_393.clk
+core/jtag$u_config.jtdo[0]
+3236 52.929000 -49.900000 3.029000 0 1
+core/jtag$loader/response_shift[0] core/jtag$u_config.jtdo[0]
+
+
+
+
+
+Timing group statistics: 
+	Clock constraints: 
+	  Clock Name                                  Min Period     Max Freq           Skew      Fanout            TNS
+	  core/pll/pll_inst.clkc[1] (25.000MHz)         17.571ns      56.912MHz        0.262ns      1017        0.000ns
+	  jtck (10.000MHz)                              15.880ns      62.972MHz        0.066ns       147        0.000ns
+	  clk_ref (10.000MHz)                            2.438ns     410.000MHz        0.416ns        12        0.000ns
+	Minimum input arrival time before clock: 5.898ns
+	Maximum output required time after clock: 1.321ns
+	Maximum combinational path delay: no constraint path
+

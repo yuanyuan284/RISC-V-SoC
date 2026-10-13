@@ -1,0 +1,13 @@
+============================================================
+   Tang Dynasty, V5.6.119222
+      Copyright (c) 2012-2024 Anlogic Inc.
+   Executable = D:/TD_5.6.5_Release_119.222/bin/td_commands_prompt.exe
+   Built at =   17:28:21 May 30 2024
+   Run by =     yuanj
+   Run Date =   Tue Oct 13 15:52:42 2026
+
+   Run on =     DESKTOP-RBEAPOF
+============================================================
+RUN-1002 : start command "download -mode jtag -bit D:/demo14_vexriscv_stage1_resource_safe_fixed/stage3/build/stage3_uart.unverified_bit -cable 0 -spd 7 -sec 64"
+PRG-2014 : Chip validation success: EF2L45B
+PRG-8003 ERROR: Download: the bit file(D:/demo14_vexriscv_stage1_resource_safe_fixed/stage3/build/stage3_uart.unverified_bit) is invalid

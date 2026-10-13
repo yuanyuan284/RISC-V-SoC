@@ -1,0 +1,4 @@
+set_pin_assignment	{ rx }	{ LOCATION = P59; }
+set_pin_assignment	{ clk_ref }	{ LOCATION = P128; IOSTANDARD = LVCMOS33; }
+set_pin_assignment	{ i_rst }	{ LOCATION = P55; IOSTANDARD = LVCMOS33; PULLTYPE = PULLDOWN; }
+set_pin_assignment	{ tx }	{ LOCATION = P60; }

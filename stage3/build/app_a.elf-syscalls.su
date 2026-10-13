@@ -1,0 +1,10 @@
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:10:5:_write	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:19:7:_sbrk	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:29:5:_fstat	0	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:30:5:_isatty	0	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:31:5:_close	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:32:7:_lseek	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:35:5:_read	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:38:5:_getpid	0	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:39:5:_kill	16	static
+D:\demo14_vexriscv_stage1_resource_safe_fixed\stage3\firmware\syscalls.c:40:6:_exit	0	static

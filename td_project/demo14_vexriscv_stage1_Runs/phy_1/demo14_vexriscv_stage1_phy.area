@@ -1,0 +1,75 @@
+standard
+***Report Model: design_top_wrapper Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+Utilization Statistics
+#lut                     3236   out of   4480   72.23%
+#reg                      880   out of   4480   19.64%
+#le                      3298
+  #lut only              2418   out of   3298   73.32%
+  #reg only                62   out of   3298    1.88%
+  #lut&reg                818   out of   3298   24.80%
+#dsp                        0   out of     15    0.00%
+#bram                       0   out of     12    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    0   out of      6    0.00%
+#bram128k                   0   out of      1    0.00%
+#bram256k                   0   out of      1    0.00%
+#pad                        4   out of    109    3.67%
+  #ireg                     1
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      1  100.00%
+#gclk                       2   out of     16   12.50%
+
+Clock Resource Statistics
+Index     ClockNet                    Type               DriverType         Driver                      Fanout
+#1        cpu0/clk                    GCLK               pll                u_sys_pll/pll_inst.clkc1    585
+#2        u_jtag_loader/i_jtag_tck    GCLK               config             u_jtag_config.jtck          153
+#3        clk_ref_dup_1               GCLK               io                 clk_ref_syn_2.di            14
+#4        u_sys_pll/clk0_buf          GCLK               pll                u_sys_pll/pll_inst.clkc0    1
+
+
+Detailed IO Report
+
+   Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  clk_ref      INPUT        P128       LVCMOS33          N/A          PULLUP      NONE    
+   i_rst       INPUT        P55        LVCMOS33          N/A         PULLDOWN     IREG    
+    rx         INPUT        P59        LVCMOS33          N/A          PULLUP      NONE    
+    tx        OUTPUT        P60        LVCMOS33           8            NONE       OREG    
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------------------+
+|Instance        |Module             |le     |lut     |ripple  |seq     |bram    |dsp     |
++-----------------------------------------------------------------------------------------+
+|top             |design_top_wrapper |3298   |3094    |142     |882     |0       |0       |
+|  cpu0          |VexRiscv           |995    |969     |26      |370     |0       |0       |
+|  u_intercon    |soc_wb_intercon    |136    |68      |68      |2       |0       |0       |
+|  u_jtag_loader |jtag_wb_loader     |361    |291     |18      |314     |0       |0       |
+|  u_ram         |wb_ram             |1282   |1282    |0       |59      |0       |0       |
+|  u_rom         |wb_ram             |263    |263     |0       |40      |0       |0       |
+|  u_sys_pll     |sys_pll            |0      |0       |0       |0       |0       |0       |
+|  u_uart        |uart_wb            |230    |198     |22      |80      |0       |0       |
+|    tx0         |uart_tx            |70     |56      |14      |31      |0       |0       |
+|    tx0_fifo    |fifo               |137    |129     |8       |27      |0       |0       |
++-----------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets  
+    #1          1       2722  
+    #2          2       1432  
+    #3          3       123   
+    #4          4       275   
+    #5        5-10      199   
+    #6        11-50     278   
+    #7       51-100      8    
+    #8       101-500     2    
+  Average     3.32            

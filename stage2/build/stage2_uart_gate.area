@@ -1,0 +1,51 @@
+standard
+***Report Model: stage2_top Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+LUT Statistics
+#Total_luts              3005
+  #lut4                  2122
+  #lut5                   380
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b             503
+
+Utilization Statistics
+#lut                     3005   out of   4480   67.08%
+#reg                     1265   out of   4480   28.24%
+#le                         0
+#dsp                        0   out of     15    0.00%
+#bram                      12   out of     12  100.00%
+  #bram9k                  12
+  #fifo9k                   0
+#bram32k                    0   out of      6    0.00%
+#bram128k                   0   out of      1    0.00%
+#bram256k                   0   out of      1    0.00%
+#dram                     132
+#pad                        4   out of    109    3.67%
+  #ireg                     2
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      1  100.00%
+
+Report Hierarchy Area:
++------------------------------------------------------------------------------------------+
+|Instance                   |Module           |lut     |ripple  |seq     |bram    |dsp     |
++------------------------------------------------------------------------------------------+
+|top                        |stage2_top       |2502    |503     |1268    |12      |0       |
+|  cpu                      |VexRiscv         |1847    |416     |1060    |10      |0       |
+|    IBusCachedPlugin_cache |InstructionCache |49      |40      |131     |6       |0       |
+|  pll                      |sys_pll          |1       |0       |0       |0       |0       |
+|  ram                      |stage2_memory    |415     |0       |33      |0       |0       |
+|  rom                      |stage2_memory    |1       |0       |1       |2       |0       |
+|  uart                     |uart_wb          |212     |87      |149     |0       |0       |
+|    rx0                    |uart_rx          |46      |52      |34      |0       |0       |
+|    rx0_fifo               |fifo             |33      |0       |20      |0       |0       |
+|    tx0                    |uart_tx          |46      |35      |31      |0       |0       |
+|    tx0_fifo               |fifo             |32      |0       |20      |0       |0       |
++------------------------------------------------------------------------------------------+

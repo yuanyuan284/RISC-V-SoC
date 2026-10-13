@@ -1,0 +1,63 @@
+standard
+***Report Model: stage2_watcher_top Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+LUT Statistics
+#Total_luts              2558
+  #lut4                  1794
+  #lut5                   764
+  #lut6                     0
+  #lut5_mx41                0
+  #lut4_alu1b               0
+
+Utilization Statistics
+#lut                     3880   out of   4480   86.61%
+#reg                     1428   out of   4480   31.88%
+#le                      1322
+  #lut only              1282   out of   1322   96.97%
+  #reg only                 0   out of   1322    0.00%
+  #lut&reg                 40   out of   1322    3.03%
+#dsp                        0   out of     15    0.00%
+#bram                      12   out of     12  100.00%
+  #bram9k                  12
+  #fifo9k                   0
+#bram32k                    1   out of      6   16.67%
+#bram128k                   0   out of      1    0.00%
+#bram256k                   0   out of      1    0.00%
+#pad                        4   out of    109    3.67%
+  #ireg                     2
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      1  100.00%
+
+Report Hierarchy Area:
++-----------------------------------------------------------------------------------------------------+
+|Instance                            |Module             |lut     |ripple  |seq     |bram    |dsp     |
++-----------------------------------------------------------------------------------------------------+
+|top                                 |stage2_watcher_top |3880    |265     |1431    |13      |0       |
+|  core                              |stage2_top         |3582    |170     |1265    |12      |0       |
+|    cpu                             |VexRiscv           |2059    |125     |1060    |10      |0       |
+|      IBusCachedPlugin_cache        |InstructionCache   |91      |21      |131     |6       |0       |
+|    pll                             |sys_pll            |1       |0       |0       |0       |0       |
+|    ram                             |stage2_memory      |1164    |0       |33      |0       |0       |
+|    rom                             |stage2_memory      |1       |0       |1       |2       |0       |
+|    uart                            |uart_wb            |327     |45      |149     |0       |0       |
+|      rx0                           |uart_rx            |99      |27      |34      |0       |0       |
+|      rx0_fifo                      |fifo               |47      |0       |20      |0       |0       |
+|      tx0                           |uart_tx            |80      |18      |31      |0       |0       |
+|      tx0_fifo                      |fifo               |44      |0       |20      |0       |0       |
+|  cw_top                            |CW_TOP_WRAPPER     |298     |95      |163     |0       |0       |
+|    wrapper_cwc_top                 |cwc_top            |298     |95      |163     |0       |0       |
+|      cfg_int_inst                  |cwc_cfg_int        |20      |0       |87      |0       |0       |
+|        reg_inst                    |register           |20      |0       |84      |0       |0       |
+|        tap_inst                    |tap                |0       |0       |3       |0       |0       |
+|      trigger_inst                  |trigger            |278     |95      |76      |0       |0       |
+|        bus_inst                    |bus_top            |12      |6       |4       |0       |0       |
+|          BUS_DETECTOR[0]$bus_nodes |bus_det            |12      |6       |4       |0       |0       |
+|        emb_ctrl_inst               |emb_ctrl           |145     |45      |51      |0       |0       |
++-----------------------------------------------------------------------------------------------------+

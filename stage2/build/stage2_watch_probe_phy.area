@@ -1,0 +1,71 @@
+standard
+***Report Model: watch_probe_top Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+Utilization Statistics
+#lut                      294   out of   4480    6.56%
+#reg                      172   out of   4480    3.84%
+#le                       373
+  #lut only               201   out of    373   53.89%
+  #reg only                79   out of    373   21.18%
+  #lut&reg                 93   out of    373   24.93%
+#dsp                        0   out of     15    0.00%
+#bram                       0   out of     12    0.00%
+  #bram9k                   0
+  #fifo9k                   0
+#bram32k                    1   out of      6   16.67%
+#bram128k                   0   out of      1    0.00%
+#bram256k                   0   out of      1    0.00%
+#pad                        4   out of    109    3.67%
+  #ireg                     0
+  #oreg                     0
+  #treg                     0
+#pll                        0   out of      1    0.00%
+#gclk                       1   out of     16    6.25%
+
+Clock Resource Statistics
+Index     ClockNet         Type               DriverType         Driver              Fanout
+#1        clk_ref_dup_1    GCLK               io                 clk_ref_syn_2.di    62
+#2        u_syn_9          GCLK               config             u.jtck              46
+
+
+Detailed IO Report
+
+   Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  clk_ref      INPUT        P128       LVCMOS25          N/A          PULLUP      NONE    
+   i_rst       INPUT        P55        LVCMOS25          N/A         PULLDOWN     NONE    
+    rx         INPUT        P59        LVCMOS33          N/A          PULLUP      NONE    
+    tx        OUTPUT        P60        LVCMOS33          16            NONE       NONE    
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------------+
+|Instance                            |Module          |le     |lut     |ripple  |seq     |bram    |dsp     |
++----------------------------------------------------------------------------------------------------------+
+|top                                 |watch_probe_top |373    |218     |76      |172     |1       |0       |
+|  cw_top                            |CW_TOP_WRAPPER  |338    |211     |69      |149     |0       |0       |
+|    wrapper_cwc_top                 |cwc_top         |338    |211     |69      |149     |0       |0       |
+|      cfg_int_inst                  |cwc_cfg_int     |83     |34      |0       |72      |0       |0       |
+|        reg_inst                    |register        |80     |31      |0       |69      |0       |0       |
+|        tap_inst                    |tap             |3      |3       |0       |3       |0       |0       |
+|      trigger_inst                  |trigger         |255    |177     |69      |77      |0       |0       |
+|        bus_inst                    |bus_top         |2      |2       |0       |2       |0       |0       |
+|          BUS_DETECTOR[0]$bus_nodes |bus_det         |2      |2       |0       |2       |0       |0       |
+|        emb_ctrl_inst               |emb_ctrl        |157    |120     |37      |54      |0       |0       |
++----------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout    Nets  
+    #1         1       286   
+    #2         2        97   
+    #3         3        28   
+    #4         4        10   
+    #5        5-10      32   
+    #6       11-50      16   
+  Average     2.46           

@@ -1,0 +1,76 @@
+standard
+***Report Model: stage2_top Device: EF2L45LG144B***
+
+IO Statistics
+#IO                         4
+  #input                    3
+  #output                   1
+  #inout                    0
+
+Utilization Statistics
+#lut                     3726   out of   4480   83.17%
+#reg                     1275   out of   4480   28.46%
+#le                      3737
+  #lut only              2462   out of   3737   65.88%
+  #reg only                11   out of   3737    0.29%
+  #lut&reg               1264   out of   3737   33.82%
+#dsp                        0   out of     15    0.00%
+#bram                      12   out of     12  100.00%
+  #bram9k                  12
+  #fifo9k                   0
+#bram32k                    0   out of      6    0.00%
+#bram128k                   0   out of      1    0.00%
+#bram256k                   0   out of      1    0.00%
+#pad                        4   out of    109    3.67%
+  #ireg                     2
+  #oreg                     1
+  #treg                     0
+#pll                        1   out of      1  100.00%
+#gclk                       1   out of     16    6.25%
+
+Clock Resource Statistics
+Index     ClockNet         Type               DriverType         Driver                Fanout
+#1        cpu/clk          GCLK               pll                pll/pll_inst.clkc1    972
+#2        clk_ref_dup_1    GCLK               io                 clk_ref_syn_2.di      14
+#3        pll/clk0_buf     GCLK               pll                pll/pll_inst.clkc0    1
+
+
+Detailed IO Report
+
+   Name      Direction    Location    IOStandard    DriveStrength    PullType    PackReg  
+  clk_ref      INPUT        P128       LVCMOS33          N/A          PULLUP      NONE    
+   i_rst       INPUT        P55        LVCMOS33          N/A         PULLDOWN     IREG    
+    rx         INPUT        P59        LVCMOS33          N/A          PULLUP      IREG    
+    tx        OUTPUT        P60        LVCMOS33           8            NONE       OREG    
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------------+
+|Instance                   |Module           |le     |lut     |ripple  |seq     |bram    |dsp     |
++--------------------------------------------------------------------------------------------------+
+|top                        |stage2_top       |3737   |3532    |194     |1278    |12      |0       |
+|  cpu                      |VexRiscv         |2174   |2014    |149     |1073    |10      |0       |
+|    IBusCachedPlugin_cache |InstructionCache |159    |138     |21      |117     |6       |0       |
+|  pll                      |sys_pll          |2      |2       |0       |1       |0       |0       |
+|  ram                      |stage2_memory    |1200   |1200    |0       |39      |0       |0       |
+|  rom                      |stage2_memory    |0      |0       |0       |0       |2       |0       |
+|  uart                     |uart_wb          |328    |283     |45      |146     |0       |0       |
+|    rx0                    |uart_rx          |104    |77      |27      |35      |0       |0       |
+|    rx0_fifo               |fifo             |46     |46      |0       |18      |0       |0       |
+|    tx0                    |uart_tx          |80     |62      |18      |30      |0       |0       |
+|    tx0_fifo               |fifo             |46     |46      |0       |22      |0       |0       |
++--------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout     Nets  
+    #1          1       3370  
+    #2          2       1599  
+    #3          3       367   
+    #4          4       158   
+    #5        5-10      237   
+    #6        11-50     140   
+    #7       51-100      14   
+    #8       101-500     4    
+    #9        >500       4    
+  Average     2.93            

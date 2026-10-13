@@ -1,0 +1,1112 @@
+ef2_4
+13 4108 285 2126 5990 601172 0 1
+26.921 -2.048 stage2_top ef2_4 EF2L45LG144B Detail NA 9 16
+clock: clk_ref
+13 78 78 2
+Setup check
+23 3
+Endpoint: cpu/_zz_63__n_syn_585
+23 97.761000 1 1
+Timing path: cpu/decode_RS1[31]_syn_53.clk->cpu/_zz_63__n_syn_585
+cpu/decode_RS1[31]_syn_53.clk
+cpu/_zz_63__n_syn_585
+25 97.761000 102.440000 4.679000 0 1
+reset_sync[1] cpu/_zz_63__n_syn_585.mi[0]
+
+
+Endpoint: cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+63 97.810000 1 1
+Timing path: cpu/IBusCachedPlugin_cache/decodeStage_mmuRsp_physicalAddress[2]_syn_262.clk->cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+cpu/IBusCachedPlugin_cache/decodeStage_mmuRsp_physicalAddress[2]_syn_262.clk
+cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+65 97.810000 102.440000 4.630000 0 1
+count[15] cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13.ce
+
+
+Endpoint: cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_12
+103 98.002000 1 1
+Timing path: cpu/_zz_63__n_syn_585.clk->cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_12
+cpu/_zz_63__n_syn_585.clk
+cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_12
+105 98.002000 102.369000 4.367000 0 1
+reset_sync[2] cpu/IBusCachedPlugin_fetchPc_pc[18]_syn_12.sr
+
+
+
+Hold check
+143 3
+Endpoint: reg0_syn_83
+145 0.325000 1 1
+Timing path: reg0_syn_95.clk->reg0_syn_83
+reg0_syn_95.clk
+reg0_syn_83
+147 0.325000 2.135000 2.460000 0 1
+count[9] reg0_syn_83.mi[1]
+
+
+Endpoint: cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+185 0.335000 1 1
+Timing path: reg0_syn_89.clk->cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+reg0_syn_89.clk
+cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13
+187 0.335000 2.135000 2.470000 0 1
+count[11] cpu/IBusCachedPlugin_fetchPc_pc[31]_syn_13.mi[0]
+
+
+Endpoint: cpu/decode_RS1[28]_syn_45
+225 0.338000 1 1
+Timing path: cpu/IBusCachedPlugin_cache/decodeStage_mmuRsp_physicalAddress[2]_syn_262.clk->cpu/decode_RS1[28]_syn_45
+cpu/IBusCachedPlugin_cache/decodeStage_mmuRsp_physicalAddress[2]_syn_262.clk
+cpu/decode_RS1[28]_syn_45
+227 0.338000 2.135000 2.473000 0 1
+count[15] cpu/decode_RS1[28]_syn_45.ce
+
+
+
+
+clock: pll/pll_inst.clkc[0]
+267 0 0 0
+
+clock: pll/pll_inst.clkc[1]
+275 600368 5496 4
+Setup check
+285 3
+Endpoint: cpu/reg29_syn_211
+285 26.921000 226 3
+Timing path: cpu/reg33_syn_15.clk->cpu/reg29_syn_211
+cpu/reg33_syn_15.clk
+cpu/reg29_syn_211
+287 26.921000 41.436000 14.515000 8 8
+cpu/decode_to_execute_SRC2_CTRL[0] cpu/execute_BRANCH_DO_syn_300.c[0]
+cpu/_zz_63__n_syn_13 cpu/execute_BRANCH_DO_syn_284.c[0]
+cpu/_zz_250__b[3] cpu/_zz_250_[3]_syn_5.d[1]
+cpu/_zz_250_[3] cpu/_zz_250_[0]_syn_168.a[0]
+cpu/_zz_247_[5] cpu/reg20_syn_225.c[0]
+cpu/execute_SrcPlugin_addSub[5] cpu/_zz_250_[25]_syn_5.d[0]
+cpu/decode_RS1[5]_syn_20 cpu/decode_RS1[24]_syn_47.d[0]
+cpu/_zz_30_[5] cpu/reg29_syn_211.a[0]
+
+Timing path: cpu/reg33_syn_17.clk->cpu/reg29_syn_211
+cpu/reg33_syn_17.clk
+cpu/reg29_syn_211
+335 26.972000 41.436000 14.464000 8 8
+cpu/decode_to_execute_SRC2_CTRL[1] cpu/_zz_63__n_syn_517.d[1]
+cpu/_zz_63__n_syn_16 cpu/_zz_63__n_syn_497.c[0]
+cpu/_zz_250__b[4] cpu/reg28_syn_223.d[1]
+cpu/_zz_250_[4] cpu/_zz_250_[0]_syn_168.b[0]
+cpu/_zz_247_[5] cpu/reg20_syn_225.c[0]
+cpu/execute_SrcPlugin_addSub[5] cpu/_zz_250_[25]_syn_5.d[0]
+cpu/decode_RS1[5]_syn_20 cpu/decode_RS1[24]_syn_47.d[0]
+cpu/_zz_30_[5] cpu/reg29_syn_211.a[0]
+
+Timing path: cpu/reg33_syn_17.clk->cpu/reg29_syn_211
+cpu/reg33_syn_17.clk
+cpu/reg29_syn_211
+383 27.239000 41.436000 14.197000 8 8
+cpu/decode_to_execute_SRC2_CTRL[1] cpu/execute_BRANCH_DO_syn_300.d[0]
+cpu/_zz_63__n_syn_13 cpu/execute_BRANCH_DO_syn_284.c[0]
+cpu/_zz_250__b[3] cpu/_zz_250_[3]_syn_5.d[1]
+cpu/_zz_250_[3] cpu/_zz_250_[0]_syn_168.a[0]
+cpu/_zz_247_[5] cpu/reg20_syn_225.c[0]
+cpu/execute_SrcPlugin_addSub[5] cpu/_zz_250_[25]_syn_5.d[0]
+cpu/decode_RS1[5]_syn_20 cpu/decode_RS1[24]_syn_47.d[0]
+cpu/_zz_30_[5] cpu/reg29_syn_211.a[0]
+
+
+Endpoint: cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+431 26.994000 551 3
+Timing path: cpu/reg33_syn_17.clk->cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+cpu/reg33_syn_17.clk
+cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+433 26.994000 41.436000 14.442000 11 11
+cpu/decode_to_execute_SRC2_CTRL[1] cpu/reg27_syn_155.e[0]
+cpu/_zz_250__b[20] cpu/_zz_250_[16]_syn_5.d[0]
+cpu/_zz_250_[20] cpu/_zz_250_[0]_syn_172.b[0]
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/decode_RS1[8]_syn_52.a[0]
+cpu/execute_ALU_CTRL[1]_syn_19 cpu/execute_BRANCH_DO_syn_270.a[0]
+cpu/_zz_30_[0] cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5.a[0]
+
+Timing path: cpu/reg33_syn_15.clk->cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+cpu/reg33_syn_15.clk
+cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+487 27.269000 41.436000 14.167000 16 16
+cpu/decode_to_execute_SRC2_CTRL[0] cpu/execute_BRANCH_DO_syn_300.c[0]
+cpu/_zz_63__n_syn_13 cpu/execute_BRANCH_DO_syn_284.c[0]
+cpu/_zz_250__b[3] cpu/_zz_250_[3]_syn_5.d[1]
+cpu/_zz_250_[3] cpu/_zz_250_[0]_syn_168.a[0]
+cpu/_zz_250_[0]_syn_139 cpu/_zz_250_[0]_syn_169.fci
+cpu/_zz_250_[0]_syn_143 cpu/_zz_250_[0]_syn_170.fci
+cpu/_zz_250_[0]_syn_147 cpu/_zz_250_[0]_syn_171.fci
+cpu/_zz_250_[0]_syn_151 cpu/_zz_250_[0]_syn_172.fci
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/decode_RS1[8]_syn_52.a[0]
+cpu/execute_ALU_CTRL[1]_syn_19 cpu/execute_BRANCH_DO_syn_270.a[0]
+cpu/_zz_30_[0] cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5.a[0]
+
+Timing path: cpu/reg28_syn_206.clk->cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+cpu/reg28_syn_206.clk
+cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5
+551 27.275000 41.436000 14.161000 11 11
+cpu/decode_to_execute_PC[20] cpu/reg27_syn_155.b[0]
+cpu/_zz_250__b[20] cpu/_zz_250_[16]_syn_5.d[0]
+cpu/_zz_250_[20] cpu/_zz_250_[0]_syn_172.b[0]
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/decode_RS1[8]_syn_52.a[0]
+cpu/execute_ALU_CTRL[1]_syn_19 cpu/execute_BRANCH_DO_syn_270.a[0]
+cpu/_zz_30_[0] cpu/memory_MulDivIterativePlugin_rs2_b4[19]_syn_5.a[0]
+
+
+Endpoint: cpu/execute_BRANCH_DO_syn_268
+605 27.051000 2945 3
+Timing path: cpu/reg33_syn_17.clk->cpu/execute_BRANCH_DO_syn_268
+cpu/reg33_syn_17.clk
+cpu/execute_BRANCH_DO_syn_268
+607 27.051000 41.436000 14.385000 11 11
+cpu/decode_to_execute_SRC2_CTRL[1] cpu/reg27_syn_155.e[0]
+cpu/_zz_250__b[20] cpu/_zz_250_[16]_syn_5.d[0]
+cpu/_zz_250_[20] cpu/_zz_250_[0]_syn_172.b[0]
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/execute_BRANCH_DO_syn_336.a[1]
+cpu/execute_BRANCH_DO_syn_111 cpu/execute_BRANCH_DO_syn_268.d[1]
+cpu/execute_BRANCH_DO_syn_113 cpu/execute_BRANCH_DO_syn_268.b[0]
+
+Timing path: cpu/reg33_syn_17.clk->cpu/execute_BRANCH_DO_syn_268
+cpu/reg33_syn_17.clk
+cpu/execute_BRANCH_DO_syn_268
+661 27.051000 41.436000 14.385000 11 11
+cpu/decode_to_execute_SRC2_CTRL[1] cpu/reg27_syn_155.e[0]
+cpu/_zz_250__b[20] cpu/_zz_250_[16]_syn_5.d[0]
+cpu/_zz_250_[20] cpu/_zz_250_[0]_syn_172.b[0]
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/execute_BRANCH_DO_syn_336.a[0]
+cpu/execute_BRANCH_DO_syn_111 cpu/execute_BRANCH_DO_syn_268.d[1]
+cpu/execute_BRANCH_DO_syn_113 cpu/execute_BRANCH_DO_syn_268.b[0]
+
+Timing path: cpu/reg33_syn_15.clk->cpu/execute_BRANCH_DO_syn_268
+cpu/reg33_syn_15.clk
+cpu/execute_BRANCH_DO_syn_268
+715 27.326000 41.436000 14.110000 16 16
+cpu/decode_to_execute_SRC2_CTRL[0] cpu/execute_BRANCH_DO_syn_300.c[0]
+cpu/_zz_63__n_syn_13 cpu/execute_BRANCH_DO_syn_284.c[0]
+cpu/_zz_250__b[3] cpu/_zz_250_[3]_syn_5.d[1]
+cpu/_zz_250_[3] cpu/_zz_250_[0]_syn_168.a[0]
+cpu/_zz_250_[0]_syn_139 cpu/_zz_250_[0]_syn_169.fci
+cpu/_zz_250_[0]_syn_143 cpu/_zz_250_[0]_syn_170.fci
+cpu/_zz_250_[0]_syn_147 cpu/_zz_250_[0]_syn_171.fci
+cpu/_zz_250_[0]_syn_151 cpu/_zz_250_[0]_syn_172.fci
+cpu/_zz_250_[0]_syn_155 cpu/_zz_250_[0]_syn_173.fci
+cpu/_zz_250_[0]_syn_159 cpu/_zz_250_[0]_syn_174.fci
+cpu/_zz_250_[0]_syn_163 cpu/_zz_250_[0]_syn_175.fci
+cpu/_zz_247_[31] cpu/execute_BRANCH_DO_syn_324.c[0]
+cpu/execute_SrcPlugin_addSub[31] cpu/execute_BRANCH_DO_syn_308.a[1]
+cpu/execute_BRANCH_DO_syn_62 cpu/execute_BRANCH_DO_syn_336.a[1]
+cpu/execute_BRANCH_DO_syn_111 cpu/execute_BRANCH_DO_syn_268.d[1]
+cpu/execute_BRANCH_DO_syn_113 cpu/execute_BRANCH_DO_syn_268.b[0]
+
+
+
+Hold check
+779 3
+Endpoint: cpu/IBusCachedPlugin_cache/ramread1_syn_29
+781 0.095000 10 3
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_206.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_29
+cpu/IBusCachedPlugin_cache/reg5_syn_206.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_29
+783 0.095000 1.622000 1.717000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[5] cpu/IBusCachedPlugin_cache/ramread1_syn_29.addra[6]
+
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_206.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_29
+cpu/IBusCachedPlugin_cache/reg5_syn_206.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_29
+817 0.104000 1.622000 1.726000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[6] cpu/IBusCachedPlugin_cache/ramread1_syn_29.addra[7]
+
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_203.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_29
+cpu/IBusCachedPlugin_cache/reg5_syn_203.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_29
+851 0.157000 1.622000 1.779000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[7] cpu/IBusCachedPlugin_cache/ramread1_syn_29.addra[8]
+
+
+Endpoint: cpu/IBusCachedPlugin_cache/ramread1_syn_9
+885 0.095000 10 3
+Timing path: cpu/_zz_63__n_syn_531.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_9
+cpu/_zz_63__n_syn_531.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_9
+887 0.095000 1.622000 1.717000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_wordIndex[0] cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[3]
+
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_215.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_9
+cpu/IBusCachedPlugin_cache/reg5_syn_215.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_9
+921 0.216000 1.622000 1.838000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[10] cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[11]
+
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_212.clk->cpu/IBusCachedPlugin_cache/ramread1_syn_9
+cpu/IBusCachedPlugin_cache/reg5_syn_212.clk
+cpu/IBusCachedPlugin_cache/ramread1_syn_9
+955 0.269000 1.622000 1.891000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[9] cpu/IBusCachedPlugin_cache/ramread1_syn_9.addra[10]
+
+
+Endpoint: cpu/IBusCachedPlugin_cache/ramread0_syn_9
+989 0.097000 9 3
+Timing path: cpu/IBusCachedPlugin_cache/reg5_syn_236.clk->cpu/IBusCachedPlugin_cache/ramread0_syn_9
+cpu/IBusCachedPlugin_cache/reg5_syn_236.clk
+cpu/IBusCachedPlugin_cache/ramread0_syn_9
+991 0.097000 1.622000 1.719000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[20] cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[1]
+
+Timing path: cpu/IBusCachedPlugin_cache/_zz_3__reg_syn_8.clk->cpu/IBusCachedPlugin_cache/ramread0_syn_9
+cpu/IBusCachedPlugin_cache/_zz_3__reg_syn_8.clk
+cpu/IBusCachedPlugin_cache/ramread0_syn_9
+1025 0.140000 1.622000 1.762000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[24] cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[5]
+
+Timing path: cpu/reg50_syn_16.clk->cpu/IBusCachedPlugin_cache/ramread0_syn_9
+cpu/reg50_syn_16.clk
+cpu/IBusCachedPlugin_cache/ramread0_syn_9
+1059 0.259000 1.622000 1.881000 1 1
+cpu/IBusCachedPlugin_cache/lineLoader_address[19] cpu/IBusCachedPlugin_cache/ramread0_syn_9.dib[0]
+
+
+
+Recovery check
+1093 3
+Endpoint: cpu/decode_RS1[0]_syn_91
+1095 36.153000 1 1
+Timing path: ram/memory_n3_syn_156.clk->cpu/decode_RS1[0]_syn_91
+ram/memory_n3_syn_156.clk
+cpu/decode_RS1[0]_syn_91
+1097 36.153000 41.252000 5.099000 0 1
+reset_pipe[1]_dup_135 cpu/decode_RS1[0]_syn_91.sr
+
+
+Endpoint: cpu/reg12_syn_163
+1131 36.373000 1 1
+Timing path: write_data[26]_syn_5.clk->cpu/reg12_syn_163
+write_data[26]_syn_5.clk
+cpu/reg12_syn_163
+1133 36.373000 41.252000 4.879000 0 1
+reset_pipe[1]_dup_136 cpu/reg12_syn_163.sr
+
+
+Endpoint: cpu/reg12_syn_166
+1167 36.373000 1 1
+Timing path: write_data[26]_syn_5.clk->cpu/reg12_syn_166
+write_data[26]_syn_5.clk
+cpu/reg12_syn_166
+1169 36.373000 41.252000 4.879000 0 1
+reset_pipe[1]_dup_136 cpu/reg12_syn_166.sr
+
+
+
+Removal check
+1203 3
+Endpoint: cpu/reg53_syn_195
+1205 0.346000 1 1
+Timing path: cpu/decode_RS1[30]_syn_43.clk->cpu/reg53_syn_195
+cpu/decode_RS1[30]_syn_43.clk
+cpu/reg53_syn_195
+1207 0.346000 1.675000 2.021000 0 1
+reset_pipe[1]_dup_138 cpu/reg53_syn_195.sr
+
+
+Endpoint: cpu/_zz_259_[18]_syn_5
+1241 0.364000 1 1
+Timing path: cw_top/wrapper_cwc_top/trigger_inst/sub0_syn_135.clk->cpu/_zz_259_[18]_syn_5
+cw_top/wrapper_cwc_top/trigger_inst/sub0_syn_135.clk
+cpu/_zz_259_[18]_syn_5
+1243 0.364000 1.675000 2.039000 0 1
+reset_pipe[1]_dup_139 cpu/_zz_259_[18]_syn_5.sr
+
+
+Endpoint: cpu/reg53_syn_204
+1277 0.389000 1 1
+Timing path: cpu/decode_RS1[30]_syn_43.clk->cpu/reg53_syn_204
+cpu/decode_RS1[30]_syn_43.clk
+cpu/reg53_syn_204
+1279 0.389000 1.675000 2.064000 0 1
+reset_pipe[1]_dup_138 cpu/reg53_syn_204.sr
+
+
+
+
+clock: jtck
+1313 508 234 4
+Setup check
+1323 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+1323 96.040000 12 3
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+1325 96.040000 102.440000 6.400000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[1]
+
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+1367 96.040000 102.440000 6.400000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+1409 96.293000 102.440000 6.147000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1451 96.085000 12 3
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1453 96.085000 102.440000 6.355000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.a[1]
+
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1495 96.085000 102.440000 6.355000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+1537 96.338000 102.440000 6.102000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+1579 96.085000 12 3
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+1581 96.085000 102.440000 6.355000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.a[1]
+
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+1623 96.085000 102.440000 6.355000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.a[0]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+1665 96.338000 102.440000 6.102000 3 3
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.a[1]
+
+
+
+Hold check
+1707 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_131
+1709 0.225000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_131
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_131
+1711 0.225000 2.295000 2.520000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[20] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_131.mi[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+1749 0.235000 1 1
+Timing path: ram/read_data_b2[19]_syn_43.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+ram/read_data_b2[19]_syn_43.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+1751 0.235000 2.295000 2.530000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.mi[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+1789 0.235000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171.clk->cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171.clk
+cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+1791 0.235000 2.295000 2.530000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[6] cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5.mi[0]
+
+
+
+Recovery check
+1829 3
+Endpoint: ram/read_data_b2[6]_syn_41
+1831 96.949000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->ram/read_data_b2[6]_syn_41
+ram/read_data_b2[18]_syn_42.clk
+ram/read_data_b2[6]_syn_41
+1833 96.949000 102.256000 5.307000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst ram/read_data_b2[6]_syn_41.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+1871 97.714000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+ram/read_data_b2[18]_syn_42.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+1873 97.714000 102.256000 4.542000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+1911 97.852000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+ram/read_data_b2[18]_syn_42.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+1913 97.852000 102.256000 4.404000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144.sr
+
+
+
+Removal check
+1951 3
+Endpoint: ram/read_data_b2[19]_syn_43
+1953 0.183000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->ram/read_data_b2[19]_syn_43
+ram/read_data_b2[18]_syn_42.clk
+ram/read_data_b2[19]_syn_43
+1955 0.183000 2.454000 2.637000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst ram/read_data_b2[19]_syn_43.sr
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+1993 0.260000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+ram/read_data_b2[18]_syn_42.clk
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11
+1995 0.260000 2.487000 2.747000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.sr
+
+
+Endpoint: ram/read_data_b2[22]_syn_42
+2033 0.314000 1 1
+Timing path: ram/read_data_b2[18]_syn_42.clk->ram/read_data_b2[22]_syn_42
+ram/read_data_b2[18]_syn_42.clk
+ram/read_data_b2[22]_syn_42
+2035 0.314000 2.487000 2.801000 0 1
+cw_top/wrapper_cwc_top/cfg_int_inst/rst ram/read_data_b2[22]_syn_42.sr
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2073 2 2 2
+Recovery check
+2084 1
+Endpoint: ram/read_data_b2[18]_syn_42
+2086 96.948000 1 1
+Timing path: u.jrstn->ram/read_data_b2[18]_syn_42
+u.jrstn
+ram/read_data_b2[18]_syn_42
+2088 96.948000 102.053000 5.105000 0 1
+u_syn_2 ram/read_data_b2[18]_syn_42.sr
+
+
+
+Removal check
+2124 1
+Endpoint: ram/read_data_b2[18]_syn_42
+2126 -2.048000 1 1
+Timing path: u.jrstn->ram/read_data_b2[18]_syn_42
+u.jrstn
+ram/read_data_b2[18]_syn_42
+2128 -2.048000 3.019000 0.971000 0 1
+u_syn_2 ram/read_data_b2[18]_syn_42.sr
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2164 54 38 2
+Setup check
+2174 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2174 45.115000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2176 45.115000 52.237000 7.122000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2214 45.115000 52.237000 7.122000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+2252 45.160000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+2254 45.160000 52.237000 7.077000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99
+2292 45.160000 52.237000 7.077000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_99.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+2330 45.160000 2 2
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+2332 45.160000 52.237000 7.077000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.a[1]
+
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97
+2370 45.160000 52.237000 7.077000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_97.a[0]
+
+
+
+Hold check
+2408 3
+Endpoint: ram/read_data_b2[19]_syn_43
+2410 48.252000 1 1
+Timing path: u.jscanen[1]->ram/read_data_b2[19]_syn_43
+u.jscanen[1]
+ram/read_data_b2[19]_syn_43
+2412 48.252000 -47.207000 1.045000 0 1
+u_syn_4 ram/read_data_b2[19]_syn_43.mi[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_113
+2448 49.380000 1 1
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_113
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_113
+2450 49.380000 -47.550000 1.830000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_113.a[1]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_102
+2488 49.380000 1 1
+Timing path: u.jscanen[1]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_102
+u.jscanen[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_102
+2490 49.380000 -47.550000 1.830000 2 2
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_102.a[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2528 32 32 2
+Setup check
+2538 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+2538 45.261000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+2540 45.261000 52.237000 6.976000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+2578 45.261000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+2580 45.261000 52.237000 6.976000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171
+2618 45.404000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171
+2620 45.404000 52.237000 6.833000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_171.ce
+
+
+
+Hold check
+2658 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+2660 48.833000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+2662 48.833000 -47.207000 1.626000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143.ce
+
+
+Endpoint: ram/read_data_b2[22]_syn_42
+2700 48.919000 1 1
+Timing path: u.jscanen[0]->ram/read_data_b2[22]_syn_42
+u.jscanen[0]
+ram/read_data_b2[22]_syn_42
+2702 48.919000 -47.207000 1.712000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 ram/read_data_b2[22]_syn_42.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+2740 49.145000 1 1
+Timing path: u.jscanen[0]->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+u.jscanen[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+2742 49.145000 -47.550000 1.595000 1 2
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+2780 84 68 2
+Setup check
+2790 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2790 45.225000 2 2
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2792 45.225000 52.237000 7.012000 2 2
+u_syn_5 u_syn_29.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[1]
+
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107
+2830 45.225000 52.237000 7.012000 2 2
+u_syn_5 u_syn_29.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_107.a[0]
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+2868 45.231000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150
+2870 45.231000 52.237000 7.006000 1 2
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_150.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+2908 45.231000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153
+2910 45.231000 52.237000 7.006000 1 2
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_153.ce
+
+
+
+Hold check
+2948 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+2950 48.846000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143
+2952 48.846000 -47.207000 1.639000 1 2
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_143.ce
+
+
+Endpoint: ram/read_data_b2[22]_syn_42
+2990 48.932000 1 1
+Timing path: u.jshift->ram/read_data_b2[22]_syn_42
+u.jshift
+ram/read_data_b2[22]_syn_42
+2992 48.932000 -47.207000 1.725000 1 2
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 ram/read_data_b2[22]_syn_42.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+3030 49.155000 1 1
+Timing path: u.jshift->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+u.jshift
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140
+3032 49.155000 -47.550000 1.605000 1 2
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.ce
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+3070 2 2 2
+Setup check
+3080 1
+Endpoint: ram/read_data_b2[22]_syn_42
+3080 47.147000 1 1
+Timing path: u.jtdi->ram/read_data_b2[22]_syn_42
+u.jtdi
+ram/read_data_b2[22]_syn_42
+3082 47.147000 51.990000 4.843000 0 1
+u_syn_1 ram/read_data_b2[22]_syn_42.mi[0]
+
+
+
+Hold check
+3118 1
+Endpoint: ram/read_data_b2[22]_syn_42
+3120 48.133000 1 1
+Timing path: u.jtdi->ram/read_data_b2[22]_syn_42
+u.jtdi
+ram/read_data_b2[22]_syn_42
+3122 48.133000 -47.207000 0.926000 0 1
+u_syn_1 ram/read_data_b2[22]_syn_42.mi[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. 
+3158 28 28 2
+Setup check
+3168 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+3168 46.148000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156
+3170 46.148000 52.237000 6.089000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_156.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+3206 46.257000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144
+3208 46.257000 52.237000 5.980000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_144.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+3244 46.257000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+u.jupdate
+cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5
+3246 46.257000 52.237000 5.980000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/trigger_inst/stop_len[11]_syn_5.ce
+
+
+
+Hold check
+3282 3
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_141
+3284 48.288000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_141
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_141
+3286 48.288000 -47.207000 1.081000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_141.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_134
+3322 48.465000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_134
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_134
+3324 48.465000 -47.207000 1.258000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_134.ce
+
+
+Endpoint: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_128
+3360 48.465000 1 1
+Timing path: u.jupdate->cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_128
+u.jupdate
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_128
+3362 48.465000 -47.207000 1.258000 0 1
+u_syn_6 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg1_syn_128.ce
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+3398 6 2 2
+Setup check
+3408 1
+Endpoint: u.jtdo[1]
+3408 39.844000 3 3
+Timing path: ram/read_data_b2[19]_syn_43.clk->u.jtdo[1]
+ram/read_data_b2[19]_syn_43.clk
+u.jtdo[1]
+3410 39.844000 46.000000 6.156000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk
+u.jtdo[1]
+3451 40.097000 46.000000 5.903000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_93.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_93.clk
+u.jtdo[1]
+3492 40.978000 46.000000 5.022000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2[0] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[0]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+3529 1
+Endpoint: u.jtdo[1]
+3531 53.694000 3 3
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_93.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg2_syn_93.clk
+u.jtdo[1]
+3533 53.694000 -49.900000 3.794000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2[0] cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[0]
+u_syn_8 u.jtdo[1]
+
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk->u.jtdo[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.clk
+u.jtdo[1]
+3570 54.234000 -49.900000 4.334000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r2 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+Timing path: ram/read_data_b2[19]_syn_43.clk->u.jtdo[1]
+ram/read_data_b2[19]_syn_43.clk
+u.jtdo[1]
+3611 54.414000 -49.900000 4.514000 3 4
+cw_top/wrapper_cwc_top/cfg_int_inst/tap_inst/jscan_1_r cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_2 u_syn_29.d[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set output delay: 4ns max, and 0ns min. 
+3652 2 2 2
+Setup check
+3662 1
+Endpoint: u.jtdo[0]
+3662 41.139000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.clk->u.jtdo[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.clk
+u.jtdo[0]
+3664 41.139000 46.000000 4.861000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[0] u_syn_29.c[1]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+3701 1
+Endpoint: u.jtdo[0]
+3703 53.555000 1 1
+Timing path: cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.clk->u.jtdo[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/reg0_syn_140.clk
+u.jtdo[0]
+3705 53.555000 -49.900000 3.655000 1 2
+cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/cshift_r[0] u_syn_29.c[1]
+u_syn_7 u.jtdo[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3742 2 2 2
+Setup check
+3753 1
+Endpoint: u.jtdo[1]
+3753 89.122000 1 1
+Timing path: u.jscanen[1]->u.jtdo[1]
+u.jscanen[1]
+u.jtdo[1]
+3755 89.122000 96.000000 6.878000 2 3
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+3792 1
+Endpoint: u.jtdo[1]
+3794 1.917000 1 1
+Timing path: u.jscanen[1]->u.jtdo[1]
+u.jscanen[1]
+u.jtdo[1]
+3796 1.917000 0.100000 2.017000 2 3
+u_syn_4 u_syn_29.b[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3833 2 2 2
+Setup check
+3844 1
+Endpoint: u.jtdo[0]
+3844 89.081000 1 1
+Timing path: u.jscanen[0]->u.jtdo[0]
+u.jscanen[0]
+u.jtdo[0]
+3846 89.081000 96.000000 6.919000 2 3
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 u_syn_29.d[1]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+3883 1
+Endpoint: u.jtdo[0]
+3885 1.916000 1 1
+Timing path: u.jscanen[0]->u.jtdo[0]
+u.jscanen[0]
+u.jtdo[0]
+3887 1.916000 0.100000 2.016000 2 3
+u_syn_3 u_syn_27.d[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 u_syn_29.d[1]
+u_syn_7 u.jtdo[0]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+3924 2 2 2
+Setup check
+3935 1
+Endpoint: u.jtdo[1]
+3935 89.232000 1 1
+Timing path: u.jshift->u.jtdo[1]
+u.jshift
+u.jtdo[1]
+3937 89.232000 96.000000 6.768000 2 3
+u_syn_5 u_syn_29.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+
+
+Hold check
+3974 1
+Endpoint: u.jtdo[1]
+3976 1.820000 1 1
+Timing path: u.jshift->u.jtdo[1]
+u.jshift
+u.jtdo[1]
+3978 1.820000 0.100000 1.920000 2 3
+u_syn_5 u_syn_29.c[0]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_1 cw_top/wrapper_cwc_top/cfg_int_inst/reg_inst/sshift_r2_b[16]_syn_11.d[0]
+u_syn_8 u.jtdo[1]
+
+
+
+
+Set input delay: 4ns max, and 0ns min. Set output delay: 4ns max, 0ns min. 
+4015 2 2 2
+Setup check
+4026 1
+Endpoint: u.jtdo[0]
+4026 89.051000 1 1
+Timing path: u.jshift->u.jtdo[0]
+u.jshift
+u.jtdo[0]
+4028 89.051000 96.000000 6.949000 2 3
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 u_syn_29.d[1]
+u_syn_7 u.jtdo[0]
+
+
+
+Hold check
+4065 1
+Endpoint: u.jtdo[0]
+4067 1.926000 1 1
+Timing path: u.jshift->u.jtdo[0]
+u.jshift
+u.jtdo[0]
+4069 1.926000 0.100000 2.026000 2 3
+u_syn_5 u_syn_27.c[1]
+cw_top/wrapper_cwc_top/cfg_int_inst/shift_0 u_syn_29.d[1]
+u_syn_7 u.jtdo[0]
+
+
+
+
+
+Timing group statistics: 
+	Clock constraints: 
+	  Clock Name                                  Min Period     Max Freq           Skew      Fanout            TNS
+	  pll/pll_inst.clkc[1] (25.000MHz)              13.079ns      76.458MHz        0.416ns      1059        0.000ns
+	  jtck (10.000MHz)                              20.312ns      49.232MHz        0.066ns        47        0.000ns
+	  clk_ref (10.000MHz)                            2.239ns     446.628MHz        0.416ns        14        0.000ns
+	Minimum input arrival time before clock: 3.122ns
+	Maximum output required time after clock: 3.537ns
+	Maximum combinational path delay: 2.949ns
+
