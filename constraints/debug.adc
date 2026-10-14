@@ -1,0 +1,9 @@
+set_pin_assignment { clk_ref } { LOCATION = P128; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { i_rst } { LOCATION = P55; IOSTANDARD = LVCMOS33; PULLTYPE = PULLDOWN; }
+set_pin_assignment { rx } { LOCATION = P59; IOSTANDARD = LVCMOS33; }
+set_pin_assignment { tx } { LOCATION = P60; IOSTANDARD = LVCMOS33; }
+# PotatoPie V3.0 H3: TCK=55, TMS=45, TDI=46, TDO=47; ordinary FPGA I/O.
+set_pin_assignment { jtag_tck } { LOCATION = P49; IOSTANDARD = LVCMOS33; PULLTYPE = PULLDOWN; }
+set_pin_assignment { jtag_tms } { LOCATION = P38; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { jtag_tdi } { LOCATION = P39; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { jtag_tdo } { LOCATION = P40; IOSTANDARD = LVCMOS33; }

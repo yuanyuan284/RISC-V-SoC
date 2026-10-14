@@ -1,8 +1,10 @@
-# RISC-V SoC：EF2 FPGA 上的 UART 程序加载
+# RISC-V SoC：UART 程序加载与独立 JTAG 调试
 
 本项目在安路 **EF2L45LG144B** FPGA 上实现 VexRiscv、8 KiB BootROM、64 KiB RAM 和 UART。电脑把 C 程序编译成 RISC-V BIN，经串口下载到 RAM；CPU 校验完成后跳到应用执行。修改应用只需重新编译和上传软件，无需重新综合 FPGA 硬件。
 
 当前主线是 **Stage 3**。2026-10-13 实板已验证两份 42424 字节应用的下载、CRC32、RAM 执行和 newlib `printf/snprintf`，包括 `FLOAT=3.25`、`errors=0`、`STAGE3 PASS`。完整记录见 [实板验收](docs/stage3/HARDWARE_VALIDATION.md)。Stage 1/2 保留为历史实验，不能把它们的小容量参数当成当前系统参数。
+
+**当前新目标是独立 RISC-V JTAG 调试。** CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链。真实 RTL + 标准 OpenOCD/GDB 仿真已通过完整 64 KiB RAM 下载/回读、ELF、单步、C 断点和变量检查；TD 时序 0 setup/hold。尚无独立 USB-JTAG 调试器，**未实板验收**，目标没有标记完成。原 UART 位流和已验证流程保持独立，详情见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
 
 ## SoC 架构
 
@@ -25,7 +27,7 @@ flowchart LR
 
 CPU 复位从 BootROM 取指。BootROM 通过 UART 接收 BIN，经 Wishbone 写入 RAM，验证 CRC32 后跳到 `0x80000000`。应用的 `printf` 通过 `_write` 访问同一个 UART。仲裁器同时连接指令、数据两个主端口，并在一次总线周期内保持归属，避免取指缓存的突发传输被打断。未知地址和 ROM 写入返回总线错误。
 
-JTAG 下载器 **AL-Link Mini** 用于配置 FPGA 位流；它不在 Stage 3 应用下载的数据路径里。自定义 JTAG RAM 加载器只是 Stage 2 扩展，用户扫描链指令尚未确认，不是已完成的 GDB 调试功能。
+**AL-Link Mini** 用于配置 FPGA 位流，不在 UART 应用下载路径中。新的 `stage3_debug_top` 使用 CPU 自带标准 JTAG + 独立调试器，其下载路径为 TAP/DTM -> DMI/DM -> Program Buffer -> CPU 数据 Wishbone -> RAM。Stage 2 私有 69 位 JTAG 加载器和安路用户扫描链问题仅为历史记录，不是当前方案。
 
 | 地址范围 | 大小与用途 |
 | --- | --- |
@@ -112,6 +114,8 @@ python .\script\run_tests.py
 
 ## 实板操作
 
+本节是已验证的 **UART-only 位流**操作；独立 JTAG 新位流的接线和待实板验证命令见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)，两种 CPU 生成输入和位流不能互换。
+
 板卡 RX=P59、TX=P60、复位=P55，USB-UART 使用 3.3 V 电平并共地。串口参数为 115200、8N1、无流控，先关闭占用端口的 Tera Term；本机端口为 COM3，其他电脑按实际端口修改。
 
 终端一先监听，等待新一次 BootROM 横幅：
@@ -133,6 +137,7 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 ## 验证记录与资料
 
 - [Stage 3 详细流程](docs/stage3/README.md)
+- [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板待验收
 - [实板验收与边界](docs/stage3/HARDWARE_VALIDATION.md)：两份应用、六类错误帧和恢复执行
 - [中文原理报告与答辩准备](docs/report.md)
 - [当前进度](agent.md)

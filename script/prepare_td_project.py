@@ -26,7 +26,7 @@ def prepare_uart(output):
     return [output / f'uart_{name}_stage2.v' for name in ('rx', 'tx', 'wb')]
 
 
-def write_project(path, name, top, sources):
+def write_project(path, name, top, sources, constraint='uart'):
     project = ET.Element('Project', Version='3', Minor='2')
     for key, value in [('TD_Version', '5.6.119222'), ('UCode', '00000000'), ('Name', name)]:
         ET.SubElement(project, key).text = value
@@ -36,8 +36,8 @@ def write_project(path, name, top, sources):
     ET.SubElement(hardware, 'Speed')
     groups = ET.SubElement(project, 'Source_Files')
     for kind, paths, owner in [('Verilog', sources, 'design_1'),
-                                ('ADC_FILE', [ROOT / 'constraints/uart.adc'], 'constraint_1'),
-                                ('SDC_FILE', [ROOT / 'constraints/uart.sdc'], 'constraint_1')]:
+                                ('ADC_FILE', [ROOT / f'constraints/{constraint}.adc'], 'constraint_1'),
+                                ('SDC_FILE', [ROOT / f'constraints/{constraint}.sdc'], 'constraint_1')]:
         group = ET.SubElement(groups, kind)
         for order, source in enumerate(paths, 1):
             if not source.is_file():
@@ -63,12 +63,13 @@ def write_project(path, name, top, sources):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('variant', choices=('stage1', 'stage2_uart', 'stage2_jtag', 'stage3_uart'))
+    parser.add_argument('variant', choices=('stage1', 'stage2_uart', 'stage2_jtag', 'stage3_uart', 'stage3_debug'))
     parser.add_argument('--cpu', type=Path)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     stage = args.variant.split('_')[0]
-    output = args.output or ROOT / 'build' / stage
+    debug = args.variant == 'stage3_debug'
+    output = args.output or ROOT / 'build' / ('debug' if debug else stage)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     if stage == 'stage1':
@@ -102,15 +103,24 @@ def main():
         if args.variant.endswith('jtag'):
             sources.append(ROOT / 'rtl/common/jtag_wb_loader.v')
     else:
-        init = (output / 'bootrom_init.vh').read_text()
+        init_dir = ROOT / 'build/stage3' if debug else output
+        init = (init_dir / 'bootrom_init.vh').read_text()
         memory = (ROOT / 'rtl/stage3/stage3_memory.v').read_text()
         memory = memory.replace('`include "bootrom_init.vh"', init)
         memory_path = output / 'stage3_memory_hw.v'
         memory_path.write_text(memory, encoding='ascii')
-        sources = [ROOT / 'rtl/stage3/stage3_top.v', args.cpu, memory_path]
-        top_name = 'stage3_top'
+        top_name = 'stage3_debug_top' if debug else 'stage3_top'
+        cpu_path = args.cpu
+        if debug:
+            # TD does not predefine SYNTHESIS. Exclude Spinal's simulation-only
+            # random power-up values; JTAG still resets its TAP via TMS.
+            cpu_path = output / 'VexRiscvDebug_hw.v'
+            cpu_path.write_text('`define SYNTHESIS\n' + args.cpu.read_text()
+                                + '\n`undef SYNTHESIS\n', encoding='ascii')
+        sources = [ROOT / f'rtl/stage3/{top_name}.v', cpu_path, memory_path]
     sources += [ROOT / 'rtl/common/fifo.v', *uart, ROOT / 'rtl/ip/sys_pll.v']
-    write_project(output / f'{args.variant}.prj', args.variant, top_name, sources)
+    write_project(output / f'{args.variant}.prj', args.variant, top_name, sources,
+                  constraint='debug' if debug else 'uart')
 
 
 if __name__ == '__main__':
