@@ -1,9 +1,0 @@
-Listening for fresh Stage-3 BootROM banner
-PASS: zero length rejected; BootROM recovered
-PASS: oversized image rejected; BootROM recovered
-PASS: unaligned length rejected; BootROM recovered
-PASS: wrong entry rejected; BootROM recovered
-PASS: wrong magic rejected; BootROM recovered
-PASS: corrupted CRC rejected
-Application output: b'APP A: UART loaded C!'
-PASS: valid BIN executed after all six rejected frames

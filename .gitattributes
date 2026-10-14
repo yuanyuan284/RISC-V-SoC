@@ -1,2 +1,2 @@
-# Preserve exact source and generated artifact bytes in this folder snapshot.
+# Preserve HDL and firmware input bytes independently of local Git settings.
 * -text
