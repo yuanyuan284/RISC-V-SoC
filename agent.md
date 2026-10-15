@@ -1,6 +1,6 @@
 # 项目进度与接手说明
 
-最后整理：2026-10-15；UART 实板验收日期：2026-10-13。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。独立 CPU JTAG 调试尚未实板验收。
+最后整理：2026-10-15；UART-only 实板验收日期：2026-10-13，FreeRTOS 实板验收日期：2026-10-15。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。独立 CPU JTAG 调试尚未实板验收。
 
 ## 仓库与目录
 
@@ -10,9 +10,31 @@
 
 ## 当前结论
 
-### 当前目标：独立 RISC-V JTAG，尚未完成实板验收
+### 最新目标：FreeRTOS，已完成实板验证
 
-最新目标是在 CPU 中实现标准 RISC-V 调试 TAP，四根 JTAG 信号通过 FPGA **普通 I/O** 引出，不走安路配置 TAP/用户扫描链；下载软件到已有 **64 KiB RAM**，支持暂停、继续和单步。使用上游 `EmbeddedRiscvJtag`、特权调试 CSR 和标准 OpenOCD `riscv` target，不是历史 69 位私有加载器，也不使用 ChipWatcher。
+因暂时没有独立 JTAG 调试器，转而实现 FreeRTOS 所需的 CPU 陷阱/中断、timer 和外部中断控制器。新增独立 `VexRiscvRtos`/`stage3_rtos_top`，未把旧 UART 或 JTAG CPU 文件替换为 RTOS CPU。官方 FreeRTOS-Kernel V11.1.0 与其 GCC RISC-V port 固定下载到 `build/deps`，不手写调度器。
+
+| 项目 | 2026-10-15 的证据 |
+| --- | --- |
+| CPU/内存 | RV32IM、25 MHz、4 KiB Icache、无 Dcache；可写 mtvec、ecall/mret、机器模式 CSR。8 KiB ROM / 64 KiB RAM 保留；链接器隔离顶部 4 KiB 主程序/ISR 栈，16 KiB 内核堆包含任务栈。 |
+| Timer | CLINT 地址兼容的 64 位 mtime/mtimecmp、msip，直接连接 MTIP/MSIP；1000 Hz tick。独立仿真通过字节掩码、计数回卷、比较和复位。 |
+| 外部中断 | 精简双源、单机器上下文 PLIC，UART RX=ID1、事件寄存器=ID2；支持优先级、阈值、pending、claim/complete 和持续电平 gateway。不是完整多核 PLIC。 |
+| FreeRTOS | 六个应用任务和 idle；两忙任务验证时间片抢占及 s0..s11 保存，另测嵌套临界区/ecall、5 tick 周期生产者、队列顺序、ISR 通知唤醒。 |
+| 完整仿真 | 最新输出 `tick=66 switches=102 queue=14 msip=1 plic=1 uart=1`；真实 CPU、功能 BRAM、UART 线与 IRQ 链路通过。仿真直接初始化 RAM，不冒充 UART 上传。 |
+| TD | 0 setup / 0 hold；3138/4480 LUT（70.04%）、1483/4480 寄存器、10/12 BRAM9K，全部大 BRAM 保留原存储容量。 |
+| 实板 | AL-Link 易失性配置后，COM3 从新 BootROM 横幅开始上传 15544B BIN，CRC 接受并跳转；`CHECK preemption=1 registers=1 critical=1 queue=1 notify=1` 和 `FREERTOS PASS tick=66 switches=101 queue=14 msip=1 plic=1 uart=0` 通过。随后发送实际 UART 输入，收到 `UART IRQ PASS count=1`。 |
+| 持续运行 | 后续三次实板心跳为 tick/queue = 1070/214、2072/415、3074/615。没有把约三秒的观察表述为长期稳定性或实时延迟认证。 |
+| 回归 | 40 项 Python 测试通过；CLINT/PLIC 独立 RTL、原完整 8 KiB ROM/64 KiB RAM 测试通过；新 RTOS 工程隔离检查保证不覆盖 UART/JTAG 工程或固件。 |
+
+验收时间为北京时间 2026-10-15 10:40:24..10:45:00，日志为 `build/rtos/hardware_validation.log`、`hardware_validation.json`、`configure_hardware.log`、`simulation.log`、`interrupts.log`、`td_flow.log`。首次仅监听时因尚未复位/配置而未收到横幅，该次超时不计通过；配置新电路后的这次完整验收退出码 0，JSON 为 `mode=hardware/status=passed`。
+
+RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b35e92fc`；应用 BIN SHA256：`8cbe4fd1375a4171d4cc0b5a7273e739a86722c0953a226219fa22cb66103f98`；CPU RTL SHA256：`60e3373b624741bf98563e623732515bf43d93a33aa06ddb458e8339d60f36e1`。本地位流哈希需结合配置日志与串口运行证据，不单独当设备证明。主程序/ISR 栈顶 `0x80010000`，BSS 末端 `0x80007e10`；代码/数据/BSS 总计 32272B，BIN 不包含 BSS。
+
+本轮没有写 Flash、改驱动或使用独立调试器；验收后 COM3 已随程序退出释放，最后一次配置运行的是 RTOS 电路和应用。随后断电/复位或重新配置的状态需另行确认。RTOS 位流不含独立 JTAG TAP，JTAG 实板目标仍待硬件。当前 FreeRTOS 目标的实现、仿真、综合和实板运行均已通过；不含软件定时器、低功耗、任意应用或极限负载的承诺。原理/命令见 `docs/stage3/FREERTOS.md`；本轮 GitHub 同步范围为 RTOS 源码、脚本、测试和文档，位流、依赖及完整日志仍保留在本地 `build/`。
+
+### 前一目标：独立 RISC-V JTAG，尚未完成实板验收
+
+前一目标是在 CPU 中实现标准 RISC-V 调试 TAP，四根 JTAG 信号通过 FPGA **普通 I/O** 引出，不走安路配置 TAP/用户扫描链；下载软件到已有 **64 KiB RAM**，支持暂停、继续和单步。使用上游 `EmbeddedRiscvJtag`、特权调试 CSR 和标准 OpenOCD `riscv` target，不是历史 69 位私有加载器，也不使用 ChipWatcher。
 
 | 项目 | 当前证据 |
 | --- | --- |
@@ -77,7 +99,7 @@
 
 ## 当前后续事项
 
-当前必需的未完成项是独立 CPU JTAG **实板验收**：取得支持 JTAG 的调试器，确认 3.3 V H3 接线及相关 I/O bank 的实际供电、配置 `stage3_debug.bit`，然后验证标准 OpenOCD/GDB 的 RAM 下载、单步、断点、复位和换程序并保存日志。离线设计、完整仿真和验收入口已准备好；等待调试器和接线条件后继续，不重复跑相同离线测试来代替实板验收。不重复占用 COM3，不盲试安路用户扫描 IR。UART-only 的 SW2 换载和最大 BIN 演示是历史路线的补充测试，不代替本轮验收。
+当前 FreeRTOS 目标没有必需的未完成项。后续可以扩展软件定时器、更多外设、任务负载和长时间测试，但不将这些扩展冒充本次已验证能力。独立 CPU JTAG **实板验收**仍独立等待调试器：确认 3.3 V H3 接线及相关 I/O bank 实际供电、配置 `stage3_debug.bit`，再验证标准 OpenOCD/GDB 的 RAM 下载、单步、断点、复位和换程序。RTOS 成功不代替这项验收；不盲试安路用户扫描 IR。
 
 ## Stage 2 历史记录
 
@@ -109,6 +131,9 @@
 
 ## 关键文件与复现
 
+- `docs/stage3/FREERTOS.md`：当前 FreeRTOS 原理、内存/中断布局、完整实板证据和复现。
+- `rtl/cpu/GenRtosCpu.scala`、`rtl/stage3/stage3_rtos_top.v`、`rtos_clint.v`、`rtos_plic.v`：RTOS CPU、SoC、定时器和中断控制器。
+- `fw/rtos/`、`script/build_rtos_*.ps1`、`run_rtos_sim.ps1`、`validate_rtos_hardware.py`：内核配置、应用、构建与验收。
 - `docs/stage3/JTAG_DEBUG.md`：当前独立 CPU JTAG 调试原理、证据、接线和验收。
 - `rtl/cpu/GenDebugCpu.scala`、`rtl/stage3/stage3_debug_top.v`：标准调试 CPU 生成配置和独立 TAP SoC。
 - `script/bootstrap_debug_cpu.ps1`、`build_debug_cpu.ps1`、`build_debug_td.ps1`：固定依赖与离线硬件构建。

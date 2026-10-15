@@ -18,6 +18,8 @@ class DebugProjectTests(unittest.TestCase):
             'rtl/common/fifo.v', 'rtl/ip/sys_pll.v',
             'rtl/stage3/stage3_top.v', 'rtl/stage3/stage3_debug_top.v',
             'rtl/stage3/stage3_memory.v',
+            'rtl/stage3/stage3_rtos_top.v', 'rtl/stage3/rtos_clint.v',
+            'rtl/stage3/rtos_plic.v', 'rtl/stage3/rtos_event.v',
             'constraints/debug.adc', 'constraints/debug.sdc',
             'constraints/uart.adc', 'constraints/uart.sdc',
         ):
@@ -64,6 +66,33 @@ class DebugProjectTests(unittest.TestCase):
         self.assertFalse((self.stage3 / 'VexRiscvDebug_hw.v').exists())
         sdc = project.find('Source_Files/SDC_FILE/File').attrib['Path']
         self.assertEqual(Path(sdc), self.root / 'constraints/uart.sdc')
+
+    def test_rtos_project_preserves_uart_debug_and_firmware(self):
+        uart_project = self.stage3 / 'stage3_uart.prj'
+        uart_project.write_text('UART sentinel', encoding='ascii')
+        debug_project = self.root / 'build/debug/stage3_debug.prj'
+        debug_project.parent.mkdir(parents=True)
+        debug_project.write_text('JTAG sentinel', encoding='ascii')
+        output = self.root / 'build/rtos'
+        output.mkdir(parents=True)
+        (output / 'freertos.bin').write_bytes(b'Firmware sentinel')
+        self.cpu.write_text('module VexRiscvRtos;\nendmodule\n', encoding='ascii')
+        original = self.cpu.read_bytes()
+        self.generate('stage3_rtos')
+        project = ET.parse(output / 'stage3_rtos.prj').getroot()
+        self.assertEqual(project.findtext('TOP_MODULE/MODULE'), 'stage3_rtos_top')
+        sources = [Path(item.attrib['Path']) for item in project.findall('Source_Files/Verilog/File')]
+        self.assertIn(output / 'VexRiscvRtos_hw.v', sources)
+        for name in ('clint', 'plic', 'event'):
+            self.assertIn(self.root / f'rtl/stage3/rtos_{name}.v', sources)
+        self.assertEqual(self.cpu.read_bytes(), original)
+        self.assertTrue((output / 'VexRiscvRtos_hw.v').read_text().startswith('`define SYNTHESIS\n'))
+        self.assertEqual(uart_project.read_text(), 'UART sentinel')
+        self.assertEqual(debug_project.read_text(), 'JTAG sentinel')
+        self.assertEqual((output / 'freertos.bin').read_bytes(), b'Firmware sentinel')
+        self.assertIn('// Test ROM initialization', (output / 'stage3_memory_hw.v').read_text())
+        self.assertEqual(Path(project.find('Source_Files/SDC_FILE/File').attrib['Path']),
+                         self.root / 'constraints/uart.sdc')
 
 
 if __name__ == '__main__':

@@ -1,12 +1,16 @@
-# RISC-V SoC：UART 程序加载与独立 JTAG 调试
+# RISC-V SoC：UART 加载、FreeRTOS 与独立 JTAG 调试
 
 本项目在安路 **EF2L45LG144B** FPGA 上实现 VexRiscv、8 KiB BootROM、64 KiB RAM 和 UART。电脑把 C 程序编译成 RISC-V BIN，经串口下载到 RAM；CPU 校验完成后跳到应用执行。修改应用只需重新编译和上传软件，无需重新综合 FPGA 硬件。
 
 当前主线是 **Stage 3**。2026-10-13 实板已验证两份 42424 字节应用的下载、CRC32、RAM 执行和 newlib `printf/snprintf`，包括 `FLOAT=3.25`、`errors=0`、`STAGE3 PASS`。完整记录见 [实板验收](docs/stage3/HARDWARE_VALIDATION.md)。Stage 1/2 保留为历史实验，不能把它们的小容量参数当成当前系统参数。
 
-**当前新目标是独立 RISC-V JTAG 调试。** CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链。真实 RTL + 标准 OpenOCD/GDB 仿真已通过完整 64 KiB RAM 下载/回读、ELF、单步、C 断点和变量检查；TD 时序 0 setup/hold。尚无独立 USB-JTAG 调试器，**未实板验收**，目标没有标记完成。原 UART 位流和已验证流程保持独立，详情见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
+**最新完成：FreeRTOS V11.1.0 已于 2026-10-15 在真实 FPGA 上运行。** 新 `stage3_rtos_top` 加入 CLINT 定时器/软件中断和精简 PLIC，1000 Hz tick 驱动抢占式任务调度；寄存器保存、嵌套临界区、队列、ISR 通知和真实 UART 中断均通过，三次后续心跳持续增长。TD 25 MHz 时序 0 setup/hold。通过原 BootROM + UART 下载 15544B BIN，不需要独立 JTAG 调试器。原理、构建和实板证据见 [FreeRTOS](docs/stage3/FREERTOS.md)。
+
+**独立 RISC-V JTAG 仍等待调试器，未实板验收。** CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链。真实 RTL + 标准 OpenOCD/GDB 仿真已通过完整 64 KiB RAM 下载/回读、ELF、单步、C 断点和变量检查；TD 时序 0 setup/hold。UART-only、独立 JTAG 和 RTOS 使用各自的 CPU/位流，当前 RTOS 位流不包含独立 JTAG。详情见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
 
 ## SoC 架构
+
+下图为 UART 基础系统。RTOS 版本在相同 Wishbone 上增加 CLINT（`0x02000000`）、PLIC（`0x0c000000`）和测试事件寄存器（`0x40002000`），并把定时、软件、外部 IRQ 接入 CPU；完整中断路径见 FreeRTOS 文档。
 
 ```mermaid
 flowchart LR
@@ -36,7 +40,7 @@ CPU 复位从 BootROM 取指。BootROM 通过 UART 接收 BIN，经 Wishbone 写
 | `0x8000f000..0x8000ffff` | RAM 顶部 4 KiB 栈，初始 SP 为 `0x80010000` |
 | `0x40001000..0x40001fff` | UART 地址窗口，实际寄存器见 `rtl/common/uart_wb.v` |
 
-测试应用还保留 `0x8000b800..0x8000efff` 作为 14 KiB RAM 测试区，见 `fw/stage3/app.ld`。BIN 尺寸合规不代表任意 C 程序的运行时内存都合规；扩展应用时需检查代码、BSS、堆与栈的布局。RAM 不保存断电后的程序，项目未实现 Flash 持久化启动。
+UART-only 测试应用还保留 `0x8000b800..0x8000efff` 作为 14 KiB RAM 测试区，见 `fw/stage3/app.ld`。RTOS 使用独立 `fw/rtos/app.ld`，不保留该测试区：代码、BSS（含 16 KiB 内核堆）位于低 60 KiB，顶部 4 KiB 是主程序/ISR 栈，任务栈从内核堆分配。BIN 尺寸合规不代表任意 C 程序的运行时内存都合规；扩展应用时需检查代码、BSS、堆与栈的布局。RAM 不保存断电后的程序，项目未实现 Flash 持久化启动。
 
 ## 目录
 
@@ -52,7 +56,8 @@ RISC-V-SoC/
 |-- fw/                   C、汇编与链接脚本
 |   |-- common/           共用启动汇编
 |   |-- stage2/           小容量启动与演示程序
-|   `-- stage3/           BootROM、newlib 应用及系统调用
+|   |-- stage3/           BootROM、newlib 应用及系统调用
+|   `-- rtos/             FreeRTOS 配置、多任务示例和链接布局
 |-- tb/                   Verilog testbench 和 Python 单元测试
 |-- script/               构建、产物检查、仿真、UART 上传和 TD Tcl
 |-- constraints/          引脚 / 时序 / 历史 ChipWatcher 约束
@@ -137,6 +142,7 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 ## 验证记录与资料
 
 - [Stage 3 详细流程](docs/stage3/README.md)
+- [FreeRTOS 实板运行](docs/stage3/FREERTOS.md)：定时器、中断控制器、抢占/队列、UART 验收和复现
 - [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板待验收
 - [实板验收与边界](docs/stage3/HARDWARE_VALIDATION.md)：两份应用、六类错误帧和恢复执行
 - [中文原理报告与答辩准备](docs/report.md)

@@ -5,6 +5,7 @@ module uart_wb(
     // Physical signals
     input wire i_uart_rx,
     output wire o_uart_tx,
+    output wire o_irq_rx,
     // Wishbone
     input  wire [31:0] i_wb_adr,
     input  wire [31:0] i_wb_dat,
@@ -57,6 +58,7 @@ wire [DATA_WIDTH-1:0]         rx_fifo_r_data;
 reg                           rx_fifo_r_stb;
 wire                          rx_fifo_full;
 wire                          rx_fifo_empty;
+assign o_irq_rx = !rx_fifo_empty;
 wire [$clog2(RX_BUFSIZE)-1:0] rx_fifo_item_count;
 wire [$clog2(RX_BUFSIZE)-1:0] rx_fifo_free_size;
 fifo #(

@@ -63,13 +63,14 @@ def write_project(path, name, top, sources, constraint='uart'):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('variant', choices=('stage1', 'stage2_uart', 'stage2_jtag', 'stage3_uart', 'stage3_debug'))
+    parser.add_argument('variant', choices=('stage1', 'stage2_uart', 'stage2_jtag', 'stage3_uart', 'stage3_debug', 'stage3_rtos'))
     parser.add_argument('--cpu', type=Path)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     stage = args.variant.split('_')[0]
     debug = args.variant == 'stage3_debug'
-    output = args.output or ROOT / 'build' / ('debug' if debug else stage)
+    rtos = args.variant == 'stage3_rtos'
+    output = args.output or ROOT / 'build' / ('debug' if debug else 'rtos' if rtos else stage)
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     if stage == 'stage1':
@@ -103,21 +104,23 @@ def main():
         if args.variant.endswith('jtag'):
             sources.append(ROOT / 'rtl/common/jtag_wb_loader.v')
     else:
-        init_dir = ROOT / 'build/stage3' if debug else output
+        init_dir = ROOT / 'build/stage3' if debug or rtos else output
         init = (init_dir / 'bootrom_init.vh').read_text()
         memory = (ROOT / 'rtl/stage3/stage3_memory.v').read_text()
         memory = memory.replace('`include "bootrom_init.vh"', init)
         memory_path = output / 'stage3_memory_hw.v'
         memory_path.write_text(memory, encoding='ascii')
-        top_name = 'stage3_debug_top' if debug else 'stage3_top'
+        top_name = 'stage3_debug_top' if debug else 'stage3_rtos_top' if rtos else 'stage3_top'
         cpu_path = args.cpu
-        if debug:
+        if debug or rtos:
             # TD does not predefine SYNTHESIS. Exclude Spinal's simulation-only
             # random power-up values; JTAG still resets its TAP via TMS.
-            cpu_path = output / 'VexRiscvDebug_hw.v'
+            cpu_path = output / ('VexRiscvRtos_hw.v' if rtos else 'VexRiscvDebug_hw.v')
             cpu_path.write_text('`define SYNTHESIS\n' + args.cpu.read_text()
                                 + '\n`undef SYNTHESIS\n', encoding='ascii')
         sources = [ROOT / f'rtl/stage3/{top_name}.v', cpu_path, memory_path]
+        if rtos:
+            sources += [ROOT / f'rtl/stage3/rtos_{name}.v' for name in ('clint', 'plic', 'event')]
     sources += [ROOT / 'rtl/common/fifo.v', *uart, ROOT / 'rtl/ip/sys_pll.v']
     write_project(output / f'{args.variant}.prj', args.variant, top_name, sources,
                   constraint='debug' if debug else 'uart')

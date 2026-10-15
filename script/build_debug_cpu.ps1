@@ -1,7 +1,8 @@
 param(
     [string]$VexSource,
     [string]$JavaExecutable,
-    [string]$SbtLauncher
+    [string]$SbtLauncher,
+    [ValidateSet('debug','rtos')][string]$Variant = 'debug'
 )
 . (Join-Path $PSScriptRoot 'common.ps1')
 $revision = 'baf7dc82f855eddaf5b0a20a6802c526f127e38a'
@@ -24,12 +25,14 @@ if (!$csr.Contains($selector)) { throw 'Pinned trigger selector declaration chan
 if (!$csr.Contains("$selector init(0)")) {
     [IO.File]::WriteAllText($csrPath, $csr.Replace($selector, "$selector init(0)"))
 }
-$build = Join-Path $root 'build/cpu-debug'
+$build = Join-Path $root "build/cpu-$Variant"
+$generator = if ($Variant -eq 'rtos') { 'GenRtosCpu' } else { 'GenDebugCpu' }
+$definition = if ($Variant -eq 'rtos') { 'VexRiscvRtos' } else { 'VexRiscvDebug' }
 $deps = Join-Path $root 'build/deps'
 New-Item -ItemType Directory -Path $build -Force | Out-Null
 $generatorDir = Join-Path $VexSource 'src/main/scala/soc'
 New-Item -ItemType Directory -Path $generatorDir -Force | Out-Null
-Copy-Item (Join-Path $root 'rtl/cpu/GenDebugCpu.scala') (Join-Path $generatorDir 'GenDebugCpu.scala') -Force
+Copy-Item (Join-Path $root "rtl/cpu/$generator.scala") (Join-Path $generatorDir "$generator.scala") -Force
 $repositories = Join-Path $deps 'sbt-repositories'
 [IO.File]::WriteAllText($repositories, "[repositories]`nlocal`nmaven-central: https://repo.maven.apache.org/maven2`n")
 $options = @('-Xmx2G', '-Dsbt.supershell=false', '-Dsbt.override.build.repos=true',
@@ -42,7 +45,7 @@ if ($env:HTTPS_PROXY) {
 }
 Push-Location $VexSource
 try {
-    & $JavaExecutable @options -jar $SbtLauncher "runMain soc.GenDebugCpu $($build.Replace('\','/'))"
-    if ($LASTEXITCODE) { throw 'Debug CPU generation failed' }
+    & $JavaExecutable @options -jar $SbtLauncher "runMain soc.$generator $($build.Replace('\','/'))"
+    if ($LASTEXITCODE) { throw "$Variant CPU generation failed" }
 } finally { Pop-Location }
-if (!(Test-Path (Join-Path $build 'VexRiscvDebug.v'))) { throw 'Generated debug CPU is missing' }
+if (!(Test-Path (Join-Path $build "$definition.v"))) { throw "Generated $Variant CPU is missing" }
