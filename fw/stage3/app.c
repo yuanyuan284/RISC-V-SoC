@@ -12,6 +12,7 @@ static volatile uint32_t scratch[3584] __attribute__((section(".memtest")));
 
 int main(void) {
     setvbuf(stdout, NULL, _IONBF, 0);
+    printf("HELLO,YUAN!\r\n");
     unsigned errors = zeroed != 0 || initialized != 1234;
     for (unsigned i = 0; i < 3584; ++i) scratch[i] = 0x13570000u ^ i;
     for (unsigned i = 0; i < 3584; ++i)

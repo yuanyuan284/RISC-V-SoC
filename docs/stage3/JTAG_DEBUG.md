@@ -1,8 +1,45 @@
 # 独立 RISC-V JTAG 调试
 
-更新：2026-10-15。当前状态是 **RTL + OpenOCD/GDB 仿真通过，TD 时序通过，实板尚未验证**。用户目前没有独立 USB-JTAG 调试器；不能把本页结果表述为已经在真实 FPGA 上完成调试。本轮没有配置 FPGA、使用 COM3 或烧写 Flash。GitHub 同步源码和文档，构建产物、依赖及完整验收日志留在本地 `build/`。
+更新：2026-10-18。当前状态是 **RTL + OpenOCD/GDB 仿真、TD 时序和完整独立 JTAG 实板验收均通过**。使用 IoTelic FT2232HL 调试器、WinUSB 和 100 kHz JTAG；AL-Link 仅配置 FPGA SRAM。core、gdb、download 三项均通过，含全 64 KiB 逐字节读回；没有使用 COM3 或烧写 Flash。构建产物、依赖及完整验收日志留在本地 `build/`。
 
-离线准备和完整套件复验已结束；实板阶段 **等待外部硬件**，总目标尚未完成。下一步需要独立调试器和正确接线，不能用重复仿真替代实板验收。
+本项目当前独立 CPU JTAG 目标已完成实板验收；不代表完整规范一致性认证、高速/长期稳定性测试或 RTOS 与 JTAG 已合并。UART-only、RTOS 和独立 JTAG 仍使用各自位流。
+
+## IoTelic FT2232HL 接入进度
+
+模块丝印 `JTAG-USB_V1.0 / 2018.11.06`，USB `15BA:002A`、序列号 `OL5C11FC`。USB 描述符虽显示 Olimex，未找到可确认该 IoTelic 板布局的权威原理图，不能直接套用 Olimex 的复位/LED 输出。配置采用标准通道 A MPSSE：AD0=CK、AD1=DI、AD2=DO、AD3=MS；`layout_init 0x0008 0x000b` 只启用三个 JTAG 输出，其余 GPIO 输入。这份最小配置已在本模块通过实际扫描、下载和调试，不需要额外使能 GPIO；不能推广为所有同名模块的电路认证。参考 [OpenOCD FTDI 配置说明](https://openocd.org/doc/html/Debug-Adapter-Configuration.html)。
+
+用户确认 CK→P49、MS→P38、DI→P39、DO→P40 和已测候选 GND→GND。3V3/RST 及辅助针不接，不将模块的 3V3 当作已知 VTref。板卡原理图的 BANK1 默认选择 3.3 V，不等于已测量本板电压。五线接法仍要求双方实际电平兼容。
+
+42 项主机测试、以下 PlanOnly 和 OpenOCD 仅解析配置均通过，主机测试不作为实板证明。首次配置失败日志 `build/debug/configure_iotelic_20261018.log` 返回 USB 打开错误，退出码 1；用户拔插 AL-Link USB 后重试成功，`build/debug/configure_iotelic_20261018-172601.log` 记录芯片识别、SRAM 配置和退出码 0。保留首次失败记录，不计通过。
+
+```powershell
+# 不接触硬件的命令预览。
+.\script\run_debug_validation.ps1 -Adapter iotelic-ft2232h -PlanOnly
+# 只有调试位流已成功配置、供电/电平就绪后才执行；扫描 TAP，不暂停 CPU 或访问 RAM。
+& 'D:\risc-v\toolchain\jtag\xpack-openocd-0.12.0-7\bin\openocd.exe' -f .\script\openocd\probe-iotelic-tap.cfg
+```
+
+期望 CPU TAP `0x10002fff`，不是 EF2 配置 TAP 的 `0x03004c37`。扫描成功后，完整验收可用 `run_debug_validation.ps1 -Adapter iotelic-ft2232h -Test all -ConfirmRamOverwrite`；该命令会复位/暂停 CPU 并覆盖 RAM，不能用作初次只识别测试。
+
+## 2026-10-18 实板验收
+
+先在 100 kHz 下两次扫描到 `0x10002fff`，随后 OpenOCD 识别一个 RV32 hart，`misa=0x40001100/datacount=1/progbufsize=2`。原始探测日志为 `build/debug/tap_iotelic_20261018-172631.log` 和 `hart_iotelic_20261018-172727.log`。用户明确允许覆盖 RAM 后执行：
+
+```powershell
+.\script\run_debug_validation.ps1 -Adapter iotelic-ft2232h -Test all -ConfirmRamOverwrite -Timeout 3600
+```
+
+北京时间 17:28:52..17:29:39 退出码 0，报告目录 `build/debug/hardware/20261018-172852-821311/`，`hardware_validation.json` 为 `mode=hardware/adapter=iotelic-ft2232h/status=passed/full_suite_passed=true`，三项均 passed。
+
+| 检查 | 实板结果和目录内日志 |
+| --- | --- |
+| core | RAM bank 边界/最后一字、寄存器、三条指令单步及 store、reset halt 后 RAM 保留、硬件断点通过；`openocd_validation.log`。 |
+| gdb | 132B ELF 的 `.text/.data` 比较一致；C 硬件断点、`stepi`、`result=9/initialized=7`、软件断点、C 源码 `step` 通过；`gdb_validation.log`、`openocd_gdb.log`。 |
+| download | 完整 65536B 图案 load/verify/dump 和 Python 逐字节读回比较通过；原 Stage3 app A ELF 下载/回读通过；同地址换指令后执行新结果 a0=9 通过；`download_validation.log`。 |
+
+`ram-pattern.bin` 与 `ram-readback.bin` 均为 65536B，SHA256 同为 `92637c8cb225bd128b795e12c87eb7a42d069e0fb0b9f4ffeee185770f5312b9`。本次调试位流 SHA256 `72c1b6fb67ef636d8d75a0c900883e0cef2634599478af795a1f4ada64661bed`。自动报告的 `fpga_configuration=not performed` 仅指验收脚本不配置电路，需结合上面的独立 TD 配置日志，不是整轮未配置。
+
+OpenOCD 未分配 RAM 工作区，加速 CRC 不可用时退回回读比较；GDB 有宿主 CP1252/UTF-32 编码警告，但 ELF 比较、断点、源码步进和全部断言通过，不宣称日志无警告。本次没有通过串口验证大应用输出，也没有证明 RTOS 与调试模块可在同一位流运行。测试结束后全部本轮 TD/OpenOCD/GDB 进程退出，CPU 留在单步后的暂停状态，RAM 是测试内容；未恢复 RTOS/HELLO。掉电后需重新配置调试位流。
 
 ## 目标和两条 JTAG 链路
 
@@ -100,24 +137,24 @@ OpenOCD + 仿真仅监听本机，使用端口 9824/3333/6666/4444；重复启�
 同一个入口默认仍是 **仿真**；只有明确传入 `-Adapter` 才选择实板。以下预览可在没有硬件时运行，只显示命令、不启动 OpenOCD、不写目标 RAM，也不产生“通过”的实板报告：
 
 ```powershell
-.\script\run_debug_validation.ps1 -Adapter jlink -PlanOnly
+.\script\run_debug_validation.ps1 -Adapter iotelic-ft2232h -PlanOnly
 ```
 
-未来已经配置新位流、确认型号和 H3 接线后，先关闭手动启动的 OpenOCD，再执行实板自动验收。它会复位/暂停 CPU 并覆盖原 RAM 内容，**不是只读探测**，必须明确确认；不会配置 FPGA 或擦写 Flash：
+已经配置新位流、确认型号和 H3 接线后，先关闭手动启动的 OpenOCD，再执行实板自动验收。它会复位/暂停 CPU 并覆盖原 RAM 内容，**不是只读探测**，必须明确确认；不会配置 FPGA 或擦写 Flash：
 
 ```powershell
-# 仅在有 J-Link 硬件并核对接线后执行，不是现在必须运行的命令。
-.\script\run_debug_validation.ps1 -Adapter jlink -Test all -ConfirmRamOverwrite
-# 支持 JTAG 的 CMSIS-DAP 用 -Adapter cmsis-dap；不要仅凭 USB 接口名称判断能力。
+# 使用本次已验证的 IoTelic 模块；会覆盖目标 RAM。
+.\script\run_debug_validation.ps1 -Adapter iotelic-ft2232h -Test all -ConfirmRamOverwrite
+# J-Link / 支持 JTAG 的 CMSIS-DAP 可选 jlink / cmsis-dap 模板，本次未实测它们。
 ```
 
 实板每次调用独立保存到 `build/debug/hardware/<时间戳>/`，包括 OpenOCD/GDB 日志、完整 RAM 图案/读回，以及 `hardware_validation.json`。报告记录输入文件 SHA256、实际命令、开始/结束时间、各项状态。失败、超时或中断不能留下整体 passed；仅运行 core 也不能得到 `full_suite_passed=true`。本地 `.bit` 指纹不是设备上当前位流的证明，配置日志和接线仍须另行确认；自动报告不会擅自把项目目标标记完成。
 
 仿真仍写 `build/debug/simulation_validation.json`，其中 mode 明确为 simulation，记录本次选择的检查而不是冒充历史全部测试。实板报告不会引用仿真日志。测试会清理自己启动的进程；全容量检查完成后 RAM 已被测试/示例改写，如需恢复 UART 下载应复位回 BootROM，再重新上传应用。
 
-当前只验证了预览/确认门禁、失败清理等主机单元测试和真实 RTL 的共用流程，**实板分支本身未实测**。
+预览/确认门禁、失败清理等主机单元测试通过；2026-10-18 已使用 `iotelic-ft2232h` 完成实板分支三项完整验证。J-Link/CMSIS-DAP 仍为未由本次硬件验证的模板。
 
-## 待有调试器后的接线
+## 接线与适配器
 
 需要支持 **JTAG 和 3.3 V**、能由 OpenOCD 驱动的硬件。已有模板是 J-Link 和支持 JTAG 的 CMSIS-DAP；**SWD-only 的 DAP 不可用**。FT2232 类也可，但要根据实际型号、通道和电路确认布局，不能猜一份万能配置。购买前确认上述能力。
 
@@ -134,23 +171,23 @@ OpenOCD + 仿真仅监听本机，使用端口 9824/3333/6666/4444；重复启�
 
 H3 的 3.3 V 电源针不能单独证明相关 I/O bank 当前也使用 3.3 V。接线前还需核对板卡供电选择和相关 VCCIO 的实际电压；板卡若有改动，不能仅凭默认原理图假定电平匹配。
 
-## 实板待验收步骤
+## 实板复现步骤
 
-本节是未来操作，不是已经完成的记录。
+本节用于重新执行验证；已经完成的本次记录见上面的实板验收节。
 
 1. 确认独立调试器型号及 3.3 V 接线；先只配置易失性逻辑，不改 Flash。
 2. 通过 AL-Link Mini 配置新电路，随后独立调试器连接 H3。不要把原 UART 位流当作带标准调试模块的位流。
 3. OpenOCD 探测 IDCODE、hart 和 RAM，然后执行小程序 halt/resume/step、reset halt。
 4. GDB 下载 ELF、硬件及软件断点、`stepi`/源码 `step`、寄存器和变量检查。
-5. 使用保存完整日志的测试完成 64 KiB 回读、大程序下载、复位和换程序，补录硬件验收后才标记总目标完成。
+5. 使用保存完整日志的测试完成 64 KiB 回读、大程序下载、复位和换程序；只报告本次运行实际通过的项目，不复用历史 passed。
 
 配置电路会改变板卡当前状态；以下命令 **只在准备好硬件后执行**：
 
 ```powershell
 & 'D:\TD_5.6.5_Release_119.222\bin\td_commands_prompt.exe' .\script\configure_debug_fpga.tcl
 $ocd = 'D:\risc-v\toolchain\jtag\xpack-openocd-0.12.0-7\bin\openocd.exe'
-& $ocd -f .\script\openocd\board-jlink.cfg -c 'init; halt'
-# 若实物是支持 JTAG 的 CMSIS-DAP，改用 board-cmsis-dap.cfg。
+& $ocd -f .\script\openocd\board-iotelic-ft2232h.cfg -c 'init; halt'
+# 若实物是 J-Link / 支持 JTAG 的 CMSIS-DAP，需按型号改用对应模板。
 ```
 
 另一终端打开 GDB：

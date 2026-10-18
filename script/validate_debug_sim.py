@@ -16,6 +16,7 @@ BUILD = ROOT / 'build/debug'
 ADAPTER_CONFIGS = {
     'jlink': 'script/openocd/board-jlink.cfg',
     'cmsis-dap': 'script/openocd/board-cmsis-dap.cfg',
+    'iotelic-ft2232h': 'script/openocd/board-iotelic-ft2232h.cfg',
 }
 TEST_MARKERS = {
     'core': ('PASS independent RISC-V JTAG RAM, registers, single-step, reset and breakpoint',),
@@ -58,6 +59,8 @@ def input_hashes(tests, adapter=None):
     if adapter:
         paths += ['build/debug/stage3_debug.bit', 'constraints/debug.adc', 'constraints/debug.sdc',
                   ADAPTER_CONFIGS[adapter]]
+        if adapter == 'iotelic-ft2232h':
+            paths.append('script/openocd/iotelic-ft2232h.cfg')
     else:
         paths.append('build/debug/remote.vvp')
     if 'gdb' in tests:

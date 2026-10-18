@@ -1,7 +1,7 @@
 param(
     [ValidateSet('core','gdb','download','all')][string]$Test = 'all',
     [int]$Timeout = 3600,
-    [ValidateSet('jlink','cmsis-dap')][string]$Adapter,
+    [ValidateSet('jlink','cmsis-dap','iotelic-ft2232h')][string]$Adapter,
     [switch]$ConfirmRamOverwrite,
     [switch]$PlanOnly
 )

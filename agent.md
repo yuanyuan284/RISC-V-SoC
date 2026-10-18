@@ -1,6 +1,6 @@
 # 项目进度与接手说明
 
-最后整理：2026-10-15；UART-only 实板验收日期：2026-10-13，FreeRTOS 实板验收日期：2026-10-15。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。独立 CPU JTAG 调试尚未实板验收。
+最后整理：2026-10-18；UART-only 实板验收日期：2026-10-13，FreeRTOS 实板验收日期：2026-10-15，独立 CPU JTAG 完整实板验收日期：2026-10-18。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。
 
 ## 仓库与目录
 
@@ -10,7 +10,29 @@
 
 ## 当前结论
 
-### 最新目标：FreeRTOS，已完成实板验证
+### 2026-10-18：独立 CPU JTAG 完整实板验收通过
+
+用户已有 IoTelic JTAG-USB_V1.0（2018.11.06，主芯片 FT2232HL），USB 枚举为 `15BA:002A / OL5C11FC`，描述符为 Olimex ARM-USB-TINY-H；描述符不证明它与 Olimex 电路相同。两个 USB 接口均已安装 WinUSB，设备状态 OK；AL-Link Mini 仍使用原 ANLOCYUSB 驱动，FT232R 串口驱动未更换。
+
+用户确认五线已接好并要求继续，不再要求接线照片。CK→P49、MS→P38、DI→P39、DO→P40、已测候选 GND→板卡 GND；不交叉 DI/DO。候选地为 DI 同排另一列的那一针，用户报告其到断电 USB 信号地约 3.1 Ω、表笔短接约 1.3 Ω；这不是整列地针认证。3V3/RST 不接。原理图显示 BANK1 默认选择 3.3 V，但未实测本板 VCCIO 或调试器输出电平。
+
+新增 `iotelic-ft2232h.cfg`、`board-iotelic-ft2232h.cfg` 和只识别 TAP 的 `probe-iotelic-tap.cfg`；初始 100 kHz，仅启用 MPSSE AD0/1/3 输出、AD2 输入，其余 FTDI GPIO 不驱动，不照搬 Olimex 的复位/LED 引脚。本模块通道 A 与 CK/DI/DO/MS 的标准 MPSSE 配置已由后续实际扫描、下载和调试通过证明可用，不代表认证所有同名模块的电路。验证入口支持 `-Adapter iotelic-ft2232h`，RAM 覆盖确认门禁保留。42 项主机测试、PlanOnly 和 OpenOCD 不初始化硬件的配置解析通过；主机测试与实板证据分开记录。
+
+17:17 首次用 AL-Link 配置 `build/debug/stage3_debug.bit` 失败，TD 返回 `PRG-9505 USB device open error`、`PRG-9525 Chip validation failed`，退出码 1，日志 `build/debug/configure_iotelic_20261018.log`。该次失败不计通过。用户拔插 AL-Link 下载 USB 后，17:26 重试芯片识别和 SRAM 配置成功，退出码 0，日志 `build/debug/configure_iotelic_20261018-172601.log`。位流 SHA256 仍为 `72c1b6fb67ef636d8d75a0c900883e0cef2634599478af795a1f4ada64661bed`，没有写 Flash。
+
+100 kHz 扫描两次读到 CPU TAP `0x10002fff`，随后枚举出一个 RV32 hart，`datacount=1/progbufsize=2/misa=0x40001100`。探测日志为 `build/debug/tap_iotelic_20261018-172631.log`、`hart_iotelic_20261018-172727.log`。用户明确允许覆盖 RAM 后，执行 `run_debug_validation.ps1 -Adapter iotelic-ft2232h -Test all -ConfirmRamOverwrite -Timeout 3600`，北京时间 17:28:52..17:29:39 退出码 0。
+
+| 本次真实 FPGA 验收 | 结果 |
+| --- | --- |
+| core | 全部 RAM bank 边界/最后一字、寄存器、三条指令单步及 store 效果、reset halt 保留 RAM、硬件断点通过。 |
+| gdb | 132B ELF 下载，`.text/.data` 比较一致，C 函数硬件断点、指令单步、`result=9/initialized=7`、软件断点与 C 源码单步通过。 |
+| download | 全 65536B 非均匀图案 JTAG 下载、verify、dump 和 Python 逐字节比较通过；Stage3 app A ELF 下载/回读通过；同地址指令替换后执行新结果 a0=9 通过。大应用仅验证下载/回读，不冒充 UART 输出或应用运行。 |
+
+报告与各项日志：`build/debug/hardware/20261018-172852-821311/`。`hardware_validation.json` 明确为 `mode=hardware/adapter=iotelic-ft2232h/status=passed/full_suite_passed=true`，core、gdb、download 均 passed；图案与读回均为 65536B，SHA256 同为 `92637c8cb225bd128b795e12c87eb7a42d069e0fb0b9f4ffeee185770f5312b9`。报告的 `fpga_configuration=not performed` 表示验收脚本自身不配置电路，实际配置由上述单独 TD 日志证明，不是“整轮未配置”。OpenOCD 无工作区提示后走回读校验，GDB 有宿主编码警告，但所有断言与独立字节比较通过；不宣称无警告运行。
+
+本次独立 JTAG 目标已实现、仿真、TD 和完整实板通过；不等于规范全覆盖认证、高速/长稳测试或 RTOS 与调试模块已合并。收尾 TD/OpenOCD/GDB 进程均已退出，COM3 未打开，Flash 未写；最后一次操作后是独立 JTAG 位流、CPU 暂停、RAM 留有测试内容，未恢复 RTOS/HELLO 应用。掉电会丢失本次易失性配置。以下 2026-10-15“没有调试器/等待硬件”的描述保留为历史记录，该硬件限制现已解除。
+
+### 已验收目标：FreeRTOS，已完成实板验证
 
 因暂时没有独立 JTAG 调试器，转而实现 FreeRTOS 所需的 CPU 陷阱/中断、timer 和外部中断控制器。新增独立 `VexRiscvRtos`/`stage3_rtos_top`，未把旧 UART 或 JTAG CPU 文件替换为 RTOS CPU。官方 FreeRTOS-Kernel V11.1.0 与其 GCC RISC-V port 固定下载到 `build/deps`，不手写调度器。
 
@@ -30,9 +52,9 @@
 
 RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b35e92fc`；应用 BIN SHA256：`8cbe4fd1375a4171d4cc0b5a7273e739a86722c0953a226219fa22cb66103f98`；CPU RTL SHA256：`60e3373b624741bf98563e623732515bf43d93a33aa06ddb458e8339d60f36e1`。本地位流哈希需结合配置日志与串口运行证据，不单独当设备证明。主程序/ISR 栈顶 `0x80010000`，BSS 末端 `0x80007e10`；代码/数据/BSS 总计 32272B，BIN 不包含 BSS。
 
-本轮没有写 Flash、改驱动或使用独立调试器；验收后 COM3 已随程序退出释放，最后一次配置运行的是 RTOS 电路和应用。随后断电/复位或重新配置的状态需另行确认。RTOS 位流不含独立 JTAG TAP，JTAG 实板目标仍待硬件。当前 FreeRTOS 目标的实现、仿真、综合和实板运行均已通过；不含软件定时器、低功耗、任意应用或极限负载的承诺。原理/命令见 `docs/stage3/FREERTOS.md`；本轮 GitHub 同步范围为 RTOS 源码、脚本、测试和文档，位流、依赖及完整日志仍保留在本地 `build/`。
+2026-10-15 这轮没有写 Flash、改驱动或使用独立调试器；验收后 COM3 已随程序退出释放，当时最后一次配置运行的是 RTOS 电路和应用。随后断电/复位或重新配置的状态需另行确认。RTOS 位流不含独立 JTAG TAP，当时 JTAG 实板目标仍待硬件；2026-10-18 已独立通过。当前 FreeRTOS 目标的实现、仿真、综合和实板运行均已通过；不含软件定时器、低功耗、任意应用或极限负载的承诺。原理/命令见 `docs/stage3/FREERTOS.md`；该轮 GitHub 同步范围为 RTOS 源码、脚本、测试和文档，位流、依赖及完整日志仍保留在本地 `build/`。
 
-### 前一目标：独立 RISC-V JTAG，尚未完成实板验收
+### 独立 RISC-V JTAG：离线证据与历史准备
 
 前一目标是在 CPU 中实现标准 RISC-V 调试 TAP，四根 JTAG 信号通过 FPGA **普通 I/O** 引出，不走安路配置 TAP/用户扫描链；下载软件到已有 **64 KiB RAM**，支持暂停、继续和单步。使用上游 `EmbeddedRiscvJtag`、特权调试 CSR 和标准 OpenOCD `riscv` target，不是历史 69 位私有加载器，也不使用 ChipWatcher。
 
@@ -45,7 +67,7 @@ RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b3
 | 大应用和重载 | 原 app A（BIN 42424B）的 ELF 下载/回读验证通过；同地址代码从 a0=1 改成 a0=9、不复位后执行新结果通过。没有把这项检查当成大应用运行通过。 |
 | UART 回归 | 新调试 CPU 以真实 115200 UART 线输出 BootROM 横幅，board reset 后再次输出，通过；不代表新 CPU 的完整 UART 大应用传输已验证。 |
 | TD | 综合、布局布线、位流生成通过；CPU 25 MHz、JTAG 1 MHz 约束下 0 setup / 0 hold。约 75.51% LUT，64 KiB RAM 未缩减。 |
-| 实板 | **用户再次确认暂时没有独立 USB-JTAG 调试器，未配置新位流、未实测接线或 JTAG 下载/单步。离线准备已完成，实板阶段等待外部硬件，总目标未完成。** |
+| 实板 | **2026-10-18 通过 IoTelic FT2232HL 完整 core/gdb/download 实板验收，含全 64 KiB 读回、指令/源码单步、软硬件断点、复位保留 RAM、换代码后缓存一致性；见本页最新记录。** |
 
 主要日志：`build/debug/openocd_validation.log`、`gdb_validation.log`、`download_validation.log`、`uart_boot_validation.log`、`td_flow.log`；时序和资源为 `stage3_debug.timing`、`stage3_debug_phy.area`。2026-10-14 全 RAM 图案/读回 SHA256：`92637c8cb225bd128b795e12c87eb7a42d069e0fb0b9f4ffeee185770f5312b9`。这些是离线证据，不能套用为实板证明。
 
@@ -59,9 +81,9 @@ RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b3
 
 配置位流仍可由 AL-Link Mini 完成；CPU 调试需要另外支持 JTAG/3.3 V/OpenOCD 的适配器。已写 J-Link 和支持 JTAG 的 CMSIS-DAP 配置模板；SWD-only 不可用。H3 接线：TCK=55/P49、TMS=45/P38、TDI=46/P39、TDO=47/P40、GND=57、VTref=59/60（3.3 V）；不要接到 H2 的 FPGA 配置 JTAG。接线方向需按实际丝印核实。
 
-实板自动验收入口也已准备：`run_debug_validation.ps1 -Adapter jlink -Test all -ConfirmRamOverwrite`（仅在硬件/接线/配置准备好后运行），或使用支持 JTAG 的 `cmsis-dap`。不传 Adapter 默认仿真；`-PlanOnly` 只预览且不启动连接。实板报告使用独立 `build/debug/hardware/<时间戳>/hardware_validation.json`，记录命令、输入指纹、逐项状态和失败原因；不把仿真当硬件，也不因单项通过就记录完整套件通过。没有执行硬件分支。新增门禁/失败清理单元测试后，当前 Python 测试共 36 项通过。
+实板自动验收入口：`run_debug_validation.ps1 -Adapter iotelic-ft2232h -Test all -ConfirmRamOverwrite`（仅在硬件/接线/配置准备好后运行）；另外保留 `jlink` 和支持 JTAG 的 `cmsis-dap` 模板，后二者未由本次硬件验证。不传 Adapter 默认仿真；`-PlanOnly` 只预览且不启动连接。实板报告使用独立 `build/debug/hardware/<时间戳>/hardware_validation.json`，记录命令、输入指纹、逐项状态和失败原因；不把仿真当硬件，也不因单项通过就记录完整套件通过。主机测试现为 42 项通过，完整硬件分支已于 2026-10-18 通过。
 
-完整原理、工具、接线、电压限制、复现和实板待验收步骤见 `docs/stage3/JTAG_DEBUG.md`。从项目根目录构建后运行 `script/run_debug_validation.ps1 -Test core/gdb/download`（参数每次选一个，或 `all`）；完整 RAM 扫描约需数十分钟。GitHub 同步范围为源码、约束、固件示例、脚本、测试和文档；输出、完整日志和依赖均在忽略的 `build/`，仍只保留本地。源码同步不改变实板尚未验收的结论。
+完整原理、工具、接线、电压限制、复现和实板验收步骤见 `docs/stage3/JTAG_DEBUG.md`。从项目根目录构建后运行 `script/run_debug_validation.ps1 -Test core/gdb/download`（参数每次选一个，或 `all`）；不传 Adapter 是仿真，完整 RTL RAM 扫描约需数十分钟，不是硬件耗时指标。GitHub 同步范围为源码、约束、固件示例、脚本、测试和文档，包括本次 FTDI 接入和实板验收记录；输出、完整日志和依赖均在忽略的 `build/`，仍只保留本地。
 
 ### 2026-10-14 仓库整理验证
 
@@ -91,7 +113,7 @@ RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b3
 | `0x40001000` 起 | UART寄存器窗口。 |
 
 - 两个42424B应用均实板通过；尚未用最大60KiB BIN做实板传输测试。
-- 全64KiB RAM、全8KiB ROM的逐字覆盖来自功能模型；实板应用覆盖代码/数据、上部14KiB测试区与栈，不能称为实板全地址穷举。
+- UART-only 的全64KiB RAM、全8KiB ROM逐字覆盖来自功能模型；其历史实板应用覆盖代码/数据、上部14KiB测试区与栈。另有 2026-10-18 独立 JTAG 位流的全64KiB图案下载/逐字节读回实板证据，二者不混用。
 - 测试应用链接脚本把 `0x8000b800..0x8000efff` 留为14KiB测试区。换普通C程序需核对代码、BSS、堆、栈布局；BIN尺寸合规不代表全部运行时内存合规。
 - 本轮以相同位流文件重新配置来复位，没有烧写Flash。Stage 3仅按SW2换载尚未单独实测；Stage 2有历史实测，不能直接套用。
 - 两项Icarus真实UART线长仿真因耗时终止，未完成，不计通过；标准115200波特率的下载、错误恢复和格式化执行已有实板证据。
@@ -99,7 +121,7 @@ RTOS 位流 SHA256：`18d181a8813ef9c7c73831a7091b434f216fdb6909ce8e406bf19fc3b3
 
 ## 当前后续事项
 
-当前 FreeRTOS 目标没有必需的未完成项。后续可以扩展软件定时器、更多外设、任务负载和长时间测试，但不将这些扩展冒充本次已验证能力。独立 CPU JTAG **实板验收**仍独立等待调试器：确认 3.3 V H3 接线及相关 I/O bank 实际供电、配置 `stage3_debug.bit`，再验证标准 OpenOCD/GDB 的 RAM 下载、单步、断点、复位和换程序。RTOS 成功不代替这项验收；不盲试安路用户扫描 IR。
+当前 FreeRTOS 与独立 CPU JTAG 两个独立目标均无本次验收范围内的必需未完成项。后续可以扩展 RTOS 与 JTAG 合并、高速和长时间调试、更多外设或应用演示，但不将这些扩展冒充已验证能力。两种 CPU/位流仍分开；历史禁用的安路用户扫描 IR 入口未改。
 
 ## Stage 2 历史记录
 

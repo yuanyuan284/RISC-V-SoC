@@ -78,28 +78,53 @@ class DebugValidationTests(unittest.TestCase):
                     self.assertIn(f'set validation_output {{{output.as_posix()}}}', command)
 
     def test_hardware_without_overwrite_acknowledgment_cannot_start_processes(self):
-        with patch('sys.argv', ['validate_debug_sim.py', '--adapter', 'jlink']), \
-                patch.object(validation.subprocess, 'Popen') as popen, \
-                patch.object(validation, 'input_hashes') as hashes, redirect_stderr(io.StringIO()):
-            with self.assertRaises(SystemExit) as result:
-                validation.main()
-            self.assertEqual(result.exception.code, 2)
-            hashes.assert_not_called()
-            popen.assert_not_called()
+        for adapter in validation.ADAPTER_CONFIGS:
+            with self.subTest(adapter=adapter), \
+                    patch('sys.argv', ['validate_debug_sim.py', '--adapter', adapter]), \
+                    patch.object(validation.subprocess, 'Popen') as popen, \
+                    patch.object(validation, 'input_hashes') as hashes, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as result:
+                    validation.main()
+                self.assertEqual(result.exception.code, 2)
+                hashes.assert_not_called()
+                popen.assert_not_called()
 
     def test_plan_only_starts_nothing_and_is_not_passed_evidence(self):
-        output = io.StringIO()
-        with patch('sys.argv', ['validate_debug_sim.py', '--adapter', 'cmsis-dap', '--plan-only']), \
-                patch.object(validation.subprocess, 'Popen') as popen, \
-                patch.object(validation, 'input_hashes') as hashes, redirect_stdout(output):
-            validation.main()
-            popen.assert_not_called()
-            hashes.assert_not_called()
-        plan = json.loads(output.getvalue())
-        self.assertEqual(plan['mode'], 'hardware')
-        self.assertNotIn('status', plan)
-        self.assertEqual(plan['fpga_configuration'], 'not performed')
-        self.assertEqual([item['test'] for item in plan['commands']], ['core', 'gdb', 'download'])
+        for adapter in validation.ADAPTER_CONFIGS:
+            output = io.StringIO()
+            with self.subTest(adapter=adapter), \
+                    patch('sys.argv', ['validate_debug_sim.py', '--adapter', adapter, '--plan-only']), \
+                    patch.object(validation.subprocess, 'Popen') as popen, \
+                    patch.object(validation, 'input_hashes') as hashes, redirect_stdout(output):
+                validation.main()
+                popen.assert_not_called()
+                hashes.assert_not_called()
+            plan = json.loads(output.getvalue())
+            self.assertEqual(plan['mode'], 'hardware')
+            self.assertEqual(plan['adapter'], adapter)
+            self.assertNotIn('status', plan)
+            self.assertEqual(plan['fpga_configuration'], 'not performed')
+            self.assertEqual([item['test'] for item in plan['commands']], ['core', 'gdb', 'download'])
+
+    def test_iotelic_bringup_does_not_drive_auxiliary_gpio(self):
+        config = (validation.ROOT / 'script/openocd/iotelic-ft2232h.cfg').read_text()
+        commands = [line.strip() for line in config.splitlines()
+                    if line.strip() and not line.lstrip().startswith('#')]
+        self.assertEqual(commands, ['adapter driver ftdi', 'ftdi vid_pid 0x15ba 0x002a',
+                                   'ftdi channel 0', 'ftdi layout_init 0x0008 0x000b',
+                                   'adapter speed 100'])
+        probe = (validation.ROOT / 'script/openocd/probe-iotelic-tap.cfg').read_text()
+        self.assertIn('jtag newtap soc cpu -irlen 5 -expected-id 0x10002fff', probe)
+        self.assertIn('\njtag arp_init\n', probe)
+        self.assertNotIn('target create', probe)
+        self.assertNotIn('riscv-debug.cfg', probe)
+
+    def test_iotelic_evidence_hashes_include_the_interface_config(self):
+        with patch.object(Path, 'read_bytes', return_value=b'unit-test fixture') as read:
+            hashes = validation.input_hashes(('core',), 'iotelic-ft2232h')
+        self.assertIn('script/openocd/iotelic-ft2232h.cfg', hashes)
+        self.assertIn('script/openocd/board-iotelic-ft2232h.cfg', hashes)
+        self.assertEqual(read.call_count, len(hashes))
 
     def test_hardware_mode_never_launches_an_rtl_bridge(self):
         args = SimpleNamespace(adapter='jlink', openocd='openocd', timeout=60)

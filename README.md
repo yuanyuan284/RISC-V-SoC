@@ -6,7 +6,7 @@
 
 **最新完成：FreeRTOS V11.1.0 已于 2026-10-15 在真实 FPGA 上运行。** 新 `stage3_rtos_top` 加入 CLINT 定时器/软件中断和精简 PLIC，1000 Hz tick 驱动抢占式任务调度；寄存器保存、嵌套临界区、队列、ISR 通知和真实 UART 中断均通过，三次后续心跳持续增长。TD 25 MHz 时序 0 setup/hold。通过原 BootROM + UART 下载 15544B BIN，不需要独立 JTAG 调试器。原理、构建和实板证据见 [FreeRTOS](docs/stage3/FREERTOS.md)。
 
-**独立 RISC-V JTAG 仍等待调试器，未实板验收。** CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链。真实 RTL + 标准 OpenOCD/GDB 仿真已通过完整 64 KiB RAM 下载/回读、ELF、单步、C 断点和变量检查；TD 时序 0 setup/hold。UART-only、独立 JTAG 和 RTOS 使用各自的 CPU/位流，当前 RTOS 位流不包含独立 JTAG。详情见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
+**独立 RISC-V JTAG 已于 2026-10-18 完整实板通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性；报告为 `mode=hardware/full_suite_passed=true`。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 仅配置 FPGA SRAM，不写 Flash。真实 RTL 仿真与 TD 25 MHz 时序此前也已通过。UART-only、独立 JTAG 和 RTOS 仍使用各自 CPU/位流，RTOS 位流不含独立 JTAG，不宣称已合并。证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
 
 ## SoC 架构
 
@@ -143,10 +143,10 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 
 - [Stage 3 详细流程](docs/stage3/README.md)
 - [FreeRTOS 实板运行](docs/stage3/FREERTOS.md)：定时器、中断控制器、抢占/队列、UART 验收和复现
-- [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板待验收
+- [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板验收
 - [实板验收与边界](docs/stage3/HARDWARE_VALIDATION.md)：两份应用、六类错误帧和恢复执行
 - [中文原理报告与答辩准备](docs/report.md)
 - [当前进度](agent.md)
 - [Stage 2 历史](docs/stage2/README.md) 与 [ChipWatcher 问题](docs/stage2/CHIPWATCHER_TIMING.md)
 
-尚未单独实测最大 60 KiB BIN、Stage 3 仅 SW2 换载或实板全地址穷举。自定义 JTAG 用户链路和 ChipWatcher 时序问题仍属历史未完成扩展；禁用入口继续保持禁用。生成日志只保留本地，文档记录已有验收结果及其限制。
+UART-only 尚未单独实测最大 60 KiB BIN、Stage 3 仅 SW2 换载或全 RAM 地址覆盖；独立 JTAG 位流已另行通过全 64 KiB 图案下载/读回，不能混为 UART 传输验收。自定义 JTAG 用户链路和 ChipWatcher 时序问题仍属历史未完成扩展；禁用入口继续保持禁用。生成日志只保留本地，文档记录已有验收结果及其限制。
