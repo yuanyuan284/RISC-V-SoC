@@ -8,7 +8,9 @@
 
 **独立 RISC-V JTAG 已于 2026-10-18 完整实板通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性；报告为 `mode=hardware/full_suite_passed=true`。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 仅配置 FPGA SRAM，不写 Flash。真实 RTL 仿真与 TD 25 MHz 时序此前也已通过。UART-only、独立 JTAG 和 RTOS 仍使用各自 CPU/位流，RTOS 位流不含独立 JTAG，不宣称已合并。证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
 
-**Flash 上电启动状态（2026-10-19）：尚未实现或实板验证。** EF2L45LG144B 支持将配置位流写入片内 Flash，并在相应启动模式下上电自动加载；目前本项目只通过 AL-Link 将位流配置到易失性 SRAM，没有执行 Flash 烧写、上电重启或自动加载验收。即使后续固化了现有位流，CPU 也会先进入位流初始化的 BootROM 等待 UART 上传：应用 BIN 目前存放在易失性 RAM，断电后不会保留。因此“上电自动加载 FPGA 电路”和“上电自动输出 HELLO,YUAN!”是两项不同工作；后者还需要持久化应用及对应启动路径。
+**Flash 上电启动状态（2026-10-19）：离线原型通过，实板尚未验证。** EF2L45LG144B 支持将配置位流写入片内 Flash，并在相应启动模式下上电自动加载；目前本项目没有执行 Flash 烧写、断电重启或自动加载验收。现有 UART/RTOS/JTAG 位流仍只通过 AL-Link 配置到易失性 SRAM，应用也在易失性 RAM；固化其中任一旧位流并不会让 `HELLO,YUAN!` 上电自动运行。
+
+新增独立只读 Flash/XIP 变体：将片内 512 KiB Flash 映射到 `0x30000000`，复用 CPU 已有的 4 KiB、1-way 指令缓存。BootROM 在仿真中校验 Flash 镜像并运行 `HELLO,YUAN!`，无效镜像回退 UART；SPI 读桥、完整 CPU 仿真和 TD 位流生成均通过。**尚未配置新位流到实板，也未读回或写入板上 Flash；不能据此声称已实现上电即跑。**Flash 内可能已有 Golden/Multi Boot 镜像，写入地址须先读回确认。进度与复现步骤见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
 
 ## SoC 架构
 
@@ -31,7 +33,7 @@ flowchart LR
     end
 ```
 
-CPU 复位从 BootROM 取指。BootROM 通过 UART 接收 BIN，经 Wishbone 写入 RAM，验证 CRC32 后跳到 `0x80000000`。应用的 `printf` 通过 `_write` 访问同一个 UART。仲裁器同时连接指令、数据两个主端口，并在一次总线周期内保持归属，避免取指缓存的突发传输被打断。未知地址和 ROM 写入返回总线错误。
+在已验证的 UART-only 变体中，CPU 复位从 BootROM 取指。BootROM 通过 UART 接收 BIN，经 Wishbone 写入 RAM，验证 CRC32 后跳到 `0x80000000`。应用的 `printf` 通过 `_write` 访问同一个 UART。仲裁器同时连接指令、数据两个主端口，并在一次总线周期内保持归属，避免取指缓存的突发传输被打断。未知地址和 ROM 写入返回总线错误。Flash 变体另有只读 Flash 窗口与 XIP 启动判断，见专门文档。
 
 **AL-Link Mini** 用于配置 FPGA 位流，不在 UART 应用下载路径中。新的 `stage3_debug_top` 使用 CPU 自带标准 JTAG + 独立调试器，其下载路径为 TAP/DTM -> DMI/DM -> Program Buffer -> CPU 数据 Wishbone -> RAM。Stage 2 私有 69 位 JTAG 加载器和安路用户扫描链问题仅为历史记录，不是当前方案。
 
@@ -59,7 +61,8 @@ RISC-V-SoC/
 |   |-- common/           共用启动汇编
 |   |-- stage2/           小容量启动与演示程序
 |   |-- stage3/           BootROM、newlib 应用及系统调用
-|   `-- rtos/             FreeRTOS 配置、多任务示例和链接布局
+|   |-- rtos/             FreeRTOS 配置、多任务示例和链接布局
+|   `-- flash/            Flash BootROM、XIP 演示及链接布局
 |-- tb/                   Verilog testbench 和 Python 单元测试
 |-- script/               构建、产物检查、仿真、UART 上传和 TD Tcl
 |-- constraints/          引脚 / 时序 / 历史 ChipWatcher 约束
@@ -92,6 +95,16 @@ $env:VVP = 'D:\risc-v\simulator\ucrt64\bin\vvp.exe'
 ```
 
 `SOC_PYTHON` 可指定 Python 可执行文件；默认用 PATH 中的 `python`。Python 上传依赖只有 `pyserial==3.5`。厂商 BRAM 功能模型从安装的 `ef2_macro.v` 端口定义生成，用于逻辑验证，不替代厂商时序模型。
+
+Flash/XIP 离线原型的复现顺序（不接触板上 Flash）：
+
+```powershell
+.\script\build_flash_firmware.ps1
+.\script\run_flash_sim.ps1
+.\script\build_flash_td.ps1
+```
+
+生成物在本地 `build/flash/`，不提交到 GitHub。TD 位流仅说明设计可生成且时序通过；`script/configure_flash_fpga.tcl` 也只配置易失性 SRAM，并不烧写 Flash。应用槽位 `0x40000` 是待实板读回确认的候选位置，**不要直接向此地址烧写**。详细边界见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
 
 ## 构建与验证
 

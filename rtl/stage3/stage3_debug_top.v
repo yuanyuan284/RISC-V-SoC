@@ -24,14 +24,17 @@ module stage3_debug_top(
     stage3_debug_soc soc(.clk(clk), .power_reset(power_pipe[1]),
         .board_reset(button_pipe[2]), .rx(rx), .tx(tx),
         .jtag_tck(jtag_tck), .jtag_tms(jtag_tms),
-        .jtag_tdi(jtag_tdi), .jtag_tdo(jtag_tdo));
+        .jtag_tdi(jtag_tdi), .jtag_tdo(jtag_tdo),
+        .flash_cs_n(), .flash_sck(), .flash_mosi(), .flash_miso(1'b1));
 endmodule
 
-module stage3_debug_soc(
+module stage3_debug_soc #(parameter FLASH_READ = 0)(
     input wire clk, power_reset, board_reset, rx,
     output wire tx,
     input wire jtag_tck, jtag_tms, jtag_tdi,
-    output wire jtag_tdo
+    output wire jtag_tdo,
+    output wire flash_cs_n, flash_sck, flash_mosi,
+    input wire flash_miso
 );
     wire ndmreset;
     wire reset = power_reset | board_reset | ndmreset;
@@ -58,13 +61,17 @@ module stage3_debug_soc(
     wire rom_select = address[31:13] == (32'h20000000 >> 13);
     wire ram_select = address[31:16] == (32'h80000000 >> 16);
     wire uart_select = address[31:12] == (32'h40001000 >> 12);
-    wire [31:0] rom_data, ram_data, uart_data;
-    wire rom_ack, ram_ack, uart_ack;
+    wire flash_select = FLASH_READ && address[31:19] == (32'h30000000 >> 19);
+    wire [31:0] rom_data, ram_data, uart_data, flash_data;
+    wire rom_ack, ram_ack, uart_ack, flash_ack;
     wire fault = cycle && strobe &&
-        (!(rom_select || ram_select || uart_select) || (rom_select && write_enable));
+        (!(rom_select || ram_select || uart_select || flash_select) ||
+         ((rom_select || flash_select) && write_enable));
     wire ack = cycle && strobe && !fault &&
-        ((rom_select && rom_ack) || (ram_select && ram_ack) || (uart_select && uart_ack));
-    assign read_data = rom_select ? rom_data : ram_select ? ram_data : uart_data;
+        ((rom_select && rom_ack) || (ram_select && ram_ack) ||
+         (uart_select && uart_ack) || (flash_select && flash_ack));
+    assign read_data = rom_select ? rom_data : ram_select ? ram_data :
+                       uart_select ? uart_data : flash_data;
     assign ia = ack && !data_owner;
     assign da = ack && data_owner;
     assign ie = fault && !data_owner;
@@ -80,6 +87,19 @@ module stage3_debug_soc(
         .i_wb_adr(address), .i_wb_dat(write_data), .i_wb_sel(select),
         .i_wb_we(write_enable), .i_wb_cyc(cycle && uart_select), .i_wb_stb(strobe),
         .o_wb_dat(uart_data), .o_wb_ack(uart_ack));
+    generate if (FLASH_READ) begin : flash_port
+        stage3_flash_read flash(.clk(clk), .reset(reset),
+            .cycle(cycle && flash_select && !write_enable), .strobe(strobe),
+            .address(address[18:2]), .read_data(flash_data), .ack(flash_ack),
+            .spi_cs_n(flash_cs_n), .spi_sck(flash_sck),
+            .spi_mosi(flash_mosi), .spi_miso(flash_miso));
+    end else begin : no_flash
+        assign flash_data = 0;
+        assign flash_ack = 0;
+        assign flash_cs_n = 1;
+        assign flash_sck = 0;
+        assign flash_mosi = 0;
+    end endgenerate
     VexRiscvDebug cpu(.clk(clk), .reset(reset), .debugReset(power_reset),
         .ndmreset(ndmreset), .stoptime(), .externalResetVector(32'h20000000),
         .jtag_tck(jtag_tck), .jtag_tms(jtag_tms), .jtag_tdi(jtag_tdi), .jtag_tdo(jtag_tdo),

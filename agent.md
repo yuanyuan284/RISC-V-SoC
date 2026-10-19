@@ -10,6 +10,14 @@
 
 ## 当前结论
 
+### 2026-10-19：Flash + 1-way cache 开发中
+
+新增独立 `stage3_flash_top` 变体及只读 `stage3_flash_read` Wishbone/SPI 桥，映射 `0x30000000..0x3007ffff` 到 EF2 片内 512 KiB Flash。沿用调试版 CPU 已配置的 4 KiB/32B 行/1-way 指令缓存。桥只发 `03h` 读命令，不含写使能、擦除或页编程；顶层例化 `EF2_PHY_INTFLASH`，新位流显式 `persist_bit=0`。Flash 桥仿真覆盖首/中/末地址、字节序与复位中止；完整 CPU/BootROM/Flash/UART 仿真证明有效镜像校验后从 `0x30040010` 运行并输出 `BOOT FLASH` 和 `HELLO,YUAN!`，无效镜像回退 UART，循环期间无新增 SPI 事务；这只是仿真，不是实板。43 项主机测试通过。TD 5.6 构建位流与 25 MHz/JTAG 1 MHz 时序通过，0 setup/0 hold，3559/4480 LUT、10/12 BRAM。含 Flash BootROM 的 `build/flash/stage3_flash.bit` SHA256：`64ead754de05133f6f5e6f40c37aae0e71a859208a37dc553bec59995edccc87`。
+
+2026-10-19 提交前复查：43 项主机测试通过，`run_flash_sim.ps1` 再次通过有效镜像 XIP HELLO、CRC 损坏及无效头回退 UART；位流 SHA256 与上述记录一致，时序报告仍为 0 setup/0 hold。复现顺序为 `build_flash_firmware.ps1`、`run_flash_sim.ps1`、`build_flash_td.ps1`。这些均为离线结果。
+
+最近一次 USB 枚举时，板卡的 AL-Link 与 COM3 均不在线，仅 IoTelic JTAG-USB 在线；连接状态此后须重新确认。因此尚未配置新位流或完成实板 Flash 读回。片内 Flash 可能有 Golden/Multi Boot 镜像，应用可写区域必须先从板上读回确认；`0x40000` 只是候选槽位，禁止盲写。读回、Flash 写入、程序持久化、实板缓存取指及掉电上电运行均未验证。下一步先恢复板卡供电/AL-Link/COM3 枚举，再进行 SRAM 配置与只读 Flash 备份；确认实际布局后才能讨论烧录。复现和边界见 `docs/stage3/FLASH_XIP.md`。以下“Flash 上电启动尚待实现”仍是最终功能状态，不被本轮离线进展覆盖。
+
 ### 2026-10-19：Flash 上电启动尚待实现
 
 EF2L45LG144B 片内 Flash 可用于保存 FPGA 配置位流，并在对应启动模式下上电自动加载。项目现有 `configure_stage3_fpga.tcl`、`configure_rtos_fpga.tcl`、`configure_debug_fpga.tcl` 均只通过 AL-Link 配置易失性逻辑；尚无 Flash 烧写、断电重启与自动加载的实板验收记录，不应称为已完成。第一次将位流写入 Flash 仍需配置接口，成功后才可免去每次上电的位流下载。

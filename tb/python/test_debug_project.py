@@ -17,6 +17,7 @@ class DebugProjectTests(unittest.TestCase):
             'rtl/common/uart_wb.v', 'rtl/common/uart_rx.v', 'rtl/common/uart_tx.v',
             'rtl/common/fifo.v', 'rtl/ip/sys_pll.v',
             'rtl/stage3/stage3_top.v', 'rtl/stage3/stage3_debug_top.v',
+            'rtl/stage3/stage3_flash_top.v', 'rtl/stage3/stage3_flash_read.v',
             'rtl/stage3/stage3_memory.v',
             'rtl/stage3/stage3_rtos_top.v', 'rtl/stage3/rtos_clint.v',
             'rtl/stage3/rtos_plic.v', 'rtl/stage3/rtos_event.v',
@@ -29,6 +30,9 @@ class DebugProjectTests(unittest.TestCase):
         self.stage3 = self.root / 'build/stage3'
         self.stage3.mkdir(parents=True)
         (self.stage3 / 'bootrom_init.vh').write_text('// Test ROM initialization\n', encoding='ascii')
+        flash = self.root / 'build/flash'
+        flash.mkdir(parents=True)
+        (flash / 'bootrom_init.vh').write_text('// Flash ROM initialization\n', encoding='ascii')
         self.cpu = self.root / 'cpu.v'
         self.cpu.write_text('module VexRiscvDebug;\nendmodule\n', encoding='ascii')
 
@@ -66,6 +70,23 @@ class DebugProjectTests(unittest.TestCase):
         self.assertFalse((self.stage3 / 'VexRiscvDebug_hw.v').exists())
         sdc = project.find('Source_Files/SDC_FILE/File').attrib['Path']
         self.assertEqual(Path(sdc), self.root / 'constraints/uart.sdc')
+
+    def test_flash_project_is_separate_and_uses_debug_cpu(self):
+        original_cpu = self.cpu.read_bytes()
+        self.generate('stage3_flash')
+        output = self.root / 'build/flash'
+        project = ET.parse(output / 'stage3_flash.prj').getroot()
+        self.assertEqual(project.findtext('TOP_MODULE/MODULE'), 'stage3_flash_top')
+        sources = [Path(item.attrib['Path']) for item in
+                   project.findall('Source_Files/Verilog/File')]
+        self.assertIn(self.root / 'rtl/stage3/stage3_flash_read.v', sources)
+        self.assertIn(self.root / 'rtl/stage3/stage3_debug_top.v', sources)
+        self.assertIn(output / 'VexRiscvDebug_hw.v', sources)
+        self.assertEqual(self.cpu.read_bytes(), original_cpu)
+        self.assertEqual(Path(project.find('Source_Files/SDC_FILE/File').attrib['Path']),
+                         self.root / 'constraints/debug.sdc')
+        self.assertIn('// Flash ROM initialization',
+                      (output / 'stage3_memory_hw.v').read_text())
 
     def test_rtos_project_preserves_uart_debug_and_firmware(self):
         uart_project = self.stage3 / 'stage3_uart.prj'
