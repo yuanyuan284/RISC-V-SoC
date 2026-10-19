@@ -4,9 +4,11 @@
 
 当前主线是 **Stage 3**。2026-10-13 实板已验证两份 42424 字节应用的下载、CRC32、RAM 执行和 newlib `printf/snprintf`，包括 `FLOAT=3.25`、`errors=0`、`STAGE3 PASS`。完整记录见 [实板验收](docs/stage3/HARDWARE_VALIDATION.md)。Stage 1/2 保留为历史实验，不能把它们的小容量参数当成当前系统参数。
 
-**最新完成：FreeRTOS V11.1.0 已于 2026-10-15 在真实 FPGA 上运行。** 新 `stage3_rtos_top` 加入 CLINT 定时器/软件中断和精简 PLIC，1000 Hz tick 驱动抢占式任务调度；寄存器保存、嵌套临界区、队列、ISR 通知和真实 UART 中断均通过，三次后续心跳持续增长。TD 25 MHz 时序 0 setup/hold。通过原 BootROM + UART 下载 15544B BIN，不需要独立 JTAG 调试器。原理、构建和实板证据见 [FreeRTOS](docs/stage3/FREERTOS.md)。
+**FreeRTOS V11.1.0 已于 2026-10-15 在真实 FPGA 上运行。** 新 `stage3_rtos_top` 加入 CLINT 定时器/软件中断和精简 PLIC，1000 Hz tick 驱动抢占式任务调度；寄存器保存、嵌套临界区、队列、ISR 通知和真实 UART 中断均通过，三次后续心跳持续增长。TD 25 MHz 时序 0 setup/hold。通过原 BootROM + UART 下载 15544B BIN，不需要独立 JTAG 调试器。原理、构建和实板证据见 [FreeRTOS](docs/stage3/FREERTOS.md)。
 
 **独立 RISC-V JTAG 已于 2026-10-18 完整实板通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性；报告为 `mode=hardware/full_suite_passed=true`。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 仅配置 FPGA SRAM，不写 Flash。真实 RTL 仿真与 TD 25 MHz 时序此前也已通过。UART-only、独立 JTAG 和 RTOS 仍使用各自 CPU/位流，RTOS 位流不含独立 JTAG，不宣称已合并。证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
+
+**Flash 上电启动状态（2026-10-19）：尚未实现或实板验证。** EF2L45LG144B 支持将配置位流写入片内 Flash，并在相应启动模式下上电自动加载；目前本项目只通过 AL-Link 将位流配置到易失性 SRAM，没有执行 Flash 烧写、上电重启或自动加载验收。即使后续固化了现有位流，CPU 也会先进入位流初始化的 BootROM 等待 UART 上传：应用 BIN 目前存放在易失性 RAM，断电后不会保留。因此“上电自动加载 FPGA 电路”和“上电自动输出 HELLO,YUAN!”是两项不同工作；后者还需要持久化应用及对应启动路径。
 
 ## SoC 架构
 
@@ -119,7 +121,7 @@ python .\script\run_tests.py
 
 ## 实板操作
 
-本节是已验证的 **UART-only 位流**操作；独立 JTAG 新位流的接线和待实板验证命令见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)，两种 CPU 生成输入和位流不能互换。
+本节是已验证的 **UART-only 位流**操作；独立 JTAG 位流的接线和已通过的实板验收命令见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)，两种 CPU 生成输入和位流不能互换。
 
 板卡 RX=P59、TX=P60、复位=P55，USB-UART 使用 3.3 V 电平并共地。串口参数为 115200、8N1、无流控，先关闭占用端口的 Tera Term；本机端口为 COM3，其他电脑按实际端口修改。
 
