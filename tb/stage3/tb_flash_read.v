@@ -18,6 +18,14 @@ module tb_flash_read;
         .ack(ack), .spi_cs_n(spi_cs_n), .spi_sck(spi_sck),
         .spi_mosi(spi_mosi), .spi_miso(spi_miso));
 
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("flash_read.vcd");
+        $dumpvars(0, clk, reset, cycle, strobe, address, read_data,
+                  read_count, ack, spi_cs_n, spi_sck, spi_mosi, spi_miso,
+                  dut.state, dut.remaining, dut.tx_shift, dut.rx_shift,
+                  transactions, command, command_bits, flash_address);
+    end
+
     always @(negedge spi_cs_n) begin
         command = 0;
         command_bits = 0;

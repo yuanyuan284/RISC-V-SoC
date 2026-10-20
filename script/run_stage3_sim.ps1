@@ -1,4 +1,5 @@
-param([ValidateSet('memory','smoke','uart')][string]$Test = 'memory', [switch]$CompileOnly)
+param([ValidateSet('memory','smoke','uart')][string]$Test = 'memory',
+      [switch]$CompileOnly, [switch]$Waves)
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build\stage3'
@@ -28,7 +29,9 @@ try {
     & $Iverilog '-g2012' '-I' $build '-s' $top '-o' "$Test.vvp" @sources
     if ($LASTEXITCODE) { throw 'Stage-3 Verilog compilation failed' }
     if ($CompileOnly) { return }
-    $options = if ($Test -eq 'smoke') { @('+SMOKE') } else { @() }
+    $options = @()
+    if ($Test -eq 'smoke') { $options += '+SMOKE' }
+    if ($Waves) { $options += '+WAVE' }
     & $Vvp "$Test.vvp" @options
     if ($LASTEXITCODE) { throw "Stage-3 $Test simulation failed" }
 } finally { Pop-Location }

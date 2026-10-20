@@ -10,6 +10,7 @@ module tb_flash_soc;
     reg [7:0] sampled;
     reg [7:0] received [0:63];
     integer count = 0;
+    reg [2:0] wave_phase = 0;
     localparam integer BIT_NS = 8680;
 
     always #20 clk = ~clk;
@@ -19,6 +20,20 @@ module tb_flash_soc;
         .rx(1'b1), .tx(tx), .jtag_tck(tck), .jtag_tms(1'b1),
         .jtag_tdi(1'b0), .jtag_tdo(tdo), .flash_cs_n(spi_cs_n),
         .flash_sck(spi_sck), .flash_mosi(spi_mosi), .flash_miso(spi_miso));
+
+    wire [31:0] ram_iterations = dut.ram.ram32.memory[0];
+    wire [31:0] ram_spi_reads = dut.ram.ram32.memory[1];
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("flash_soc.vcd");
+        $dumpvars(0, clk, power_reset, board_reset, wave_phase, tx,
+                  count, sampled, ram_iterations, ram_spi_reads,
+                  dut.reset, dut.cycle, dut.strobe, dut.write_enable,
+                  dut.address, dut.write_data, dut.read_data, dut.ack,
+                  dut.data_owner, dut.rom_select, dut.ram_select,
+                  dut.uart_select, dut.flash_select, dut.flash_ack,
+                  dut.flash_read_count, transactions, spi_cs_n,
+                  spi_sck, spi_mosi, spi_miso, flash_address, command);
+    end
 
     always @(negedge spi_cs_n) begin
         command = 0;
@@ -72,7 +87,9 @@ module tb_flash_soc;
         $readmemh("hello.xip.hex", flash, 32'h50000, 32'h50000 + image_bytes - 1);
         #1000;
         power_reset = 0;
+        wave_phase = 1;
         expect_text(0, "BOOT FLASH\015\012HELLO,YUAN!\015\012");
+        wave_phase = 2;
         if (transactions < 40) $fatal(1, "Flash image was not fully read");
         wait(spi_cs_n);
         begin
@@ -91,12 +108,14 @@ module tb_flash_soc;
                 $fatal(1, "CPU could not read Flash transaction count through MMIO");
         end
         $display("PASS Flash CRC and 1-way cached XIP HELLO");
+        wave_phase = 3;
         flash[32'h50010] = flash[32'h50010] ^ 8'hff;
         board_reset = 1;
         #2000;
         board_reset = 0;
         expect_text(25, "BOOT UART 64K\015\012");
         $display("PASS corrupted Flash image fails CRC and falls back to UART");
+        wave_phase = 4;
         flash[32'h50010] = flash[32'h50010] ^ 8'hff;
         flash[32'h50000] = 8'hff;
         board_reset = 1;

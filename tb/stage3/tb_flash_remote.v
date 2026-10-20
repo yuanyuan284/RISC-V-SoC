@@ -16,6 +16,17 @@ module tb_flash_remote;
         .jtag_tdi(tdi), .jtag_tdo(tdo), .flash_cs_n(spi_cs_n),
         .flash_sck(spi_sck), .flash_mosi(spi_mosi), .flash_miso(spi_miso));
 
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("flash_jtag.vcd");
+        $dumpvars(0, clk, power_reset, tck, tms, tdi, tdo,
+                  dut.cpu.debugTransportModuleJtagTap_1.tap_fsm_state,
+                  dut.cpu.debugTransportModuleJtagTap_1.tap_instruction,
+                  dut.cpu.debugTransportModuleJtagTap_1.logic_jtagLogic_dmi_logic_store,
+                  dut.cycle, dut.strobe, dut.address, dut.ack,
+                  dut.flash_select, dut.flash_read_count,
+                  spi_cs_n, spi_sck, spi_mosi, spi_miso, flash_address);
+    end
+
     always @(negedge spi_cs_n) begin
         command = 0;
         command_bits = 0;

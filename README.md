@@ -46,7 +46,7 @@ flowchart LR
 | `0x8000f000..0x8000ffff` | RAM 顶部 4 KiB 栈，初始 SP 为 `0x80010000` |
 | `0x40001000..0x40001fff` | UART 地址窗口，实际寄存器见 `rtl/common/uart_wb.v` |
 
-UART-only 测试应用还保留 `0x8000b800..0x8000efff` 作为 14 KiB RAM 测试区，见 `fw/stage3/app.ld`。RTOS 使用独立 `fw/rtos/app.ld`，不保留该测试区：代码、BSS（含 16 KiB 内核堆）位于低 60 KiB，顶部 4 KiB 是主程序/ISR 栈，任务栈从内核堆分配。BIN 尺寸合规不代表任意 C 程序的运行时内存都合规；扩展应用时需检查代码、BSS、堆与栈的布局。RAM 不保存断电后的程序，项目未实现 Flash 持久化启动。
+UART-only 测试应用还保留 `0x8000b800..0x8000efff` 作为 14 KiB RAM 测试区，见 `fw/stage3/app.ld`。RTOS 使用独立 `fw/rtos/app.ld`，不保留该测试区：代码、BSS（含 16 KiB 内核堆）位于低 60 KiB，顶部 4 KiB 是主程序/ISR 栈，任务栈从内核堆分配。BIN 尺寸合规不代表任意 C 程序的运行时内存都合规；扩展应用时需检查代码、BSS、堆与栈的布局。RAM 不保存断电后的程序；**独立 Flash/XIP 变体**已实现位流和演示应用持久化，不能把它等同于 UART/RTOS 应用掉电保存。
 
 ## 目录
 
@@ -161,6 +161,7 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 
 ## 验证记录与资料
 
+- [带注释的仿真波形](docs/report.md#127-怎样读这次采集的仿真波形)：Flash SPI、XIP 启动、缓存命中、UART 字节和 CLINT/PLIC 中断；这些图来自 RTL 仿真，不是实板逻辑分析仪记录。`+WAVE` 生成的 VCD 保存在本地 `build/`，不会随 Git 提交。ModelSim 目前仅验证了编译器可用，交互仿真和 WLF 采集尚未验证。
 - [Stage 3 详细流程](docs/stage3/README.md)
 - [FreeRTOS 实板运行](docs/stage3/FREERTOS.md)：定时器、中断控制器、抢占/队列、UART 验收和复现
 - [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板验收

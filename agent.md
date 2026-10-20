@@ -10,6 +10,12 @@
 
 ## 当前结论
 
+### 2026-10-21：仿真波形采集与讲解（进行中）
+
+为现有 Stage 3、Flash/XIP、FreeRTOS 仿真 testbench 增加可选 `+WAVE`，默认运行不生成大体积 VCD。已实际录制并检查 Flash 只读 Wishbone/SPI 桥、Flash SoC 启动与缓存命中、UART 首字节，以及 CLINT/PLIC 独立中断测试的 VCD；相应五张带标注图片和逐图解读见 `docs/report.md` 第 12.7 节。Flash JTAG remote-bitbang、Stage 3 ROM/RAM 和 UART testbench 的 VCD 也已录制且测试通过，但还没有完成这三条路径的讲解图。VCD 在忽略的 `build/`，图在 `docs/waveforms/`。这些**全是 RTL 仿真**，不能替代此前真实 FPGA 验收记录。
+
+ModelSim 10.1c 的 `vlog` 编译器从安装目录启动可用；`vsim -c` 未能完成仿真启动，也没有得到 WLF，不能宣称 ModelSim 已出波形。带 `+WAVE` 的完整 FreeRTOS SoC 仿真出现异常缓慢，已停止，本次不能把旧日志的 PASS 当作新运行结果；CLINT/PLIC 单元仿真仍独立通过。后续需定位 ModelSim 启动及 FreeRTOS 长仿真问题，补齐 JTAG/存储/UART/RTOS 全系统讲解图。波形图是理解信号的教学材料，最终功能结论仍以各自明确的仿真或实板测试为准。
+
 ### 2026-10-20：位流和 XIP 应用已持久烧写，开发板断电重上电后 XIP 运行已验证
 
 经用户分别授权，TD `download -mode program_spi` 将 SHA256 `6c1d96051f40faab66d96c4c21f247c00f436be7add666c9825d20bb6a25c1a9` 的 Flash 变体位流写入 EF2 片内 Flash。写后在普通调试位流运行时，TD 512 KiB 读回 SHA256 为 `72f24b2f0227e5854d033afefb711f431169674a0a95788997b7c169b1d5b20a`，非 `FF` 字节止于 `0x3ed0e`，`0x50000..0x7ffff` 保持全 `FF`。TD `download -mode program_spibin -bin hello.xip.bin -start_addr 0x50000` 仅报告擦除第 80 个 4 KiB 扇区；再次配置普通调试位流并整片读回 SHA256 `f4747274c3ec9773d4e3ce7d60c5179357d95cb50cf56c9382c32a9a2ede925c`，比较器证实除物理 `0x50000..0x500bf` 的 192 字节镜像外其余字节全部不变。TD 在 `persist_bit=0` Flash 位流运行时可能误读全 `FF`，不能用该状态的原生读回作为证据。

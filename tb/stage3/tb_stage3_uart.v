@@ -20,6 +20,15 @@ module tb_stage3_uart;
     always #50 clk_ref = ~clk_ref;
     stage3_top dut(.clk_ref(clk_ref), .i_rst(i_rst), .rx(rx), .tx(tx));
 
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("stage3_uart.vcd");
+        $dumpvars(0, clk_ref, i_rst, rx, tx, head, tail, sampled,
+                  dut.clk, dut.reset, dut.cycle, dut.strobe,
+                  dut.write_enable, dut.address, dut.write_data,
+                  dut.read_data, dut.ack, dut.data_owner,
+                  dut.rom_select, dut.ram_select, dut.uart_select);
+    end
+
     initial begin
         if (!$test$plusargs("SMOKE")) begin
             // Simulation-only baud acceleration; ROM, CPU and UART RTL stay unchanged.

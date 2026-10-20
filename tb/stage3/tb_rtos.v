@@ -10,6 +10,14 @@ module tb_rtos;
     reg [7:0] sampled;
     string line = "";
     localparam integer BIT_NS = 8680;
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("rtos_system.vcd");
+        $dumpvars(0, reset, rx, tx, lines, sampled,
+                  timer_edges, software_edges, external_edges,
+                  dut.timer_irq, dut.software_irq, dut.external_irq,
+                  dut.clint.mtimecmp, dut.plic.pending,
+                  dut.plic.claimed);
+    end
     always @(posedge dut.timer_irq) if (!reset) timer_edges = timer_edges + 1;
     always @(posedge dut.software_irq) if (!reset) software_edges = software_edges + 1;
     always @(posedge dut.external_irq) if (!reset) external_edges = external_edges + 1;

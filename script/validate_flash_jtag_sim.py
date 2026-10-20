@@ -15,6 +15,7 @@ def main() -> None:
     parser.add_argument('--openocd', required=True)
     parser.add_argument('--vvp', required=True)
     parser.add_argument('--timeout', type=int, default=600)
+    parser.add_argument('--wave', action='store_true')
     args = parser.parse_args()
     image = (BUILD / 'hello.xip').read_bytes()
     if len(image) < 32:
@@ -30,10 +31,13 @@ def main() -> None:
     tcl_path = dump.as_posix()
     bridge = ocd = None
     try:
+        bridge_command = [sys.executable, str(ROOT / 'script/debug_remote_sim.py'),
+                          '--vvp', args.vvp, '--image', str(BUILD / 'flash-remote.vvp'),
+                          '--cwd', str(BUILD), '--image-bytes', str(len(image))]
+        if args.wave:
+            bridge_command.append('--wave')
         bridge = LoggedProcess(
-            [sys.executable, str(ROOT / 'script/debug_remote_sim.py'),
-             '--vvp', args.vvp, '--image', str(BUILD / 'flash-remote.vvp'),
-             '--cwd', str(BUILD), '--image-bytes', str(len(image))],
+            bridge_command,
             BUILD / 'flash_jtag_bridge.log', 'JTAG simulator listening')
         bridge.wait_ready(timeout=120)
         ocd = LoggedProcess(

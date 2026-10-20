@@ -1,3 +1,4 @@
+param([switch]$Waves)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build/flash'
 $stage3 = Join-Path $root 'build/stage3'
@@ -22,5 +23,7 @@ foreach ($name in @('rx','tx','wb')) {
 }
 & $Iverilog -g2012 -I $build -s tb_flash_remote -o (Join-Path $build 'flash-remote.vvp') @sources
 if ($LASTEXITCODE) { throw 'Flash JTAG simulator compilation failed' }
-& $Python (Join-Path $PSScriptRoot 'validate_flash_jtag_sim.py') --openocd $OpenOcd --vvp $Vvp
+$options = @()
+if ($Waves) { $options += '--wave' }
+& $Python (Join-Path $PSScriptRoot 'validate_flash_jtag_sim.py') --openocd $OpenOcd --vvp $Vvp @options
 if ($LASTEXITCODE) { throw 'Flash OpenOCD/JTAG readback simulation failed' }

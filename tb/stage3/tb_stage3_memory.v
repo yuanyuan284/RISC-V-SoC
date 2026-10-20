@@ -20,6 +20,13 @@ module tb_stage3_memory;
     stage3_rom rom(.clk(clk), .reset(reset), .cycle(rom_cycle), .strobe(rom_cycle),
         .address(rom_address), .read_data(rom_data), .ack(rom_ack));
 
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("stage3_memory.vcd");
+        $dumpvars(0, clk, reset, cycle, strobe, we, address, select,
+                  write_data, data, ack, rom_cycle, rom_address,
+                  rom_data, rom_ack, i, bank, mask);
+    end
+
     task transaction(input integer addr, input bit wr, input [3:0] sel,
                      input [31:0] value, output [31:0] read_value);
         begin

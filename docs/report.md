@@ -909,6 +909,32 @@ FPGA 上电时先要变成我们的电路，CPU 才存在并开始执行。以�
 
 验证边界要说准：烧写后完整读回确认用户应用的写入未破坏配置区；临时 SRAM 配置下 COM3 曾输出 `BOOT FLASH` 和 `HELLO,YUAN!`。后来用户确认只给开发板断电至少 3 秒再上电，未用 TD 重新下载位流；随后 JTAG 读到 CPU 的 PC `0x3005009c`（在 XIP 应用内），RAM 循环计数一秒内从 `0x350c71a` 增至 `0x364a82a`。这支持 Flash 上电配置和应用运行。第一次重上电后的探针曾返回全 1，原因未定位；这次未同步抓到串口启动文字，且 AL-Link、CPU JTAG、COM3 线仍连接，完全脱离调试线的独立上电还没测试。完整记录与复现条件见 [Flash XIP 说明](stage3/FLASH_XIP.md)。
 
+### 12.7 怎样读这次采集的仿真波形
+
+下面五张图取自 **RTL 仿真的 VCD**，并非在 FPGA 引脚上用示波器或逻辑分析仪实测。横轴是仿真时间；0/1 是逻辑电平，阶梯线表示值在两次事件之间保持不变。图中只挑出便于解释的信号，原始 VCD 还包含更多细节，存于本地忽略目录 `build/`。不要把仿真时间直接当成实板上电耗时。
+
+![Flash 读事务时序](waveforms/flash_read.png)
+
+**Flash 读桥。** `Wishbone CYC/STB` 表示 CPU 一侧发起读请求；`SPI CS#` 拉低后，`SCK` 逐位送出 `03h` 读命令和 24 位物理地址，再从 `MISO` 收回 32 位数据。下方状态依次是空闲、发送、接收、应答。`ACK` 表示这笔总线读操作完成；它不是 SPI 每个时钟都产生一次的确认。该 testbench 的桥接检查通过。
+
+![Flash XIP 启动波形](waveforms/flash_boot.png)
+
+**Flash 启动。** 复位解除后，SPI 读计数先增加，表示 BootROM 读取并校验 XIP 镜像，随后 UART 字节数增长，表明启动文字经发送线输出；到约 5.78 ms 时，RAM 中的应用循环计数开始持续增加。图中展示的是有效镜像路径；同一 testbench 还测试 CRC 错误和无效头回退 UART，但没有把那些情形挤进这张图。
+
+![指令缓存命中波形](waveforms/cache_hit.png)
+
+**1-way 缓存。** 左轴的循环次数持续增长，右轴的 SPI 事务计数及应用观察到的读数在所选时间窗内保持水平。这说明此处循环仍在执行，但这段时间没有反复从 Flash 补取同一批指令；它支持“该循环缓存命中”，不代表整个程序永不访问 Flash。
+
+![UART 首字节的位时序](waveforms/uart_first_byte.png)
+
+**UART 串行发送。** 线空闲为高，起始位为低；数据按低位在先依次为 `0,1,0,0,0,0,1,0`，即 `0x42`、字符 `B`；最后是高电平停止位。每位约 8.68 微秒，对应 115200 波特率。这里看见的只是 `BOOT FLASH` 首字节，不是全部文本；完整文本仍由 testbench 的串口解码断言核对。
+
+![CLINT 和 PLIC 中断时序](waveforms/rtos_interrupts.png)
+
+**中断控制器。** `MMIO CYC/write` 是 CPU 侧寄存器访问，`CLINT/PLIC ACK` 是外设应答；软件中断 `MSIP`、定时器中断 `MTIP` 和 PLIC 外部中断分别在约 0.22、0.70、2.62 微秒首次出现。下方的 sources、pending、threshold 帮助解释外部中断为何被接受或屏蔽。此图来自 CLINT/PLIC 独立测试，不能替代完整 FreeRTOS 调度波形。
+
+复现时可给 `script/run_stage3_sim.ps1` 或 `script/run_rtos_sim.ps1` 加 `-Waves`，给 `script/run_flash_jtag_sim.ps1` 加 `-Waves`；Flash 桥和 Flash SoC 的 testbench 通过 `+WAVE` 录制。绘图依赖见 `script/waves/requirements.txt`，准备好 VCD 后运行 `python script/waves/render.py`。当前 ModelSim 10.1c 的编译器已可运行，但 `vsim` 尚未成功生成 WLF；FreeRTOS **完整 SoC** 的带波形长仿真本次异常缓慢并已停止。JTAG、Stage 3 ROM/RAM、UART 的 VCD 已录制，讲解图仍待补齐；因此不宣称“所有波形已完成”。
+
 ## 13. 看代码时按什么顺序，改功能时该改哪里
 
 ### 13.1 一条不容易迷路的阅读路线

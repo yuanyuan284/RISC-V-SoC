@@ -16,6 +16,15 @@ module tb_rtos_interrupts;
         .strobe(strobe), .write_enable(we), .address(address[21:0]),
         .select(sel), .write_data(data), .read_data(pr), .ack(pa),
         .sources(sources), .external_irq(ei));
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("rtos_interrupts.vcd");
+        $dumpvars(0, clk, reset, cycle, strobe, we, address, data, sel,
+                  cr, ca, pr, pa, sources, ti, si, ei,
+                  clint.mtime, clint.mtimecmp, clint.msip,
+                  plic.priority1, plic.priority2, plic.threshold,
+                  plic.pending, plic.enabled, plic.gateway_busy,
+                  plic.claimed, plic.winner);
+    end
     task access(input [31:0] a, input bit wr, input [31:0] d, input [3:0] mask,
                 output reg [31:0] result);
         begin

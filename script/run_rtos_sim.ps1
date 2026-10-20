@@ -1,4 +1,5 @@
-param([ValidateSet('system','interrupts')][string]$Test = 'system', [switch]$CompileOnly)
+param([ValidateSet('system','interrupts')][string]$Test = 'system',
+      [switch]$CompileOnly, [switch]$Waves)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build/rtos'
 New-Item -ItemType Directory -Path $build -Force | Out-Null
@@ -10,7 +11,9 @@ if ($Test -eq 'interrupts') {
             (Join-Path $root 'rtl/stage3/rtos_clint.v') (Join-Path $root 'rtl/stage3/rtos_plic.v')
         if ($LASTEXITCODE) { throw 'Interrupt simulation compile failed' }
         if ($CompileOnly) { return }
-        & $Vvp 'interrupts.vvp' | Tee-Object -FilePath 'interrupts.log'
+        $options = @()
+        if ($Waves) { $options += '+WAVE' }
+        & $Vvp 'interrupts.vvp' @options | Tee-Object -FilePath 'interrupts.log'
         if ($LASTEXITCODE) { throw 'Interrupt simulation failed' }
     } finally { Pop-Location }
     return
@@ -34,6 +37,8 @@ try {
     & $Iverilog '-g2012' '-I' (Join-Path $root 'build/stage3') '-s' 'tb_rtos' '-o' 'rtos.vvp' @sources
     if ($LASTEXITCODE) { throw 'RTOS simulation compile failed' }
     if ($CompileOnly) { return }
-    & $Vvp 'rtos.vvp' | Tee-Object -FilePath 'simulation.log'
+    $options = @()
+    if ($Waves) { $options += '+WAVE' }
+    & $Vvp 'rtos.vvp' @options | Tee-Object -FilePath 'simulation.log'
     if ($LASTEXITCODE) { throw 'RTOS simulation failed' }
 } finally { Pop-Location }
