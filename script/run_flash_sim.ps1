@@ -1,3 +1,4 @@
+param([switch]$Waves)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build/flash'
 New-Item -ItemType Directory -Path $build -Force | Out-Null
@@ -6,7 +7,12 @@ $image = Join-Path $build 'tb_flash_read.vvp'
     (Join-Path $root 'rtl/stage3/stage3_flash_read.v') `
     (Join-Path $root 'tb/stage3/tb_flash_read.v')
 if ($LASTEXITCODE) { throw 'Flash RTL compilation failed' }
-& $Vvp $image
+$readOptions = @()
+if ($Waves) { $readOptions += '+WAVE' }
+$readCwd = if ($Waves) { Join-Path $root 'build/waves' } else { $root }
+New-Item -ItemType Directory -Path $readCwd -Force | Out-Null
+Push-Location $readCwd
+try { & $Vvp $image @readOptions } finally { Pop-Location }
 if ($LASTEXITCODE) { throw 'Flash RTL simulation failed' }
 & $Python (Join-Path $PSScriptRoot 'prepare_stage3_models.py')
 if ($LASTEXITCODE) { throw 'BRAM model generation failed' }
@@ -35,6 +41,8 @@ foreach ($name in @('rx','tx','wb')) {
 if ($LASTEXITCODE) { throw 'Flash SoC compilation failed' }
 Push-Location $build
 try {
-    & $Vvp $socImage "+image_bytes=$imageBytes"
+    $socOptions = @("+image_bytes=$imageBytes")
+    if ($Waves) { $socOptions += '+WAVE' }
+    & $Vvp $socImage @socOptions
     if ($LASTEXITCODE) { throw 'Flash SoC simulation failed' }
 } finally { Pop-Location }

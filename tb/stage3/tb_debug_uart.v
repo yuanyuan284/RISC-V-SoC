@@ -11,6 +11,11 @@ module tb_debug_uart;
     stage3_debug_soc dut(.clk(clk), .power_reset(power_reset),
         .board_reset(board_reset), .rx(1'b1), .tx(tx),
         .jtag_tck(tck), .jtag_tms(1'b1), .jtag_tdi(1'b0), .jtag_tdo(tdo));
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("debug_uart.vcd");
+        $dumpvars(0, power_reset, board_reset, tx, count, sampled,
+                  dut.reset, dut.rom_select, dut.uart_select);
+    end
     initial forever begin
         @(negedge tx);
         #(BIT_NS / 2);

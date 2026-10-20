@@ -12,9 +12,9 @@
 
 ### 2026-10-21：仿真波形采集与讲解（进行中）
 
-为现有 Stage 3、Flash/XIP、FreeRTOS 仿真 testbench 增加可选 `+WAVE`，默认运行不生成大体积 VCD。已实际录制并检查 Flash 只读 Wishbone/SPI 桥、Flash SoC 启动与缓存命中、UART 首字节，以及 CLINT/PLIC 独立中断测试的 VCD；相应五张带标注图片和逐图解读见 `docs/report.md` 第 12.7 节。Flash JTAG remote-bitbang、Stage 3 ROM/RAM 和 UART testbench 的 VCD 也已录制且测试通过，但还没有完成这三条路径的讲解图。VCD 在忽略的 `build/`，图在 `docs/waveforms/`。这些**全是 RTL 仿真**，不能替代此前真实 FPGA 验收记录。
+为现有 Stage 3、Flash/XIP、FreeRTOS 仿真 testbench 增加可选 `+WAVE`，默认运行不生成大体积 VCD。已实际录制并检查时钟/复位、Wishbone 地址译码、Flash 只读 Wishbone/SPI 桥、Flash SoC 有效 XIP/CRC 错误/无效头回退、缓存命中、UART、CLINT/PLIC 独立中断、完整 FreeRTOS SoC、Flash JTAG remote-bitbang、独立 CPU 调试暂停/恢复及有效写回 PC，以及 Stage 3 ROM/RAM。十六张带标注图片和逐图解读见 `docs/report.md` 第 12.7 节。VCD/RTOS 事件轨迹在忽略的 `build/`，图在 `docs/waveforms/`。这些**全是 RTL 仿真**，不能替代此前真实 FPGA 验收记录。
 
-ModelSim 10.1c 的 `vlog` 编译器从安装目录启动可用；`vsim -c` 未能完成仿真启动，也没有得到 WLF，不能宣称 ModelSim 已出波形。带 `+WAVE` 的完整 FreeRTOS SoC 仿真出现异常缓慢，已停止，本次不能把旧日志的 PASS 当作新运行结果；CLINT/PLIC 单元仿真仍独立通过。后续需定位 ModelSim 启动及 FreeRTOS 长仿真问题，补齐 JTAG/存储/UART/RTOS 全系统讲解图。波形图是理解信号的教学材料，最终功能结论仍以各自明确的仿真或实板测试为准。
+完整 FreeRTOS SoC 于本轮用 `-Trace` 跑到 `76999240000 ps` 并输出 `FREERTOS PASS tick=66 switches=102 queue=14 msip=1 plic=1 uart=1`，关键事件轨迹有 1413 条，硬件 IRQ 上升沿计数为 timer=71/software=1/external=2；先前的连续 VCD 路线在约 9.1 ms 前异常变慢后已停止，不能拿该半截 VCD 充作完整证据。`script/waves/events_to_vcd.py` 将完成的事件轨迹转为标准 VCD；`export_wlf.ps1` 已把九份录制转成非空 ModelSim WLF。`vcd2wlf`/`wlf2vcd` 反向核对关键波形和结束时间一致，`vsim -c -view` 成功打开 WLF 数据集。直接用 ModelSim `vsim` 运行 testbench 仍未成功，不宣称它完成了 RTL 仿真；GUI 逐信号查看也未验收。后续可继续扩展未选入的 CPU 内部节点/任务切换细节，并排查 ModelSim 直接仿真启动。波形图是理解信号的教学材料，最终功能结论仍以各自明确的仿真或实板测试为准。
 
 ### 2026-10-20：位流和 XIP 应用已持久烧写，开发板断电重上电后 XIP 运行已验证
 

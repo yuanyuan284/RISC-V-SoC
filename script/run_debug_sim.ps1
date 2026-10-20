@@ -1,4 +1,5 @@
-param([switch]$CompileOnly, [ValidateSet('remote','uart')][string]$Test = 'remote')
+param([switch]$CompileOnly, [ValidateSet('remote','uart')][string]$Test = 'remote',
+      [switch]$Waves)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build/debug'
 $stage3 = Join-Path $root 'build/stage3'
@@ -21,12 +22,16 @@ foreach ($name in @('rx','tx','wb')) { $sources += Join-Path $build "uart_${name
 if ($LASTEXITCODE) { throw 'Debug SoC compilation failed' }
 if (!$CompileOnly) {
     if ($Test -eq 'remote') {
-        & $Python (Join-Path $PSScriptRoot 'debug_remote_sim.py') --vvp $Vvp
+        $options = @('--vvp', $Vvp)
+        if ($Waves) { $options += '--wave' }
+        & $Python (Join-Path $PSScriptRoot 'debug_remote_sim.py') @options
         if ($LASTEXITCODE) { throw 'Debug JTAG simulation failed' }
     } else {
         Push-Location $stage3
         try {
-            & $Vvp $image
+            $options = @()
+            if ($Waves) { $options += '+WAVE' }
+            & $Vvp $image @options
             if ($LASTEXITCODE) { throw 'Debug UART boot simulation failed' }
         } finally { Pop-Location }
     }

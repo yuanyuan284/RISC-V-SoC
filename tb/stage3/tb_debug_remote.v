@@ -7,6 +7,20 @@ module tb_debug_remote;
     stage3_debug_soc dut(.clk(clk), .power_reset(power_reset),
         .board_reset(1'b0), .rx(1'b1), .tx(tx),
         .jtag_tck(tck), .jtag_tms(tms), .jtag_tdi(tdi), .jtag_tdo(tdo));
+    initial if ($test$plusargs("WAVE")) begin
+        $dumpfile("debug_remote.vcd");
+        $dumpvars(0, power_reset, tck, tms, tdi, tdo,
+                  dut.cpu.debugBus_halted, dut.cpu.debugBus_haltReq,
+                  dut.cpu.decode_PC, dut.cpu.execute_PC,
+                  dut.cpu.writeBack_PC, dut.cpu.decode_arbitration_isValid,
+                  dut.cpu.execute_arbitration_isValid,
+                  dut.cpu.writeBack_arbitration_isValid,
+                  dut.cpu.debugTransportModuleJtagTap_1.tap_fsm_state,
+                  dut.cpu.debugTransportModuleJtagTap_1.tap_instruction,
+                  dut.cycle, dut.strobe, dut.address, dut.write_enable,
+                  dut.write_data, dut.read_data, dut.ack,
+                  dut.ram_select);
+    end
     integer command;
     initial begin
         // DMI data before the first response is unspecified. Choose a legal

@@ -911,7 +911,15 @@ FPGA 上电时先要变成我们的电路，CPU 才存在并开始执行。以�
 
 ### 12.7 怎样读这次采集的仿真波形
 
-下面五张图取自 **RTL 仿真的 VCD**，并非在 FPGA 引脚上用示波器或逻辑分析仪实测。横轴是仿真时间；0/1 是逻辑电平，阶梯线表示值在两次事件之间保持不变。图中只挑出便于解释的信号，原始 VCD 还包含更多细节，存于本地忽略目录 `build/`。不要把仿真时间直接当成实板上电耗时。
+下面十六张图取自 **RTL 仿真**，并非在 FPGA 引脚上用示波器或逻辑分析仪实测。大多数图从 VCD 绘制；完整 FreeRTOS 长仿真改用仅在关键信号变化时写出的事件轨迹，以免持续 VCD 写盘显著拖慢仿真。横轴是仿真时间；0/1 是逻辑电平，阶梯线表示值在两次事件之间保持不变。图中只挑出便于解释的信号，原始记录存于本地忽略目录 `build/`；不要把仿真时间直接当成实板上电耗时。
+
+![时钟与复位时序](waveforms/clock_reset.png)
+
+**时钟与复位。** `clk_ref` 是 10 MHz 参考时钟，`clk_sys` 是 testbench 中功能性 PLL 模型产生的 25 MHz 系统时钟。板级复位 `i_rst` 在约 1.5 微秒解除，随后 SoC 才开始总线事务。这张 RTL 图仅证明仿真模型的时序关系，不能测量真实 PLL 的锁定时间、抖动或实板时钟质量。
+
+![Wishbone 地址译码与应答](waveforms/wishbone_decode.png)
+
+**Wishbone 地址译码。** 三个窗口分别放大 BootROM `0x20000000`、RAM `0x8000fff4` 和 UART `0x40001000` 附近的访问。主设备置 `CYC/STB` 请求时，对应的片选升高；从设备完成访问后给 `ACK`。标题中的地址是该窗口选中的起始访问，不表示窗口内每一次 ACK 都对应同一个地址。它说明访问被路由到不同外设，读写内容是否正确仍由 testbench 断言检查。
 
 ![Flash 读事务时序](waveforms/flash_read.png)
 
@@ -920,6 +928,10 @@ FPGA 上电时先要变成我们的电路，CPU 才存在并开始执行。以�
 ![Flash XIP 启动波形](waveforms/flash_boot.png)
 
 **Flash 启动。** 复位解除后，SPI 读计数先增加，表示 BootROM 读取并校验 XIP 镜像，随后 UART 字节数增长，表明启动文字经发送线输出；到约 5.78 ms 时，RAM 中的应用循环计数开始持续增加。图中展示的是有效镜像路径；同一 testbench 还测试 CRC 错误和无效头回退 UART，但没有把那些情形挤进这张图。
+
+![Flash 错误镜像回退时序](waveforms/flash_fallback.png)
+
+**Flash 错误回退。** 有效镜像测试后，testbench 先破坏 XIP 内容的 CRC、执行板级复位：SPI 读计数从零重新增加，说明 BootROM 再次检查镜像；UART 解码字节数随后增加，且字节级断言核对 `BOOT UART 64K`。第二次改坏头部再复位，几乎不再读取应用内容，仍回到 UART 加载器。上方 `Test phase` 是 testbench 标记，不是 FPGA 的硬件状态寄存器；红虚线标示两次测试复位附近。
 
 ![指令缓存命中波形](waveforms/cache_hit.png)
 
@@ -933,7 +945,58 @@ FPGA 上电时先要变成我们的电路，CPU 才存在并开始执行。以�
 
 **中断控制器。** `MMIO CYC/write` 是 CPU 侧寄存器访问，`CLINT/PLIC ACK` 是外设应答；软件中断 `MSIP`、定时器中断 `MTIP` 和 PLIC 外部中断分别在约 0.22、0.70、2.62 微秒首次出现。下方的 sources、pending、threshold 帮助解释外部中断为何被接受或屏蔽。此图来自 CLINT/PLIC 独立测试，不能替代完整 FreeRTOS 调度波形。
 
-复现时可给 `script/run_stage3_sim.ps1` 或 `script/run_rtos_sim.ps1` 加 `-Waves`，给 `script/run_flash_jtag_sim.ps1` 加 `-Waves`；Flash 桥和 Flash SoC 的 testbench 通过 `+WAVE` 录制。绘图依赖见 `script/waves/requirements.txt`，准备好 VCD 后运行 `python script/waves/render.py`。当前 ModelSim 10.1c 的编译器已可运行，但 `vsim` 尚未成功生成 WLF；FreeRTOS **完整 SoC** 的带波形长仿真本次异常缓慢并已停止。JTAG、Stage 3 ROM/RAM、UART 的 VCD 已录制，讲解图仍待补齐；因此不宣称“所有波形已完成”。
+![完整 FreeRTOS SoC 运行总览](waveforms/rtos_system.png)
+
+**FreeRTOS 整机总览。** 与上图的单元测试不同，这次是生成的真实 RISC-V CPU 执行官方 FreeRTOS 内核的完整 RTL 仿真。约 77 ms 的运行里，定时中断持续出现，串口解码完成四行输出；软件中断一次、外部中断两次，底排给出 `MTIP/MSIP/MEIP` 电平。最终 testbench 输出 `FREERTOS PASS tick=66 switches=102 queue=14 msip=1 plic=1 uart=1`。图中的定时 IRQ 上升沿累计 71 次，与应用报告的 66 个 RTOS tick 口径不同，不能把两者直接当成同一个计数器。图没有逐条显示任务上下文保存的内部寄存器；抢占、寄存器、队列等结论来自应用断言和完整仿真日志。
+
+![FreeRTOS 三类中断放大时序](waveforms/rtos_irq_detail.png)
+
+**中断边沿放大。** 第一排定时 IRQ 约在 6.993 ms 拉高，第二排软件 IRQ 约在 16.050 ms 拉高；均在处理后回落。第三排显示 testbench 向 FPGA RX 送入一个 UART 字节，第一笔外部 IRQ 约在 8.002 ms 到来；RX 波形按显示需要抬高两格，不是 2/3 V 的模拟电压。约 16.282 ms 的第二笔外部 IRQ 来自后续测试事件，不应误说成第二个 UART 字节。这里的相对时间 0 是所选 IRQ 的上升沿。
+
+![BootROM 与 RAM 的读写时序](waveforms/memory_access.png)
+
+**同步存储器。** 上图前一排是 BootROM 连续读取前四个 32 位字，`ROM CYC` 提出请求，`ROM ACK` 表示同步读出的数据有效；数字 `0..3` 是**字地址**，旁边的十六进制数是读到的指令字。中间一排用 `Write enable=1` 把 `0x1357ac00..03` 写到 RAM 字地址 `0..3`，下一排关闭写使能并逐字读回相同数值。图只放大前四笔交易；该 testbench 另外检查全部 8 KiB ROM/64 KiB RAM、字节写掩码、存储体边界与复位保持，不能把截图当作全空间可视化。
+
+![Stage 3 UART 下载头首字节](waveforms/stage3_uart.png)
+
+**串口下载入口。** 电脑的 TX 线接 FPGA 的 RX，这里的 `rx` 是**站在 FPGA 一侧命名**。图中第一个下载头字节按低位在先为 `0,1,0,0,1,0,1,0`，即 `0x52`、字符 `R`，是 `RV32` 头的开头；起始位为低、停止位为高。每位约 8.68 微秒。图中稍后的 `FPGA TX` 跳变是板端回复的一部分；完整下载、CRC 拒绝、RAM 跳转仍由 testbench 的字节级断言判定，单凭一个字节波形不能证明全流程。
+
+![独立 CPU JTAG TAP 扫描](waveforms/jtag_tap.png)
+
+**JTAG TAP。** `TCK` 是移位时钟，`TMS` 决定 TAP 状态转移，`TDI` 是调试器送进 FPGA 的位，`TDO` 是 FPGA 返回的位。下方绿线给出 TAP 状态编码，例如 `1=IDLE`、`4=IR_SHIFT`、`8=IR_UPDATE`、`10=DR_CAPTURE`、`11=DR_SHIFT`；黄线为当前指令寄存器 IR 的十六进制值（可见 `1F`、`10`、`11` 切换）。这段信号来自 OpenOCD 的 remote-bitbang **RTL 仿真**；该仿真还核对了从模拟 Flash 窗口经 CPU JTAG 读回的应用字节，不能把图当成真实调试器的电气波形。
+
+![独立 CPU JTAG 暂停与恢复](waveforms/debug_halt.png)
+
+**CPU 暂停/恢复。** 这张图来自独立调试 CPU 的 OpenOCD `core` RTL 仿真，不是前一张 Flash 只读 TAP 测试。约 623.74 微秒，Debug Module 提出 `haltReq`；约 623.98 微秒，CPU 的 `halted` 变高。之后 CPU 曾恢复运行，约 1208.38 微秒再次进入暂停。下方放大了第一次暂停附近的 `CYC`、RAM 地址命中和 `ACK`；总线可能有在途活动，不能仅凭 `ram_select` 为高就说调试器此刻写了 RAM。该次 core 验证还通过了 RAM 边界、寄存器、单步、复位保留 RAM 和硬件断点。
+
+![CPU 暂停和恢复时的有效写回 PC](waveforms/debug_pc.png)
+
+**CPU 执行地址。** 蓝点只表示流水线 `writeBack valid=1` 时的 PC，纵轴是相对 BootROM 基址 `0x20000000` 的**字节偏移**，不是指令条数；红线是 `halted`。首次暂停确认前，仍可看到几笔有效写回；约 623.98 微秒进入暂停后，所选窗口不再出现新的有效写回点。约 1097.18 微秒恢复后，有效 PC 再次出现。流水线无效周期里 PC 寄存器可能仍有数值，所以作图时不能不看 `valid` 就称 CPU 在执行。后续单步的 PC 结果另由 OpenOCD 测试断言核对，不能仅凭这张图推断每条指令的语义。
+
+![调试版 CPU 板级复位与 UART 横幅](waveforms/debug_uart_reset.png)
+
+**调试版 BootROM 复位。** 初次释放电源复位后，UART 解码字节数从 0 增至 15；约 1.32 ms 施加一次很短的板级复位，同一位流再次执行 BootROM，字节数增至 30。字节级断言确认两次都是 `BOOT UART 64K` 横幅；曲线只画累计字节数，不把两次打印误当成软件应用已运行。
+
+复现主路径时，在项目根目录的 PowerShell 中按需要运行以下命令。`-Waves`/`-Trace` 才会录制波形；**不带 `-Adapter`，只接 RTL 仿真，不会操作实板**：
+
+```powershell
+.\script\run_flash_sim.ps1 -Waves
+.\script\run_flash_jtag_sim.ps1 -Waves
+.\script\run_stage3_sim.ps1 -Test memory -Waves
+.\script\run_stage3_sim.ps1 -Test smoke -Waves
+.\script\run_rtos_sim.ps1 -Test interrupts -Waves
+.\script\run_rtos_sim.ps1 -Test system -Trace
+.\script\run_debug_sim.ps1 -Test uart -Waves
+.\script\run_debug_sim.ps1 -CompileOnly -Test remote
+.\script\run_debug_validation.ps1 -Test core -Waves
+python -m pip install -r .\script\waves\requirements.txt
+python .\script\waves\render.py
+.\script\waves\export_wlf.ps1
+```
+
+命令耗时差别很大，完整 FreeRTOS SoC 和独立 CPU 调试仿真尤其较慢；已录好的 VCD/事件文件仍在本地 `build/` 时，只需重跑最后三条绘图与转换命令。上述输出在 `build/`，不随 Git 提交。完整 RTOS 的 `-Trace` 保留关键电平和计数变化，**不是** CPU 所有内部寄存器的全量 VCD。
+
+需要用 ModelSim 查看时，运行 `script/waves/export_wlf.ps1`，它把九份录制转换到 `build/waves/wlf/`。本机 ModelSim 10.1c 的 `vcd2wlf` 转换成功，`wlf2vcd` 反向核对的关键电平及结束时间一致，`vsim -c -view <WLF>` 也已成功打开数据集；直接用 `vsim` 执行 testbench 仍卡在启动阶段，未证明 ModelSim 自身重跑 RTL 成功。WLF 是**本机已生成、可用只读模式打开的仿真波形**，不等于实板采集或 GUI 人工检查每一条信号。
 
 ## 13. 看代码时按什么顺序，改功能时该改哪里
 

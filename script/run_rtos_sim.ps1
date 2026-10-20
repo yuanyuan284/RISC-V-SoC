@@ -1,5 +1,5 @@
 param([ValidateSet('system','interrupts')][string]$Test = 'system',
-      [switch]$CompileOnly, [switch]$Waves)
+      [switch]$CompileOnly, [switch]$Waves, [switch]$Trace)
 . (Join-Path $PSScriptRoot 'common.ps1')
 $build = Join-Path $root 'build/rtos'
 New-Item -ItemType Directory -Path $build -Force | Out-Null
@@ -39,6 +39,7 @@ try {
     if ($CompileOnly) { return }
     $options = @()
     if ($Waves) { $options += '+WAVE' }
+    if ($Trace) { $options += '+TRACE' }
     & $Vvp 'rtos.vvp' @options | Tee-Object -FilePath 'simulation.log'
     if ($LASTEXITCODE) { throw 'RTOS simulation failed' }
 } finally { Pop-Location }

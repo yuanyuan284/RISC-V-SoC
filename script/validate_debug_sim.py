@@ -136,8 +136,11 @@ def run_test(args, test, output=BUILD):
         (output / 'ram-readback.bin').unlink(missing_ok=True)
     try:
         if not args.adapter:
-            bridge = LoggedProcess([sys.executable, str(ROOT / 'script/debug_remote_sim.py'),
-                                    '--vvp', args.vvp], output / f'{test}_sim.log',
+            bridge_command = [sys.executable, str(ROOT / 'script/debug_remote_sim.py'),
+                              '--vvp', args.vvp]
+            if args.wave:
+                bridge_command.append('--wave')
+            bridge = LoggedProcess(bridge_command, output / f'{test}_sim.log',
                                    'JTAG simulator listening')
             bridge.wait_ready()
         command = openocd_command(args, test, output)
@@ -188,11 +191,15 @@ def main():
     parser.add_argument('--confirm-ram-overwrite', action='store_true',
                         help='Acknowledge board CPU reset/halt and destructive RAM tests')
     parser.add_argument('--plan-only', action='store_true', help='Print commands; never start tools')
+    parser.add_argument('--wave', action='store_true',
+                        help='Capture selected RTL signals to debug_remote.vcd in simulation mode')
     args = parser.parse_args()
     if args.timeout <= 0:
         parser.error('--timeout must be positive')
     if args.adapter and not args.confirm_ram_overwrite and not args.plan_only:
         parser.error('Hardware tests overwrite RAM and reset/halt the CPU; add --confirm-ram-overwrite')
+    if args.adapter and args.wave:
+        parser.error('--wave captures RTL simulation only; omit --adapter')
     tests = ('core', 'gdb', 'download') if args.test == 'all' else (args.test,)
     output = BUILD if not args.adapter else BUILD / 'hardware' / datetime.now().strftime('%Y%m%d-%H%M%S-%f')
     if args.plan_only:

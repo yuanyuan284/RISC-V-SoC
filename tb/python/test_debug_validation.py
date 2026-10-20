@@ -89,6 +89,18 @@ class DebugValidationTests(unittest.TestCase):
                 hashes.assert_not_called()
                 popen.assert_not_called()
 
+    def test_wave_capture_rejects_hardware_before_starting_processes(self):
+        with patch('sys.argv', ['validate_debug_sim.py', '--adapter', 'jlink',
+                                 '--confirm-ram-overwrite', '--wave']), \
+                patch.object(validation.subprocess, 'Popen') as popen, \
+                patch.object(validation, 'input_hashes') as hashes, \
+                redirect_stderr(io.StringIO()):
+            with self.assertRaises(SystemExit) as result:
+                validation.main()
+        self.assertEqual(result.exception.code, 2)
+        hashes.assert_not_called()
+        popen.assert_not_called()
+
     def test_plan_only_starts_nothing_and_is_not_passed_evidence(self):
         for adapter in validation.ADAPTER_CONFIGS:
             output = io.StringIO()
