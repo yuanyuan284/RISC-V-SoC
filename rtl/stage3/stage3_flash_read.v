@@ -4,6 +4,7 @@ module stage3_flash_read(
     input wire clk, reset, cycle, strobe,
     input wire [16:0] address,
     output reg [31:0] read_data = 0,
+    output reg [31:0] read_count = 0,
     output reg ack = 0,
     output reg spi_cs_n = 1,
     output reg spi_sck = 0,
@@ -26,10 +27,12 @@ module stage3_flash_read(
             remaining <= 0;
             tx_shift <= 0;
             rx_shift <= 0;
+            read_count <= 0;
         end else begin
             ack <= 0;
             case (state)
                 IDLE: if (cycle && strobe && !ack) begin
+                    read_count <= read_count + 1'b1;
                     // 19-bit byte address, inside the 512 KiB device.
                     tx_shift <= {8'h03, 5'b0, address, 2'b00};
                     spi_mosi <= 1'b0;

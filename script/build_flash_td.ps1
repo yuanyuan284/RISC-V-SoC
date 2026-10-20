@@ -28,5 +28,9 @@ try {
         $timing -notmatch 'Clock = pll/pll_inst.clkc\[1\], period 40ns') {
         throw 'Expected JTAG and CPU clock constraints missing'
     }
+    $bitLength = (Get-Item 'stage3_flash.unverified_bit').Length
+    if ($bitLength -gt 0x50000) {
+        throw "Flash bitstream file ($bitLength bytes) exceeds the 320 KiB configuration reserve"
+    }
     Copy-Item 'stage3_flash.unverified_bit' 'stage3_flash.bit' -Force
 } finally { Pop-Location }

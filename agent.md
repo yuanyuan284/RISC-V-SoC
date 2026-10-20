@@ -1,6 +1,6 @@
 # 项目进度与接手说明
 
-最后整理：2026-10-19；UART-only 实板验收日期：2026-10-13，FreeRTOS 实板验收日期：2026-10-15，独立 CPU JTAG 完整实板验收日期：2026-10-18。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。
+最后整理：2026-10-21；Flash 上电验证日期：2026-10-20，UART-only 实板验收日期：2026-10-13，FreeRTOS 实板验收日期：2026-10-15，独立 CPU JTAG 完整实板验收日期：2026-10-18。目标板卡为安路 EF2L45LG144B，配置下载器为 AL-Link Mini；串口测试使用 COM3、115200 8N1。以下记录的是已完成的测试，不代表板卡此刻仍连接、COM3 此刻仍空闲。
 
 ## 仓库与目录
 
@@ -9,6 +9,52 @@
 全部构建输出和历史日志在本地 `build/`，由 `.gitignore` 排除，不随源码提交；旧产物不会因为这次整理而被删除。TD 工程和 UART 适配副本由 `script/prepare_td_project.py` 从源码重新生成，不依赖历史 TD run 文件。根 `README.md` 是当前入口，含架构图、依赖、构建、仿真及板测命令。
 
 ## 当前结论
+
+### 2026-10-20：位流和 XIP 应用已持久烧写，开发板断电重上电后 XIP 运行已验证
+
+经用户分别授权，TD `download -mode program_spi` 将 SHA256 `6c1d96051f40faab66d96c4c21f247c00f436be7add666c9825d20bb6a25c1a9` 的 Flash 变体位流写入 EF2 片内 Flash。写后在普通调试位流运行时，TD 512 KiB 读回 SHA256 为 `72f24b2f0227e5854d033afefb711f431169674a0a95788997b7c169b1d5b20a`，非 `FF` 字节止于 `0x3ed0e`，`0x50000..0x7ffff` 保持全 `FF`。TD `download -mode program_spibin -bin hello.xip.bin -start_addr 0x50000` 仅报告擦除第 80 个 4 KiB 扇区；再次配置普通调试位流并整片读回 SHA256 `f4747274c3ec9773d4e3ce7d60c5179357d95cb50cf56c9382c32a9a2ede925c`，比较器证实除物理 `0x50000..0x500bf` 的 192 字节镜像外其余字节全部不变。TD 在 `persist_bit=0` Flash 位流运行时可能误读全 `FF`，不能用该状态的原生读回作为证据。
+
+随后**临时**将 Flash 位流配置到 FPGA SRAM，COM3 实板输出 `BOOT FLASH`、`HELLO,YUAN!`。OpenOCD 识别 CPU TAP `0x10002fff`；JTAG 读取 `0x80000000` 的应用循环计数在增长，`0x80000004` 与 `0x40003000` 的 SPI 事务计数一致。调试恢复后 100 ms 与 2 s 两段运行各只新增 16 次 SPI 读，增量不随时长增长，符合 1-way 指令缓存重填后命中。其后用户确认**只给开发板断电至少 3 秒并重新上电，期间未用 TD 下载位流**；首次只读 JTAG 探针返回全 1，后续探针读到 CPU TAP `0x10002fff`，PC 为 `0x3005009c`（XIP 应用区），RAM 循环计数在 1 秒内从 `0x350c71a` 增至 `0x364a82a`，SPI 事务计数从 `0x7d` 增至 `0x8d`。这支持片内 Flash 上电装载与 XIP 持续运行，但不能把首次全 1 读数隐去：可能是上电尚未稳定或链路瞬时问题，原因未定位。第二次 COM3 监听窗口未收到字符，用户回复到达时监听已结束，故没有同步捕获启动横幅；AL-Link、IoTelic 和 COM3 线在供电重插期间仍连接，完全脱离调试线的独立上电尚未测试。主机测试 58 项通过。
+
+以下是按时间保留的早期排查记录；其中“尚未烧写”等文字仅描述当时状态，不覆盖上面的最新结论。
+
+### 2026-10-20：早期 TD 全 FF 误读（后已排除）
+
+使用本机 TD 5.6.5 的只读命令 `read_flash -output ... -start_addr 0x0 -length 524288 -cable 0`，AL-Link 识别 EF2L45B 并导出 `build/flash/backups/td_flash_20261020.bin`，长度 524,288 字节、SHA256 `043e238a765f7cfbc62596a50e53c8ffb6b188a99357b0ebede251725d67589f`，全为 `FF`。与此前两份相同的 CPU JTAG 全片文件比较，恰有 5 字节不同：物理偏移 `0x1..0x4`、`0x8`。TD 单独读取首 32 字节也全 `FF`，故差异可重复观察。CPU JTAG 随后的短读出现 TAP `all ones`/IR capture 错误；此前全片读也曾卡住。**两条读取路径未一致，JTAG 链路或 SPI 桥首读仍需排查，不可把 CPU JTAG 文件当成准确的物理 Flash 镜像。**候选 MCU 用户区在两条路径均读为 `FF`，但烧写/擦除范围和上电配置行为仍未实测。此轮仅做 SRAM 配置和 Flash 只读导出，未写 Flash。
+
+### 2026-10-20：第二份完整读回与第一份逐字节一致
+
+重新运行 TD 的 SRAM 配置后，CPU TAP 在 100 kHz 下连续三次读到 `0x10002fff`。随后第二份成功的全片只读导出 `build/flash/backups/ef2_internal_flash_20261020-142926_8b4aba15.bin` 与 14:03 的第一份同为 524,288 字节，**逐字节相同**，SHA256 均为 `3a60a97c00ade9b34a6834f52b016476252d5ea5bdf2940ef7c8e5c3cede00cf`。当前读数仅首 4 KiB 扇区有 5 个非 `FF` 字节，候选 `0x50000` 扇区及整个 MCU 用户区均为 `FF`；`hello.xip`（192 字节）离线头/CRC/入口地址检查通过。两份备份都走相同 CPU JTAG/SPI 桥路径，未用 TD 原生 `FLASH READ` 独立核验，亦未确认 TD 的烧写/擦除范围。**尚未写 Flash、验证 XIP 取指/1-way 缓存或断电自启**；不得从全 `FF` 推导可安全烧写。2026-10-20 主机测试 56 项通过。
+
+### 2026-10-20：AL-Link 恢复，但 Flash 读回暂未交叉验证
+
+Windows 再次显示 AL-Link Mini 与 IoTelic JTAG 均为 `OK`；TD 5.6.5 将 SHA256 `6c1d96051f40faab66d96c4c21f247c00f436be7add666c9825d20bb6a25c1a9` 的 Flash 版位流成功下载到**易失性 FPGA SRAM**（未写 Flash），CPU TAP 读到 `0x10002fff`。OpenOCD 从 `0x30050000` 取 32 字节均为 `FF`，从配置区 `0x30000000` 取 32 字节则含 5 个非 `FF` 字节。首次完整 512 KiB 只读导出为 `build/flash/backups/ef2_internal_flash_20261020-140301_c1260ea0.bin`，长度正确，SHA256 `3a60a97c00ade9b34a6834f52b016476252d5ea5bdf2940ef7c8e5c3cede00cf`；仅首扇区出现 5 个非 `FF` 字节。第二次独立导出在 8 分钟后仍为 0 字节且 OpenOCD 几乎无进展，已中断；随后 TAP 探针出现 IDCODE 错码、IR capture 错误和 OpenOCD 断言退出。因此首份文件**尚未通过重复读回验证，不足以判定板上 Flash 布局或允许烧写**。未擦除或写入 Flash。后续先恢复稳定 JTAG，再重复全片读回并逐字节比较。备份脚本增加超时与 `.partial` 临时文件门禁，避免卡住或半成品被当作有效备份。
+
+### 2026-10-20：只读备份尝试与 AL-Link USB 故障
+
+用户表示现在可以连接开发板并同意继续**只读**备份，尚待确认板卡已经实际接好并供电。当前 Windows 能枚举 AL-Link 与独立 IoTelic FT2232H，但没有 COM3；在未重新配置 FPGA SRAM 时，CPU TAP 只读扫描返回 `all ones`、IR capture `0x1f`，**没有读到**预期 `0x10002fff`。OpenOCD 对该失败错误地仍以进程退出码 0 结束，因此不得以退出码判定成功，也没有进行全片读回或 Flash 写入。`backup_flash_readonly.ps1` 现保存 OpenOCD 日志并要求目标 TAP/CPU 检查成功且无 `Error:`，另外继续检查导出文件存在及长度 512 KiB；`-PlanOnly` 已通过且未创建备份。下一步仅在用户确认板卡已接好并供电后，先下载 Flash 版位流到**易失性 FPGA SRAM**，重新扫描 CPU TAP，再执行整片只读备份。当前不存在有效实板 Flash 备份。
+
+用户随后确认板卡已接好并供电；尝试用 TD 5.6.5 将 SHA256 `6c1d96051f40faab66d96c4c21f247c00f436be7add666c9825d20bb6a25c1a9` 的 Flash 版位流下载到**FPGA SRAM**，TD 返回 `PRG-9505 USB device open error` 和 `PRG-9525 Chip validation failed`，退出码 1，下载**未成功**。此后 AL-Link Mini 从当前 USB 设备列表消失，仅保留为非在线历史设备；IoTelic JTAG-USB 仍在线。Windows 另显示 `未知 USB 设备(端口重置失败)`、`CM_PROB_FAILED_POST_START`，疑似下载器 USB 数据链路枚举失败，不能断定是驱动或 FPGA/Flash 逻辑故障。用户已尝试换线/USB 口；正在通过只拔 AL-Link USB、观察未知设备是否消失来确认对应关系。此轮未读取或写入板上 Flash，没有生成有效备份；在 AL-Link 恢复在线且 SRAM 配置成功前，不运行全片备份。
+
+### 2026-10-20：512 KiB Flash 单启动分区已定为软件约定（离线）
+
+不考虑 Multi Boot：物理 `0x00000..0x4FFFF` 共 320 KiB 预留给 FPGA 配置，`0x50000..0x7FFFF` 共 192 KiB 作为 MCU 用户区。现有 `XIP1` 演示槽为 `0x50000..0x5FFFF`（64 KiB），`0x60000..0x7FFFF`（128 KiB）暂未分配。CPU 只读映射分别是 `0x30000000..0x3004FFFF` 和 `0x30050000..0x3007FFFF`；当前桥可读全片但完全不能写。`stage3_flash.bit` 实测 259,359 字节，约 253.3 KiB，低于 320 KiB 文件尺寸门禁；这**不能证明** TD 实际写入范围或板上空闲情况。构建脚本加入该尺寸上限，只读备份分析器分别统计两区占用；探针补充配置区/用户区/未分配区边界读点并有只读命令测试。Flash SPI 桥仿真已覆盖 `0x4FFFC`/`0x50000` 与 `0x5FFFC`/`0x60000` 两处边界；固件打包新增 ELF 入口、装载地址与 BIN 内容一致性校验。用新镜像重跑完整 Flash/CPU/CRC/缓存 RTL 仿真和 OpenOCD/JTAG 模拟 Flash 读回均通过，56 项主机测试通过。分区详见 `docs/stage3/FLASH_XIP.md`。开发板仍不方便连接，尚未做完整读回、真实烧写及断电重启验证；不可据此宣称 Flash 持久化完成。
+
+### 2026-10-20：OpenOCD 经 CPU JTAG 读取仿真 Flash 已通过
+
+新增 `tb/stage3/tb_flash_remote.v`、`script/run_flash_jtag_sim.ps1` 和 `validate_flash_jtag_sim.py`，复用现有 remote-bitbang 桥但仅连接 RTL 仿真。实际 xPack OpenOCD 识别 TAP `0x10002fff`、单个 RV32 hart，通过 CPU Program Buffer/总线从模拟 `0x30050000` 导出 32 字节，导出文件与 `hello.xip` 前 32 字节逐字节一致。原始日志为本地 `build/flash/flash_jtag_openocd.log`、`flash_jtag_bridge.log`；退出码 0。原独立 JTAG `run_debug_validation.ps1 -Test core` 随后也完整仿真通过 RAM 边界、单步、复位和硬件断点，确认共享桥的默认路径未回归。它比纯 Verilog testbench 更贴近以后只读备份的 JTAG 路径，但仍不证明 512 KiB 全片读回速度、电气连接或真实 Flash 内容。尚未接板或写 Flash。
+
+### 2026-10-20：Flash 写前/写后核对门禁（离线）
+
+在现有 `inspect_flash_dump.py` 中增加 XIP 头/长度/入口/CRC32 检查、候选 4 KiB 擦除扇区占用检查，以及写前/写后完整 512 KiB 文件逐字节对比；任何非目标字节变化都会报出首个物理地址。该工具不执行写入，扇区全 `FF` 仍不代表布局可安全擦除。主机测试增加到 51 项并全部通过。厂商资料只确认 TD `PROGRAM SPIBIN` 可指定起始地址，未确认本机版本的擦除范围；安路 FAQ 说明 `persist_bit=0` 用户逻辑访问 Flash 时不支持背景 `bg` 烧写模式。实板顺序应为原始全片备份、确认布局、写/验位流、再备份写应用前全片、校验镜像、写应用、全片读回比较、掉电上电与缓存实测。开发板仍不方便连接，因此所有硬件写入和读回均未执行，目标保持未完成。
+
+### 2026-10-20：Flash 备份准备（离线）
+
+用户表示开发板暂时不方便连接，本轮不运行 TD 配置、OpenOCD 实板扫描或 Flash 写入。只读 PnP 枚举曾显示 AL-Link 和 IoTelic JTAG 在线、COM3 不在线，但 USB 设备枚举不等于开发板已供电或接线可用；以用户当前说明为准。
+
+新增 `script/backup_flash_readonly.ps1`：在确认 Flash 变体已配置到 FPGA SRAM 后，可通过独立 CPU JTAG 从 `0x30000000` 导出完整 512 KiB；`-PlanOnly` 不启动 OpenOCD、不创建文件。实际备份尚未运行。`script/inspect_flash_dump.py` 检查长度、SHA256、全片含非 `FF` 扇区范围及候选区各 4 KiB 扇区的非 `FF` 数量；若板上原有 Golden 位流从 `0x41000` 向后延伸，仍可能覆盖 `0x50000` 候选区，不能据“全 FF”自行烧录。47 项主机测试通过（新增 4 项分析器测试），备份脚本 PlanOnly 退出码 0。
+
+为使 1-way 指令缓存可实板观测，Flash 变体增加只读 MMIO `0x40003000` SPI 事务计数器，HELLO XIP 程序在 `0x80000000` RAM 持续增加循环次数、在 `0x80000004` 记录读取计数。完整 RTL 仿真证明循环次数增长、SPI 事务数不变且 MMIO 与 SPI 模型一致；CRC 损坏和无效头回退仍通过。新镜像为 192B（应用 `.text` 174B、`.bss` 8B）。重新完成 TD 位流和时序，0 setup/0 hold，3665/4480 LUT、10/12 BRAM。根据厂商 TN413，Dual Boot 布局的 `0x40000` 是 Golden 跳转地址区、`0x41000` 是 Golden 位流起点；因此把原型应用从 `0x40000` 移到厂商 Cache 示例使用的候选 `0x50000`。新 ELF 入口为 `0x30050010`，完整 RTL 仿真、47 项主机测试和 TD 时序重新通过。**当前** `build/flash/stage3_flash.bit` SHA256：`6c1d96051f40faab66d96c4c21f247c00f436be7add666c9825d20bb6a25c1a9`。2026-10-19 的哈希是旧位流，仅为历史记录。`0x50000` 若存在 Golden 镜像仍可能冲突，绝不可未经实板读回就烧写。Flash 硬件读回、写入、缓存实测和上电自启仍未完成。下一步需板卡可连接时先配置 SRAM、执行只读探测与完整备份，确认布局后再确定实际应用槽位和烧写方式。
 
 ### 2026-10-19：Flash + 1-way cache 开发中
 

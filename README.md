@@ -8,9 +8,11 @@
 
 **独立 RISC-V JTAG 已于 2026-10-18 完整实板通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性；报告为 `mode=hardware/full_suite_passed=true`。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 仅配置 FPGA SRAM，不写 Flash。真实 RTL 仿真与 TD 25 MHz 时序此前也已通过。UART-only、独立 JTAG 和 RTOS 仍使用各自 CPU/位流，RTOS 位流不含独立 JTAG，不宣称已合并。证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
 
-**Flash 上电启动状态（2026-10-19）：离线原型通过，实板尚未验证。** EF2L45LG144B 支持将配置位流写入片内 Flash，并在相应启动模式下上电自动加载；目前本项目没有执行 Flash 烧写、断电重启或自动加载验收。现有 UART/RTOS/JTAG 位流仍只通过 AL-Link 配置到易失性 SRAM，应用也在易失性 RAM；固化其中任一旧位流并不会让 `HELLO,YUAN!` 上电自动运行。
+**Flash 上电启动状态（2026-10-20）：位流与 XIP 应用已写入片内 Flash；用户确认开发板断电重上电且未用 TD 下载位流后，CPU JTAG 证实 XIP 应用仍在运行。** 原有 UART/RTOS/JTAG 变体仍是独立工程，不应把它们的 SRAM 下载结果当作本变体的持久启动证据。
 
-新增独立只读 Flash/XIP 变体：将片内 512 KiB Flash 映射到 `0x30000000`，复用 CPU 已有的 4 KiB、1-way 指令缓存。BootROM 在仿真中校验 Flash 镜像并运行 `HELLO,YUAN!`，无效镜像回退 UART；SPI 读桥、完整 CPU 仿真和 TD 位流生成均通过。**尚未配置新位流到实板，也未读回或写入板上 Flash；不能据此声称已实现上电即跑。**Flash 内可能已有 Golden/Multi Boot 镜像，写入地址须先读回确认。进度与复现步骤见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
+独立 Flash/XIP 变体将片内 512 KiB Flash 映射到 `0x30000000`，复用 CPU 的 4 KiB、1-way 指令缓存。TD 的 `program_spi` 将 259,359 字节位流写入配置区，`program_spibin` 将 192 字节应用写入物理 `0x50000`；写前/写后整片读回确认应用写入只改变这 192 字节。临时将该位流配置到 FPGA SRAM 后，实板 COM3 输出 `BOOT FLASH` 和 `HELLO,YUAN!`；JTAG 观察到缓存重新填充后命中。随后用户确认只给开发板断电重上电、未用 TD 下载位流；OpenOCD 读到 CPU TAP `0x10002fff`，PC 为 `0x3005009c`，应用循环计数在 1 秒内从 `0x350c71a` 增至 `0x364a82a`。这支持片内 Flash 上电装载与 XIP 运行；此次调试线仍连接，启动瞬间的 COM3 字符未捕获，完全脱离调试线的独立上电尚未测试。详见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
+
+Flash 单启动分区为：物理 `0x00000..0x4FFFF` 的 **320 KiB 配置预留区**，物理 `0x50000..0x7FFFF` 的 **192 KiB MCU 用户区**。本次位流实际占用至 `0x3ED0E`，应用位于 `0x50000..0x500BF`；后 128 KiB 暂未分配。不考虑 Multi Boot；MCU 目前只读访问 Flash，不能通过现有桥写入。详见 [Flash 分区](docs/stage3/FLASH_XIP.md#单启动分区不考虑-multi-boot)。
 
 ## SoC 架构
 
@@ -101,10 +103,13 @@ Flash/XIP 离线原型的复现顺序（不接触板上 Flash）：
 ```powershell
 .\script\build_flash_firmware.ps1
 .\script\run_flash_sim.ps1
+.\script\run_flash_jtag_sim.ps1
 .\script\build_flash_td.ps1
 ```
 
-生成物在本地 `build/flash/`，不提交到 GitHub。TD 位流仅说明设计可生成且时序通过；`script/configure_flash_fpga.tcl` 也只配置易失性 SRAM，并不烧写 Flash。应用槽位 `0x40000` 是待实板读回确认的候选位置，**不要直接向此地址烧写**。详细边界见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
+生成物在本地 `build/flash/`，不提交到 GitHub。`script/configure_flash_fpga.tcl` 仍只配置易失性 SRAM；持久烧写已通过 TD 的 `program_spi`（位流）与 `program_spibin`（应用）完成，应用槽始于物理 `0x50000`。开发板断电重上电后、未用 TD 下载位流的 XIP 运行已由 CPU JTAG 验证；完全脱离调试线的上电仍待测试，详见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
+
+烧写前的两份 CPU JTAG 与一份 TD 全片备份逐字节一致，SHA256 `3a60a97c00ade9b34a6834f52b016476252d5ea5bdf2940ef7c8e5c3cede00cf`。位流写后 TD 备份 SHA256 为 `72f24b2f0227e5854d033afefb711f431169674a0a95788997b7c169b1d5b20a`，应用写后为 `f4747274c3ec9773d4e3ce7d60c5179357d95cb50cf56c9382c32a9a2ede925c`；比较器确认第二次只改变目标 192 字节。TD 在 `persist_bit=0` 位流运行时会读到误导性的全 `FF`，因此每次原生读回前均临时配置普通调试位流到 SRAM。备份在本地 `build/flash/backups/`，不提交到 GitHub。
 
 ## 构建与验证
 

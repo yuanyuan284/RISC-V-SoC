@@ -3,6 +3,7 @@ module tb_flash_read;
     reg clk = 0, reset = 1, cycle = 0, strobe = 0;
     reg [16:0] address = 0;
     wire [31:0] read_data;
+    wire [31:0] read_count;
     wire ack, spi_cs_n, spi_sck, spi_mosi;
     reg spi_miso = 1;
     reg [7:0] flash [0:524287];
@@ -13,6 +14,7 @@ module tb_flash_read;
     always #20 clk = ~clk;
     stage3_flash_read dut(.clk(clk), .reset(reset), .cycle(cycle),
         .strobe(strobe), .address(address), .read_data(read_data),
+        .read_count(read_count),
         .ack(ack), .spi_cs_n(spi_cs_n), .spi_sck(spi_sck),
         .spi_mosi(spi_mosi), .spi_miso(spi_miso));
 
@@ -60,14 +62,25 @@ module tb_flash_read;
         flash[2] = 8'h56; flash[3] = 8'h78;
         flash[32'h40100] = 8'hde; flash[32'h40101] = 8'had;
         flash[32'h40102] = 8'hbe; flash[32'h40103] = 8'hef;
+        for (integer i = 0; i < 4; i = i + 1) begin
+            flash[32'h4fffc + i] = 8'h10 + i;
+            flash[32'h50000 + i] = 8'h20 + i;
+            flash[32'h5fffc + i] = 8'h30 + i;
+            flash[32'h60000 + i] = 8'h40 + i;
+        end
         flash[32'h7fffc] = 8'ha1; flash[32'h7fffd] = 8'hb2;
         flash[32'h7fffe] = 8'hc3; flash[32'h7ffff] = 8'hd4;
         repeat (3) @(negedge clk);
         reset = 0;
         read_word(0, 32'h78563412);
         read_word(17'h10040, 32'hefbeadde);
+        read_word(17'h13fff, 32'h13121110);
+        read_word(17'h14000, 32'h23222120);
+        read_word(17'h17fff, 32'h33323130);
+        read_word(17'h18000, 32'h43424140);
         read_word(17'h1ffff, 32'hd4c3b2a1);
-        if (transactions !== 3) $fatal(1, "Expected three SPI reads");
+        if (transactions !== 7 || read_count !== 7)
+            $fatal(1, "Expected seven SPI reads");
         @(negedge clk);
         address = 17'h10040;
         cycle = 1;

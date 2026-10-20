@@ -3,7 +3,7 @@
 #define REG(o) (*(volatile uint32_t *)(0x40001000u + (o)))
 #define RAM_BASE 0x80000000u
 #define MAX_IMAGE (65536u - 4096u)
-#define FLASH_HEADER 0x30040000u
+#define FLASH_HEADER 0x30050000u
 #define FLASH_ENTRY (FLASH_HEADER + 16u)
 #define FLASH_MAGIC 0x31504958u
 #define FLASH_MAX_IMAGE (65536u - 16u)

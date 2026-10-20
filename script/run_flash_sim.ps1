@@ -16,6 +16,9 @@ if (!(Test-Path $cpu)) { throw 'Run build_debug_cpu.ps1 first' }
 if (!(Test-Path (Join-Path $build 'hello.xip.hex'))) {
     throw 'Run build_flash_firmware.ps1 first'
 }
+$xipImage = Join-Path $build 'hello.xip'
+if (!(Test-Path $xipImage)) { throw 'Run build_flash_firmware.ps1 first' }
+$imageBytes = (Get-Item $xipImage).Length
 & $Python (Join-Path $PSScriptRoot 'prepare_td_project.py') stage3_flash --cpu $cpu
 if ($LASTEXITCODE) { throw 'Flash source preparation failed' }
 $socImage = Join-Path $build 'tb_flash_soc.vvp'
@@ -32,6 +35,6 @@ foreach ($name in @('rx','tx','wb')) {
 if ($LASTEXITCODE) { throw 'Flash SoC compilation failed' }
 Push-Location $build
 try {
-    & $Vvp $socImage
+    & $Vvp $socImage "+image_bytes=$imageBytes"
     if ($LASTEXITCODE) { throw 'Flash SoC simulation failed' }
 } finally { Pop-Location }

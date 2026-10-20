@@ -13,8 +13,13 @@ def main():
     parser.add_argument('--vvp', default='vvp')
     parser.add_argument('--port', type=int, default=9824)
     parser.add_argument('--image', type=Path, default=ROOT / 'build/debug/remote.vvp')
+    parser.add_argument('--cwd', type=Path, default=ROOT / 'build/stage3')
+    parser.add_argument('--image-bytes', type=int)
     args = parser.parse_args()
-    proc = subprocess.Popen([args.vvp, str(args.image)], cwd=ROOT / 'build/stage3',
+    command = [args.vvp, str(args.image)]
+    if args.image_bytes is not None:
+        command.append(f'+image_bytes={args.image_bytes}')
+    proc = subprocess.Popen(command, cwd=args.cwd,
                             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                             stderr=sys.stderr, bufsize=65536)
     try:

@@ -61,17 +61,28 @@ module stage3_debug_soc #(parameter FLASH_READ = 0)(
     wire rom_select = address[31:13] == (32'h20000000 >> 13);
     wire ram_select = address[31:16] == (32'h80000000 >> 16);
     wire uart_select = address[31:12] == (32'h40001000 >> 12);
+    wire flash_count_select = FLASH_READ &&
+        address[31:12] == (32'h40003000 >> 12);
     wire flash_select = FLASH_READ && address[31:19] == (32'h30000000 >> 19);
-    wire [31:0] rom_data, ram_data, uart_data, flash_data;
+    wire [31:0] rom_data, ram_data, uart_data, flash_data, flash_read_count;
     wire rom_ack, ram_ack, uart_ack, flash_ack;
+    reg flash_count_ack = 0;
+    always @(posedge clk) begin
+        if (reset) flash_count_ack <= 0;
+        else flash_count_ack <= cycle && strobe && flash_count_select &&
+                                !flash_count_ack;
+    end
     wire fault = cycle && strobe &&
-        (!(rom_select || ram_select || uart_select || flash_select) ||
-         ((rom_select || flash_select) && write_enable));
+        (!(rom_select || ram_select || uart_select || flash_select ||
+           flash_count_select) ||
+         ((rom_select || flash_select || flash_count_select) && write_enable));
     wire ack = cycle && strobe && !fault &&
         ((rom_select && rom_ack) || (ram_select && ram_ack) ||
-         (uart_select && uart_ack) || (flash_select && flash_ack));
+         (uart_select && uart_ack) || (flash_select && flash_ack) ||
+         (flash_count_select && flash_count_ack));
     assign read_data = rom_select ? rom_data : ram_select ? ram_data :
-                       uart_select ? uart_data : flash_data;
+                       uart_select ? uart_data :
+                       flash_count_select ? flash_read_count : flash_data;
     assign ia = ack && !data_owner;
     assign da = ack && data_owner;
     assign ie = fault && !data_owner;
@@ -90,11 +101,13 @@ module stage3_debug_soc #(parameter FLASH_READ = 0)(
     generate if (FLASH_READ) begin : flash_port
         stage3_flash_read flash(.clk(clk), .reset(reset),
             .cycle(cycle && flash_select && !write_enable), .strobe(strobe),
-            .address(address[18:2]), .read_data(flash_data), .ack(flash_ack),
+            .address(address[18:2]), .read_data(flash_data),
+            .read_count(flash_read_count), .ack(flash_ack),
             .spi_cs_n(flash_cs_n), .spi_sck(flash_sck),
             .spi_mosi(flash_mosi), .spi_miso(flash_miso));
     end else begin : no_flash
         assign flash_data = 0;
+        assign flash_read_count = 0;
         assign flash_ack = 0;
         assign flash_cs_n = 1;
         assign flash_sck = 0;
