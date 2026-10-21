@@ -81,6 +81,7 @@ module tb_flash_soc;
 
     initial begin
         integer image_bytes;
+        integer next_uart_offset;
         if (!$value$plusargs("image_bytes=%d", image_bytes) ||
             image_bytes < 16 || image_bytes > 65536)
             $fatal(1, "Missing or invalid XIP image length");
@@ -88,7 +89,8 @@ module tb_flash_soc;
         #1000;
         power_reset = 0;
         wave_phase = 1;
-        expect_text(0, "BOOT FLASH\015\012HELLO,YUAN!\015\012");
+        expect_text(0, "BOOT FLASH\015\012HELLO,YUAN! XIP V2\015\012");
+        next_uart_offset = count;
         wave_phase = 2;
         if (transactions < 40) $fatal(1, "Flash image was not fully read");
         wait(spi_cs_n);
@@ -113,7 +115,8 @@ module tb_flash_soc;
         board_reset = 1;
         #2000;
         board_reset = 0;
-        expect_text(25, "BOOT UART 64K\015\012");
+        expect_text(next_uart_offset, "BOOT UART 64K\015\012");
+        next_uart_offset = count;
         $display("PASS corrupted Flash image fails CRC and falls back to UART");
         wave_phase = 4;
         flash[32'h50010] = flash[32'h50010] ^ 8'hff;
@@ -121,7 +124,7 @@ module tb_flash_soc;
         board_reset = 1;
         #2000;
         board_reset = 0;
-        expect_text(40, "BOOT UART 64K\015\012");
+        expect_text(next_uart_offset, "BOOT UART 64K\015\012");
         $display("PASS invalid Flash header falls back to UART");
         $finish;
     end

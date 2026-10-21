@@ -14,6 +14,13 @@ New-Item -ItemType Directory -Path $readCwd -Force | Out-Null
 Push-Location $readCwd
 try { & $Vvp $image @readOptions } finally { Pop-Location }
 if ($LASTEXITCODE) { throw 'Flash RTL simulation failed' }
+$writerImage = Join-Path $build 'tb_flash_writer.vvp'
+& $Iverilog -g2012 -s tb_flash_writer -o $writerImage `
+    (Join-Path $root 'rtl/stage3/stage3_flash_writer.v') `
+    (Join-Path $root 'tb/stage3/tb_flash_writer.v')
+if ($LASTEXITCODE) { throw 'Flash writer RTL compilation failed' }
+& $Vvp $writerImage
+if ($LASTEXITCODE) { throw 'Flash writer RTL simulation failed' }
 & $Python (Join-Path $PSScriptRoot 'prepare_stage3_models.py')
 if ($LASTEXITCODE) { throw 'BRAM model generation failed' }
 $stage3 = Join-Path $root 'build/stage3'
@@ -30,7 +37,8 @@ if ($LASTEXITCODE) { throw 'Flash source preparation failed' }
 $socImage = Join-Path $build 'tb_flash_soc.vvp'
 $sources = @((Join-Path $root 'tb/stage3/tb_flash_soc.v'),
     (Join-Path $root 'rtl/stage3/stage3_debug_top.v'),
-    (Join-Path $root 'rtl/stage3/stage3_flash_read.v'), $cpu,
+    (Join-Path $root 'rtl/stage3/stage3_flash_read.v'),
+    (Join-Path $root 'rtl/stage3/stage3_flash_writer.v'), $cpu,
     (Join-Path $stage3 'stage3_memory_sim.v'),
     (Join-Path $stage3 'bram_functional_models.v'),
     (Join-Path $root 'rtl/common/fifo.v'))
@@ -45,4 +53,14 @@ try {
     if ($Waves) { $socOptions += '+WAVE' }
     & $Vvp $socImage @socOptions
     if ($LASTEXITCODE) { throw 'Flash SoC simulation failed' }
+} finally { Pop-Location }
+$mcuImage = Join-Path $build 'tb_flash_mcu_writer.vvp'
+$mcuSources = @($sources)
+$mcuSources[0] = Join-Path $root 'tb/stage3/tb_flash_mcu_writer.v'
+& $Iverilog -g2012 -I $build -s tb_flash_mcu_writer -o $mcuImage @mcuSources
+if ($LASTEXITCODE) { throw 'Flash MCU writer SoC compilation failed' }
+Push-Location $build
+try {
+    & $Vvp $mcuImage
+    if ($LASTEXITCODE) { throw 'Flash MCU writer SoC simulation failed' }
 } finally { Pop-Location }

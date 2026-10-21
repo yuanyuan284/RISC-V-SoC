@@ -6,7 +6,7 @@
 volatile uint32_t stats[2];
 
 int main(void) {
-    const char *text = "HELLO,YUAN!\r\n";
+    const char *text = "HELLO,YUAN! XIP V2\r\n";
     REG(0) = 216u;
     while (*text) {
         while (REG(0x40) & 2u) {}

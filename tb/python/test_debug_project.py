@@ -18,6 +18,7 @@ class DebugProjectTests(unittest.TestCase):
             'rtl/common/fifo.v', 'rtl/ip/sys_pll.v',
             'rtl/stage3/stage3_top.v', 'rtl/stage3/stage3_debug_top.v',
             'rtl/stage3/stage3_flash_top.v', 'rtl/stage3/stage3_flash_read.v',
+            'rtl/stage3/stage3_flash_writer.v',
             'rtl/stage3/stage3_memory.v',
             'rtl/stage3/stage3_rtos_top.v', 'rtl/stage3/rtos_clint.v',
             'rtl/stage3/rtos_plic.v', 'rtl/stage3/rtos_event.v',
@@ -80,6 +81,7 @@ class DebugProjectTests(unittest.TestCase):
         sources = [Path(item.attrib['Path']) for item in
                    project.findall('Source_Files/Verilog/File')]
         self.assertIn(self.root / 'rtl/stage3/stage3_flash_read.v', sources)
+        self.assertIn(self.root / 'rtl/stage3/stage3_flash_writer.v', sources)
         self.assertIn(self.root / 'rtl/stage3/stage3_debug_top.v', sources)
         self.assertIn(output / 'VexRiscvDebug_hw.v', sources)
         self.assertEqual(self.cpu.read_bytes(), original_cpu)

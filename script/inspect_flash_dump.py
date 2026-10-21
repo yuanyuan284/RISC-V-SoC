@@ -52,9 +52,7 @@ def compare_backups(reference: bytes, other: bytes) -> None:
         raise ValueError(f'Backup differs at physical 0x{mismatch:05x}')
 
 
-def check_xip_image(before: bytes, image: bytes) -> dict:
-    if len(before) != FLASH_SIZE:
-        raise ValueError(f'Expected {FLASH_SIZE} backup bytes, got {len(before)}')
+def validate_xip_image(image: bytes) -> dict:
     if len(image) < 20:
         raise ValueError('XIP image is too short')
     magic, length, entry, crc = struct.unpack_from('<4sIII', image)
@@ -66,6 +64,14 @@ def check_xip_image(before: bytes, image: bytes) -> dict:
     offset = entry - FLASH_BASE - 16
     if offset != PROVISIONAL_START or offset + len(image) > PROVISIONAL_END:
         raise ValueError('XIP entry does not match the current BootROM slot')
+    return {'offset': offset, 'sha256': hashlib.sha256(image).hexdigest()}
+
+
+def check_xip_image(before: bytes, image: bytes) -> dict:
+    if len(before) != FLASH_SIZE:
+        raise ValueError(f'Expected {FLASH_SIZE} backup bytes, got {len(before)}')
+    image_info = validate_xip_image(image)
+    offset = image_info['offset']
     first_sector = offset // SECTOR_SIZE
     last_sector = (offset + len(image) - 1) // SECTOR_SIZE
     sector_start = first_sector * SECTOR_SIZE
@@ -73,7 +79,7 @@ def check_xip_image(before: bytes, image: bytes) -> dict:
     if any(byte != 0xff for byte in before[sector_start:sector_end]):
         raise ValueError('The target erase sector already contains non-FF bytes')
     return {'offset': offset, 'sector_start': sector_start,
-            'sector_end': sector_end, 'sha256': hashlib.sha256(image).hexdigest()}
+            'sector_end': sector_end, 'sha256': image_info['sha256']}
 
 
 def verify_xip_readback(before: bytes, after: bytes, image: bytes) -> dict:

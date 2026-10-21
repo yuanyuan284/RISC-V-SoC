@@ -122,7 +122,8 @@ def main():
         sources = [ROOT / f'rtl/stage3/{top_name}.v', cpu_path, memory_path]
         if flash:
             sources += [ROOT / 'rtl/stage3/stage3_debug_top.v',
-                        ROOT / 'rtl/stage3/stage3_flash_read.v']
+                        ROOT / 'rtl/stage3/stage3_flash_read.v',
+                        ROOT / 'rtl/stage3/stage3_flash_writer.v']
         if rtos:
             sources += [ROOT / f'rtl/stage3/rtos_{name}.v' for name in ('clint', 'plic', 'event')]
     sources += [ROOT / 'rtl/common/fifo.v', *uart, ROOT / 'rtl/ip/sys_pll.v']

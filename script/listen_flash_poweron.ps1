@@ -1,6 +1,7 @@
 param(
     [string]$Port = 'COM3',
     [ValidateRange(1, 1800)][int]$TimeoutSeconds = 300,
+    [string]$ExpectedAppLine = 'HELLO,YUAN!',
     [switch]$PlanOnly
 )
 
@@ -9,6 +10,7 @@ $outputDir = Join-Path $root 'build/flash'
 $logPath = Join-Path $outputDir ('poweron_uart_{0}.log' -f (Get-Date -Format 'yyyyMMdd-HHmmss'))
 Write-Host "Port: $Port, 115200 8N1"
 Write-Host "Timeout: $TimeoutSeconds seconds"
+Write-Host "Expected application line: $ExpectedAppLine"
 Write-Host "Log: $logPath"
 Write-Host 'This listener does not configure the FPGA or write Flash.'
 if ($PlanOnly) {
@@ -31,7 +33,8 @@ try {
             [void]$output.Append($chunk)
             [Console]::Write($chunk)
             $text = $output.ToString()
-            if ($text.Contains('BOOT FLASH') -and $text.Contains('HELLO,YUAN!')) {
+            if ($text.Contains("BOOT FLASH`r`n") -and
+                $text.Contains("$ExpectedAppLine`r`n")) {
                 break
             }
         }
@@ -45,7 +48,8 @@ try {
 New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
 $text = $output.ToString()
 [System.IO.File]::WriteAllText($logPath, $text, [System.Text.Encoding]::UTF8)
-if (-not ($text.Contains('BOOT FLASH') -and $text.Contains('HELLO,YUAN!'))) {
+if (-not ($text.Contains("BOOT FLASH`r`n") -and
+          $text.Contains("$ExpectedAppLine`r`n"))) {
     throw "Startup UART markers not observed before timeout; inspect $logPath"
 }
 Write-Host "UART_BANNERS_OBSERVED: $logPath"

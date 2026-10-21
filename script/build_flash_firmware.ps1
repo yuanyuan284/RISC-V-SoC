@@ -28,8 +28,22 @@ try {
     if ($LASTEXITCODE) { throw 'Flash application compilation failed' }
     & $objcopy -O binary 'hello.elf' 'hello.bin'
     if ($LASTEXITCODE) { throw 'Flash application export failed' }
+    & $cc '-march=rv32im' '-mabi=ilp32' '-Os' '-ffreestanding' `
+        '-Wall' '-Wextra' '-Werror' '-c' `
+        (Join-Path $source 'flash_writer.c') '-o' 'flash_writer.o'
+    if ($LASTEXITCODE) { throw 'RAM Flash writer driver compilation failed' }
+    & $cc @flags (Join-Path $root 'fw/common/app_start.S') `
+        (Join-Path $source 'ram_writer_smoke.c') `
+        (Join-Path $source 'flash_writer.c') `
+        '-T' (Join-Path $root 'fw/stage3/app.ld') `
+        '-Wl,-Map=ram_writer_smoke.map' '-o' 'ram_writer_smoke.elf'
+    if ($LASTEXITCODE) { throw 'RAM Flash writer smoke firmware compilation failed' }
+    & $objcopy -O binary 'ram_writer_smoke.elf' 'ram_writer_smoke.bin'
+    if ($LASTEXITCODE) { throw 'RAM Flash writer smoke BIN export failed' }
     & $size 'bootrom.elf' 'hello.elf'
     if ($LASTEXITCODE) { throw 'Flash firmware size inspection failed' }
     & $Python (Join-Path $PSScriptRoot 'prepare_flash_images.py')
     if ($LASTEXITCODE) { throw 'Flash image packaging failed' }
+    & $Python (Join-Path $PSScriptRoot 'prepare_ram_writer_sim.py')
+    if ($LASTEXITCODE) { throw 'RAM Flash writer simulation image preparation failed' }
 } finally { Pop-Location }

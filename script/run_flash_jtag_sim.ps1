@@ -14,7 +14,8 @@ if ($LASTEXITCODE) { throw 'BRAM model generation failed' }
 if ($LASTEXITCODE) { throw 'Flash source preparation failed' }
 $sources = @((Join-Path $root 'tb/stage3/tb_flash_remote.v'),
     (Join-Path $root 'rtl/stage3/stage3_debug_top.v'),
-    (Join-Path $root 'rtl/stage3/stage3_flash_read.v'), $cpu,
+    (Join-Path $root 'rtl/stage3/stage3_flash_read.v'),
+    (Join-Path $root 'rtl/stage3/stage3_flash_writer.v'), $cpu,
     (Join-Path $stage3 'stage3_memory_sim.v'),
     (Join-Path $stage3 'bram_functional_models.v'),
     (Join-Path $root 'rtl/common/fifo.v'))

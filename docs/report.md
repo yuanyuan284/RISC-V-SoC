@@ -1217,7 +1217,7 @@ Stage 1 用极小的简化 CPU 验证时钟、UART、ROM 初始化与板级起�
 | 资料 | 用途 |
 | --- | --- |
 | [根 README](../README.md) | 当前总览、环境路径、目录与操作入口 |
-| [agent.md](../agent.md) | 进度、历史证据、限制和接手注意事项 |
+| [AGENTS.md](../AGENTS.md) | 后续工作的方向、验证顺序和硬件安全边界 |
 | [Stage 3 UART 说明](stage3/README.md) | 地址、裸机构建、上传复现 |
 | [UART 实板验收](stage3/HARDWARE_VALIDATION.md) | 两应用、格式化输出和错误帧测试证据 |
 | [FreeRTOS 说明](stage3/FREERTOS.md) | RTOS 版本、布局、复现、资源、哈希与实板记录 |

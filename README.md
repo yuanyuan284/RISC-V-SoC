@@ -12,7 +12,15 @@
 
 独立 Flash/XIP 变体将片内 512 KiB Flash 映射到 `0x30000000`，复用 CPU 的 4 KiB、1-way 指令缓存。TD 的 `program_spi` 将 259,359 字节位流写入配置区，`program_spibin` 将 192 字节应用写入物理 `0x50000`；写前/写后整片读回确认应用写入只改变这 192 字节。临时将该位流配置到 FPGA SRAM 后，实板 COM3 输出 `BOOT FLASH` 和 `HELLO,YUAN!`；JTAG 观察到缓存重新填充后命中。随后用户确认只给开发板断电重上电、未用 TD 下载位流；OpenOCD 读到 CPU TAP `0x10002fff`，PC 为 `0x3005009c`，应用循环计数在 1 秒内从 `0x350c71a` 增至 `0x364a82a`。这支持片内 Flash 上电装载与 XIP 运行；此次调试线仍连接，启动瞬间的 COM3 字符未捕获，完全脱离调试线的独立上电尚未测试。详见 [Flash XIP](docs/stage3/FLASH_XIP.md)。
 
-Flash 单启动分区为：物理 `0x00000..0x4FFFF` 的 **320 KiB 配置预留区**，物理 `0x50000..0x7FFFF` 的 **192 KiB MCU 用户区**。本次位流实际占用至 `0x3ED0E`，应用位于 `0x50000..0x500BF`；后 128 KiB 暂未分配。不考虑 Multi Boot；MCU 目前只读访问 Flash，不能通过现有桥写入。详见 [Flash 分区](docs/stage3/FLASH_XIP.md#单启动分区不考虑-multi-boot)。
+Flash 单启动分区为：物理 `0x00000..0x4FFFF` 的 **320 KiB 配置预留区**，物理 `0x50000..0x7FFFF` 的 **192 KiB MCU 用户区**。此前实板位流实际占用至 `0x3ED0E`，应用位于 `0x50000..0x500BF`；后 128 KiB 暂未分配。不考虑 Multi Boot。新增的 SPI 写控制器挂在 `0x40004000`，MCU 可对用户区做 4 KiB 扇区擦除和单字节编程；配置区在硬件中拒绝擦写。2026-10-21 RAM 中的真实 MCU 固件在实板物理 `0x60000` 擦除并写入 `MCU!`。**2026-10-22 新版写控制器位流已通过 TD 持久烧入配置 Flash，`verify_spi` 通过；烧写前后整片双读比较表明 MCU 用户区 0 字节变化。用户随后只重上电开发板且未用 TD 下载，CPU JTAG 读到 XIP 区 PC 和增长的循环计数，支持新版配置从 Flash 自动加载并运行。调试线仍连接，完全脱离调试器的上电未测。**详见 [Flash 分区与写控制器](docs/stage3/FLASH_XIP.md#单启动分区不考虑-multi-boot)。
+
+**写入速度优化（2026-10-22，实板测试扇区通过）：** 在保留旧单字节命令的同时，新增最多 16 字节的 SPI 页编程批量事务；C 驱动与 OpenOCD 脚本通过状态位识别新硬件，旧位流自动回退单字节路径。RTL、RV32 整机仿真及 83 项主机测试通过；TD 新位流 4104/4480 LUT、10/12 BRAM，0 setup/hold 违例。新位流 SHA256 `152cadf20cb9390ee75a1a55fc4d85b414fa1d74dfba61b7a8a7f7a1e69a8f81` 已**仅配置到 FPGA SRAM**，硬件状态 bit7 为 1；在物理 `0x60010` 写同一份 192 字节测试镜像，OpenOCD 写入阶段逐字节模式 33.663 秒、16 字节批量模式 11.213 秒，约快 3.0 倍。测试扇区已恢复，写前写后两份双读 512 KiB 备份逐字节相同。配置 Flash 中仍是上一版位流（SHA256 `b2f7d1af3921d31cbd961d2c43b44aa0cd6ab3fdafe03d602c33358ed6233078`）；掉电后不会自动保留这次批量写优化，且本次未重测完整 XIP 冷启动。详见 [实测与限制](docs/stage3/FLASH_XIP.md#16-字节批量页编程实板测速)。
+
+新增的 [OpenOCD 烧录脚本](script/openocd/program-user-flash.tcl) 可通过独立 CPU JTAG 将原始二进制镜像写入 MCU 用户区，默认只读规划、逐扇区备份，显式确认后才擦写并读回校验。2026-10-21 实板先在物理 `0x60004..0x60007` 写入 `JTAG`，再经 OpenOCD 擦除 `0x60000..0x60fff`、恢复原有 `MCU!` 并移除 `JTAG`；两条路径均通过扇区读回。恢复后八次 64 KiB 分段只读覆盖整片 512 KiB，与写入前备份逐字节相同。单次连续全片 JTAG 读取曾报错或超时，不能把其 `.partial` 文件当作有效备份。该脚本不烧录 FPGA 配置位流；操作与保护边界见 [Flash XIP 说明](docs/stage3/FLASH_XIP.md#通过-openocd-的-cpu-jtag-烧录-mcu-用户区)。
+
+整片只读备份入口 [backup_flash_readonly.ps1](script/backup_flash_readonly.ps1) 现自动分成八个 64 KiB 段，每段用独立 OpenOCD 会话读两次并逐字节比较；失败可重试，但错误日志、短文件或双读不一致都不会发布正式 `.bin`。先用 `-PlanOnly` 查看计划。新工具已在实板完成 16 次读取，结果与此前整片基线完全相同；命令和限制见 [Flash XIP 说明](docs/stage3/FLASH_XIP.md)。
+
+**XIP 应用已真正更新为 V2（2026-10-22）：** 新程序输出 `HELLO,YUAN! XIP V2`，而非重复烧录旧镜像。写前双读备份整片 512 KiB，检查旧 `XIP1` 头/CRC 与目标扇区，保存完整 4 KiB 恢复文件；OpenOCD 只擦写物理 `0x50000..0x50FFF`，写后扇区读回及整片双读与计划逐字节一致（全片只有 20 字节变化）。CPU JTAG `reset run` 后 COM3 收到 `BOOT FLASH` 和完整 V2 文字。用户随后报告开发板断电重上电；只读 JTAG 看到持久旧版位流状态、V2 应用扇区哈希匹配和 XIP 循环持续运行。上电瞬间 COM3 未同步捕获，调试线仍连接。**16 字节写控制器位流没有持久烧写，重上电后已回到旧版**；单槽应用更新仍非断电原子操作。详见 [XIP 更新实测和恢复步骤](docs/stage3/FLASH_XIP.md#xip-应用-v2-更新与恢复)。
 
 ## SoC 架构
 
@@ -70,7 +78,7 @@ RISC-V-SoC/
 |-- constraints/          引脚 / 时序 / 历史 ChipWatcher 约束
 |-- docs/                 中文报告和分阶段验收记录
 |-- requirements.txt      Python 依赖
-|-- agent.md              当前进度与接手说明
+|-- AGENTS.md             后续工作方向与安全边界
 `-- build/                本地生成文件，由 .gitignore 排除
 ```
 
@@ -167,7 +175,7 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 - [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板验收
 - [实板验收与边界](docs/stage3/HARDWARE_VALIDATION.md)：两份应用、六类错误帧和恢复执行
 - [中文原理报告与答辩准备](docs/report.md)
-- [当前进度](agent.md)
+- [后续工作方向](AGENTS.md)
 - [Stage 2 历史](docs/stage2/README.md) 与 [ChipWatcher 问题](docs/stage2/CHIPWATCHER_TIMING.md)
 
 UART-only 尚未单独实测最大 60 KiB BIN、Stage 3 仅 SW2 换载或全 RAM 地址覆盖；独立 JTAG 位流已另行通过全 64 KiB 图案下载/读回，不能混为 UART 传输验收。自定义 JTAG 用户链路和 ChipWatcher 时序问题仍属历史未完成扩展；禁用入口继续保持禁用。生成日志只保留本地，文档记录已有验收结果及其限制。

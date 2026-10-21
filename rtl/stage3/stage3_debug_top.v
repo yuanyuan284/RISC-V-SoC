@@ -28,7 +28,10 @@ module stage3_debug_top(
         .flash_cs_n(), .flash_sck(), .flash_mosi(), .flash_miso(1'b1));
 endmodule
 
-module stage3_debug_soc #(parameter FLASH_READ = 0)(
+module stage3_debug_soc #(
+    parameter FLASH_READ = 0,
+    parameter [31:0] RESET_VECTOR = 32'h20000000
+)(
     input wire clk, power_reset, board_reset, rx,
     output wire tx,
     input wire jtag_tck, jtag_tms, jtag_tdi,
@@ -63,9 +66,15 @@ module stage3_debug_soc #(parameter FLASH_READ = 0)(
     wire uart_select = address[31:12] == (32'h40001000 >> 12);
     wire flash_count_select = FLASH_READ &&
         address[31:12] == (32'h40003000 >> 12);
+    wire flash_writer_select = FLASH_READ &&
+        address[31:12] == (32'h40004000 >> 12);
     wire flash_select = FLASH_READ && address[31:19] == (32'h30000000 >> 19);
     wire [31:0] rom_data, ram_data, uart_data, flash_data, flash_read_count;
-    wire rom_ack, ram_ack, uart_ack, flash_ack;
+    wire [31:0] flash_writer_data;
+    wire rom_ack, ram_ack, uart_ack, flash_ack, flash_writer_ack;
+    wire flash_writer_busy;
+    wire reader_cs_n, reader_sck, reader_mosi;
+    wire writer_cs_n, writer_sck, writer_mosi;
     reg flash_count_ack = 0;
     always @(posedge clk) begin
         if (reset) flash_count_ack <= 0;
@@ -74,15 +83,17 @@ module stage3_debug_soc #(parameter FLASH_READ = 0)(
     end
     wire fault = cycle && strobe &&
         (!(rom_select || ram_select || uart_select || flash_select ||
-           flash_count_select) ||
+           flash_count_select || flash_writer_select) ||
          ((rom_select || flash_select || flash_count_select) && write_enable));
     wire ack = cycle && strobe && !fault &&
         ((rom_select && rom_ack) || (ram_select && ram_ack) ||
          (uart_select && uart_ack) || (flash_select && flash_ack) ||
-         (flash_count_select && flash_count_ack));
+         (flash_count_select && flash_count_ack) ||
+         (flash_writer_select && flash_writer_ack));
     assign read_data = rom_select ? rom_data : ram_select ? ram_data :
                        uart_select ? uart_data :
-                       flash_count_select ? flash_read_count : flash_data;
+                       flash_count_select ? flash_read_count :
+                       flash_writer_select ? flash_writer_data : flash_data;
     assign ia = ack && !data_owner;
     assign da = ack && data_owner;
     assign ie = fault && !data_owner;
@@ -100,21 +111,36 @@ module stage3_debug_soc #(parameter FLASH_READ = 0)(
         .o_wb_dat(uart_data), .o_wb_ack(uart_ack));
     generate if (FLASH_READ) begin : flash_port
         stage3_flash_read flash(.clk(clk), .reset(reset),
-            .cycle(cycle && flash_select && !write_enable), .strobe(strobe),
+            .cycle(cycle && flash_select && !write_enable && !flash_writer_busy),
+            .strobe(strobe),
             .address(address[18:2]), .read_data(flash_data),
             .read_count(flash_read_count), .ack(flash_ack),
-            .spi_cs_n(flash_cs_n), .spi_sck(flash_sck),
-            .spi_mosi(flash_mosi), .spi_miso(flash_miso));
+            .spi_cs_n(reader_cs_n), .spi_sck(reader_sck),
+            .spi_mosi(reader_mosi), .spi_miso(flash_miso));
+        stage3_flash_writer writer(.clk(clk), .reset(power_reset),
+            .cycle(cycle && flash_writer_select), .strobe(strobe),
+            .write_enable(write_enable), .reg_address(address[3:0]),
+            .select(select), .write_data(write_data),
+            .read_data(flash_writer_data), .ack(flash_writer_ack),
+            .busy(flash_writer_busy), .spi_cs_n(writer_cs_n),
+            .spi_sck(writer_sck), .spi_mosi(writer_mosi),
+            .spi_miso(flash_miso));
+        assign flash_cs_n = flash_writer_busy ? writer_cs_n : reader_cs_n;
+        assign flash_sck = flash_writer_busy ? writer_sck : reader_sck;
+        assign flash_mosi = flash_writer_busy ? writer_mosi : reader_mosi;
     end else begin : no_flash
         assign flash_data = 0;
         assign flash_read_count = 0;
         assign flash_ack = 0;
+        assign flash_writer_data = 0;
+        assign flash_writer_ack = 0;
+        assign flash_writer_busy = 0;
         assign flash_cs_n = 1;
         assign flash_sck = 0;
         assign flash_mosi = 0;
     end endgenerate
     VexRiscvDebug cpu(.clk(clk), .reset(reset), .debugReset(power_reset),
-        .ndmreset(ndmreset), .stoptime(), .externalResetVector(32'h20000000),
+        .ndmreset(ndmreset), .stoptime(), .externalResetVector(RESET_VECTOR),
         .jtag_tck(jtag_tck), .jtag_tms(jtag_tms), .jtag_tdi(jtag_tdi), .jtag_tdo(jtag_tdo),
         .timerInterrupt(1'b0), .externalInterrupt(1'b0), .softwareInterrupt(1'b0),
         .iBusWishbone_CYC(ic), .iBusWishbone_STB(is), .iBusWishbone_WE(iw),
