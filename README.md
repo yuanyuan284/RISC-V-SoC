@@ -161,7 +161,7 @@ BootROM 横幅为 `BOOT UART 64K\r\n`。协议头是 `RV32`、小端 32 位长�
 
 ## 验证记录与资料
 
-- [带注释的仿真波形](docs/report.md#127-怎样读这次采集的仿真波形)：十六张图覆盖时钟/复位、Wishbone 译码、Flash SPI/XIP 与回退、缓存、UART、ROM/RAM、CPU JTAG 暂停与 PC、FreeRTOS 中断。它们是 RTL 仿真，不是实板逻辑分析仪记录。九份本地波形已转换为 ModelSim WLF，代表性文件通过只读打开及关键电平回读检查；直接用 ModelSim 执行 RTL testbench 尚未成功。VCD、WLF、完整日志保存在忽略的 `build/`，图和复现脚本随源码提交。
+- [带注释的仿真波形](docs/report.md#127-怎样读这次采集的仿真波形)：十六张图覆盖时钟/复位、Wishbone 译码、Flash SPI/XIP 与回退、缓存、UART、ROM/RAM、CPU JTAG 暂停与 PC、FreeRTOS 中断。它们是 RTL 仿真，不是实板逻辑分析仪记录。九份本地波形已转换为 ModelSim WLF；另用 `script/waves/run_modelsim_flash_read.ps1` 的 `-novopt` 参数在 ModelSim 10.1c **直接运行** Flash 读桥 testbench 并录制 WLF。直接运行只验证了这一项，不代表全部十六张图都由 ModelSim 生成。VCD、WLF、完整日志保存在忽略的 `build/`，图和复现脚本随源码提交。
 - [Stage 3 详细流程](docs/stage3/README.md)
 - [FreeRTOS 实板运行](docs/stage3/FREERTOS.md)：定时器、中断控制器、抢占/队列、UART 验收和复现
 - [独立 RISC-V JTAG 调试](docs/stage3/JTAG_DEBUG.md)：原理、完整 RAM 仿真、GDB、H3 接线和实板验收
