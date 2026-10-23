@@ -2,7 +2,7 @@ param(
     [string]$VexSource,
     [string]$JavaExecutable,
     [string]$SbtLauncher,
-    [ValidateSet('debug','rtos')][string]$Variant = 'debug'
+    [ValidateSet('debug','rtos','unified')][string]$Variant = 'debug'
 )
 . (Join-Path $PSScriptRoot 'common.ps1')
 $revision = 'baf7dc82f855eddaf5b0a20a6802c526f127e38a'
@@ -26,8 +26,16 @@ if (!$csr.Contains("$selector init(0)")) {
     [IO.File]::WriteAllText($csrPath, $csr.Replace($selector, "$selector init(0)"))
 }
 $build = Join-Path $root "build/cpu-$Variant"
-$generator = if ($Variant -eq 'rtos') { 'GenRtosCpu' } else { 'GenDebugCpu' }
-$definition = if ($Variant -eq 'rtos') { 'VexRiscvRtos' } else { 'VexRiscvDebug' }
+$generator = switch ($Variant) {
+    'rtos' { 'GenRtosCpu' }
+    'unified' { 'GenUnifiedCpu' }
+    default { 'GenDebugCpu' }
+}
+$definition = switch ($Variant) {
+    'rtos' { 'VexRiscvRtos' }
+    'unified' { 'VexRiscvUnified' }
+    default { 'VexRiscvDebug' }
+}
 $deps = Join-Path $root 'build/deps'
 New-Item -ItemType Directory -Path $build -Force | Out-Null
 $generatorDir = Join-Path $VexSource 'src/main/scala/soc'

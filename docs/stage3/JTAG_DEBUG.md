@@ -167,7 +167,7 @@ OpenOCD + 仿真仅监听本机，使用端口 9824/3333/6666/4444；重复启�
 | GND | 共地 | 57，亦可用 2/4/6 |
 | VTref | 板卡 3.3 V 电平参考 | 59/60，亦可用 1/3/5 |
 
-依据本机 `D:\PotatoPie V3.0\原理图\PotatoPie V3.0.pdf` 的 H3 网络标注，配合 `constraints/debug.adc`。H3 位置编号不是 FPGA 的 Pxx 引脚编号；接线前按实际丝印、原理图确认方向，断电接线。**不要接到 H2 的 FPGA 配置 JTAG 1..4；不要给普通 I/O 输入 5 V。VTref 是参考输入，不是要求由调试器给整板供电。**本设计没有独立 TRST/SRST 引脚，TMS 复位 TAP，OpenOCD 通过 DM 复位 CPU。
+依据本机 `D:\PotatoPie V3.0\原理图\PotatoPie V3.0.pdf` 的 H3 网络标注，配合 `constraints/debug.adc`。H3 位置编号不是 FPGA 的 Pxx 引脚编号；接线前按实际丝印、原理图确认方向，断电接线。**H2 和 H3 都是 60 针扩展排针；H2 的 1..4 不是 FPGA 配置 JTAG 接口。** PotatoPie V3.0 的 AL-Link Mini 已装在板上，板载 Type-C 连接它；FPGA 配置 JTAG 在 PCB 内部相连，不需要另接 H2。不要给普通 I/O 输入 5 V；VTref 是参考输入，不是要求由外接调试器给整板供电。本设计没有独立 TRST/SRST 引脚，TMS 复位 TAP，OpenOCD 通过 DM 复位 CPU。
 
 H3 的 3.3 V 电源针不能单独证明相关 I/O bank 当前也使用 3.3 V。接线前还需核对板卡供电选择和相关 VCCIO 的实际电压；板卡若有改动，不能仅凭默认原理图假定电平匹配。
 

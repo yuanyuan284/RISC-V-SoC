@@ -17,6 +17,7 @@ module tb_stage3_uart;
     reg [7:0] received [0:131071];
     integer head = 0, tail = 0, length, test_id;
     reg [7:0] sampled;
+    reg ram_fetch_seen = 0;
     always #50 clk_ref = ~clk_ref;
     stage3_top dut(.clk_ref(clk_ref), .i_rst(i_rst), .rx(rx), .tx(tx));
 
@@ -83,7 +84,10 @@ module tb_stage3_uart;
             expect_byte("H");
             for (integer k = 16; k < size; k = k + 1) begin
                 send_byte(frame[k]); expect_byte("A");
-                if ((k - 15) % 4096 == 0) $display("UART BIN received %0d bytes at %0t", k - 15, $time);
+                if ((k - 15) % 4096 == 0) begin
+                    $display("UART BIN received %0d bytes at %0t", k - 15, $time);
+                    $fflush();
+                end
             end
         end
     endtask
@@ -98,10 +102,55 @@ module tb_stage3_uart;
         // Oversized header must be rejected before a RAM payload is accepted.
         $readmemh("oversize.frame.hex", frame, 0, 15);
         send_header; expect_byte("E"); expect_text("BOOT UART 64K\015\012");
+        if ($test$plusargs("BOUNDARY_HEADER") || $test$plusargs("BOUNDARY")) begin
+            $readmemh("zero.frame.hex", frame, 0, 15);
+            send_header; expect_byte("E"); expect_text("BOOT UART 64K\015\012");
+            $readmemh("unaligned.frame.hex", frame, 0, 15);
+            send_header; expect_byte("E"); expect_text("BOOT UART 64K\015\012");
+            $readmemh("wrong_entry.frame.hex", frame, 0, 15);
+            send_header; expect_byte("E"); expect_text("BOOT UART 64K\015\012");
+            $readmemh("wrong_magic.frame.hex", frame, 0, 15);
+            send_header; expect_byte("E"); expect_text("BOOT UART 64K\015\012");
+        end
         // A corrupted CRC must return to the loader without fetching RAM instructions.
         $readmemh("badcrc.frame.hex", frame, 0, 19);
         send_header; send_payload(20); expect_byte("E"); expect_text("BOOT UART 64K\015\012");
-        if (!fast_mode) begin
+        if ($test$plusargs("BOUNDARY_HEADER") || $test$plusargs("BOUNDARY")) begin
+            $readmemh("max_header.frame.hex", frame, 0, 15);
+            send_header; expect_byte("H");
+            board_reset;
+            $display("PASS: maximum 60 KiB header accepted; oversized header rejected");
+            // The smallest valid image is one aligned instruction: jal x0, 0.
+            $readmemh("min_image.frame.hex", frame, 0, 19);
+            send_header; send_payload(20); expect_byte("G");
+            repeat (100) @(posedge dut.clk);
+            if (!ram_fetch_seen) $fatal(1, "Minimum accepted image was not fetched from RAM");
+            $display("PASS: minimum 4-byte UART image accepted and fetched from RAM");
+            board_reset;
+        end
+        if ($test$plusargs("BOUNDARY_HEADER")) begin
+            $readmemh("smoke.frame.hex", frame, 0, 159);
+            send_header; send_payload(160); expect_byte("G");
+            expect_text("APP A: UART loaded C!\015\012");
+            $display("PASS: invalid frames rejected; loader recovered and ran a valid image");
+            $finish;
+        end
+        if ($test$plusargs("BOUNDARY")) begin
+            $display("Starting maximum 60 KiB UART image");
+            $fflush();
+            $readmemh("max_image.frame.hex", frame, 0, 61455);
+            send_header; send_payload(61456); expect_byte("G");
+            expect_text("APP A: UART loaded C!\015\012");
+            if (dut.ram.ram8b.lo.memory[1023] !== 16'h4445 ||
+                dut.ram.ram8b.hi.memory[1023] !== 16'h4547)
+                $fatal(1, "Last image word at 0x8000effc was not written");
+            $display("PASS: maximum 60 KiB UART image and last RAM word");
+            board_reset;
+            $readmemh("smoke.frame.hex", frame, 0, 159);
+            send_header; send_payload(160); expect_byte("G");
+            expect_text("APP A: UART loaded C!\015\012");
+            $display("PASS: reset reload after maximum UART image");
+        end else if (!fast_mode) begin
             $readmemh("smoke.frame.hex", frame, 0, 159);
             send_header; send_payload(160); expect_byte("G");
             expect_text("APP A: UART loaded C!\015\012");
@@ -131,12 +180,17 @@ module tb_stage3_uart;
     // No application instruction fetch is permitted before a successful CRC ACK.
     reg launch_seen = 0;
     always @(posedge dut.clk) begin
-        if (dut.reset) launch_seen <= 0;
+        if (dut.reset) begin
+            launch_seen <= 0;
+            ram_fetch_seen <= 0;
+        end
         else begin
             if (dut.uart.tx_fifo_w_stb && dut.uart.tx_fifo_w_data == "G") launch_seen <= 1;
             if (dut.ic && {dut.iad, 2'b0} >= 32'h80000000 &&
-                {dut.iad, 2'b0} < 32'h80010000 && !launch_seen)
-                $fatal(1, "RAM instruction fetch before CRC accepted");
+                {dut.iad, 2'b0} < 32'h80010000) begin
+                if (!launch_seen) $fatal(1, "RAM instruction fetch before CRC accepted");
+                ram_fetch_seen <= 1;
+            end
         end
     end
     initial begin #2000000000; $fatal(1, "Overall UART simulation timeout"); end

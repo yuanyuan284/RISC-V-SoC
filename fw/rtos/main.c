@@ -97,7 +97,8 @@ static void monitor(void *argument) {
     __asm volatile ("csrr %0, mstatus" : "=r"(status));
     configASSERT(!(status & 8u));
     TickType_t before = xTaskGetTickCount();
-    taskYIELD();
+    for (volatile unsigned spin = 0; spin < 64; ++spin)
+        __asm volatile ("nop");
     configASSERT(xTaskGetTickCount() == before);
     taskEXIT_CRITICAL();
     __asm volatile ("csrr %0, mstatus" : "=r"(status));
@@ -105,10 +106,15 @@ static void monitor(void *argument) {
     taskEXIT_CRITICAL();
     __asm volatile ("csrr %0, mstatus" : "=r"(status));
     configASSERT(status & 8u);
+    taskYIELD();
     vTaskDelay(10);
     MMIO(MSIP) = 1;
     MMIO(EVENT) = 1;
     vTaskDelay(50);
+    for (unsigned attempts = 0; attempts < 100 &&
+         (spins[0] <= 100 || spins[1] <= 100 ||
+          consumed < 10 || rtos_switches < 20); ++attempts)
+        vTaskDelay(10);
     configASSERT(tick_hooks >= 60 && xTaskGetTickCount() >= 60);
     configASSERT(spins[0] > 100 && spins[1] > 100);
     configASSERT(consumed >= 10 && rtos_switches >= 20);

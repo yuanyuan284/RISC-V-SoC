@@ -1,4 +1,4 @@
-"""Prepare one-sector XIP replacement and verify full-Flash readback."""
+"""Prepare a sector-aligned XIP replacement and verify full-Flash readback."""
 import argparse
 import hashlib
 import json
@@ -18,22 +18,24 @@ def make_plan(before: bytes, old_image: bytes, new_image: bytes) -> dict:
     new_info = validate_xip_image(new_image)
     if old_info['offset'] != PROVISIONAL_START or new_info['offset'] != PROVISIONAL_START:
         raise ValueError('XIP image must start at the current BootROM slot')
-    if len(old_image) > SECTOR_SIZE or len(new_image) > SECTOR_SIZE:
-        raise ValueError('Single-sector XIP update requires both images <= 4096 bytes')
-    old_sector = before[PROVISIONAL_START:PROVISIONAL_START + SECTOR_SIZE]
-    if old_sector != old_image + b'\xff' * (SECTOR_SIZE - len(old_image)):
-        raise ValueError('Backup XIP sector does not match old image plus erased tail')
+    sector_count = (max(len(old_image), len(new_image)) + SECTOR_SIZE - 1) // SECTOR_SIZE
+    region_size = sector_count * SECTOR_SIZE
+    old_sector = before[PROVISIONAL_START:PROVISIONAL_START + region_size]
+    if old_sector != old_image + b'\xff' * (region_size - len(old_image)):
+        raise ValueError('Backup XIP region does not match old image plus erased tail')
     if old_image == new_image:
         raise ValueError('New XIP image is identical to the current image')
-    new_sector = new_image + b'\xff' * (SECTOR_SIZE - len(new_image))
+    new_sector = new_image + b'\xff' * (region_size - len(new_image))
     expected = (before[:PROVISIONAL_START] + new_sector +
-                before[PROVISIONAL_START + SECTOR_SIZE:])
+                before[PROVISIONAL_START + region_size:])
     return {
         'old_sector': old_sector,
         'new_sector': new_sector,
         'expected_flash': expected,
         'manifest': {
-            'physical_sector': '0x50000..0x50fff',
+            'physical_sector': (f'0x{PROVISIONAL_START:05x}..'
+                                f'0x{PROVISIONAL_START + region_size - 1:05x}'),
+            'sector_count': sector_count,
             'before_flash_sha256': sha(before),
             'old_image_sha256': sha(old_image),
             'new_image_sha256': sha(new_image),
@@ -71,8 +73,9 @@ def main() -> None:
         print('XIP_UPDATE_VERIFY_OK full 512 KiB matches planned image')
         return
     args.output_dir.mkdir(parents=True, exist_ok=False)
-    (args.output_dir / 'old_sector.bin').write_bytes(plan['old_sector'])
-    (args.output_dir / 'new_sector.bin').write_bytes(plan['new_sector'])
+    suffix = 'sector' if plan['manifest']['sector_count'] == 1 else 'sectors'
+    (args.output_dir / f'old_{suffix}.bin').write_bytes(plan['old_sector'])
+    (args.output_dir / f'new_{suffix}.bin').write_bytes(plan['new_sector'])
     (args.output_dir / 'manifest.json').write_text(
         json.dumps(plan['manifest'], indent=2) + '\n', encoding='ascii')
     print(f'XIP_UPDATE_PLAN_OK {args.output_dir}')

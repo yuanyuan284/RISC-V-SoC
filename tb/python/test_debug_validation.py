@@ -5,12 +5,27 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import validate_debug_sim as validation
 
 
 class DebugValidationTests(unittest.TestCase):
+    def test_logged_process_tree_cleanup_is_opt_in(self):
+        process = object.__new__(validation.LoggedProcess)
+        process.proc = Mock(pid=1234)
+        process.proc.poll.side_effect = [None, 0]
+        process.thread = Mock()
+        process.kill_tree = True
+        with patch.object(validation, 'os', SimpleNamespace(name='nt')), \
+                patch.object(validation.subprocess, 'run') as run:
+            process.stop()
+        run.assert_called_once()
+        self.assertEqual(run.call_args.args[0],
+                         ['taskkill', '/PID', '1234', '/T', '/F'])
+        process.proc.terminate.assert_not_called()
+        process.thread.join.assert_called_once()
+
     def metadata_fixture(self, test, results):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

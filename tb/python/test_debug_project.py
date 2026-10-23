@@ -19,6 +19,7 @@ class DebugProjectTests(unittest.TestCase):
             'rtl/stage3/stage3_top.v', 'rtl/stage3/stage3_debug_top.v',
             'rtl/stage3/stage3_flash_top.v', 'rtl/stage3/stage3_flash_read.v',
             'rtl/stage3/stage3_flash_writer.v',
+            'rtl/stage3/stage3_unified_top.v',
             'rtl/stage3/stage3_memory.v',
             'rtl/stage3/stage3_rtos_top.v', 'rtl/stage3/rtos_clint.v',
             'rtl/stage3/rtos_plic.v', 'rtl/stage3/rtos_event.v',
@@ -116,6 +117,62 @@ class DebugProjectTests(unittest.TestCase):
         self.assertIn('// Test ROM initialization', (output / 'stage3_memory_hw.v').read_text())
         self.assertEqual(Path(project.find('Source_Files/SDC_FILE/File').attrib['Path']),
                          self.root / 'constraints/uart.sdc')
+
+    def test_unified_project_contains_one_cpu_and_all_three_capabilities(self):
+        self.cpu.write_text('module VexRiscvUnified;\nendmodule\n', encoding='ascii')
+        original = self.cpu.read_bytes()
+        self.generate('stage3_unified')
+        output = self.root / 'build/unified'
+        project = ET.parse(output / 'stage3_unified.prj').getroot()
+        self.assertEqual(project.findtext('TOP_MODULE/MODULE'), 'stage3_unified_top')
+        sources = [Path(item.attrib['Path']) for item in
+                   project.findall('Source_Files/Verilog/File')]
+        self.assertIn(output / 'VexRiscvUnified_hw.v', sources)
+        self.assertIn(self.root / 'rtl/stage3/stage3_unified_top.v', sources)
+        for name in ('clint', 'plic', 'event'):
+            self.assertIn(self.root / f'rtl/stage3/rtos_{name}.v', sources)
+        for name in ('read', 'writer'):
+            self.assertIn(self.root / f'rtl/stage3/stage3_flash_{name}.v', sources)
+        self.assertNotIn(self.root / 'rtl/stage3/stage3_debug_top.v', sources)
+        self.assertNotIn(self.root / 'rtl/stage3/stage3_rtos_top.v', sources)
+        self.assertIn('// Flash ROM initialization',
+                      (output / 'stage3_memory_hw.v').read_text())
+        self.assertEqual(self.cpu.read_bytes(), original)
+        self.assertEqual(Path(project.find('Source_Files/SDC_FILE/File').attrib['Path']),
+                         self.root / 'constraints/debug.sdc')
+
+    def test_unified_config_flash_scripts_use_the_unified_bitstream_and_guard_writes(self):
+        program = (prepare.ROOT / 'script/program_unified_flash_fpga.tcl').read_text()
+        verify = (prepare.ROOT / 'script/verify_unified_flash_fpga.tcl').read_text()
+        bit_path = 'build unified stage3_unified.bit'
+        self.assertIn(bit_path, program)
+        self.assertIn(bit_path, verify)
+        self.assertLess(program.index('SOC_CONFIRM_UNIFIED_CONFIG_FLASH'),
+                        program.index('download -mode program_spi'))
+        self.assertIn('PROGRAM_UNIFIED_CONFIG_FLASH', program)
+        self.assertIn('download -mode verify_spi', verify)
+        self.assertNotIn('program_spi', verify)
+
+    def test_unified_live_debug_checks_xip_and_restores_cpu_without_memory_writes(self):
+        script = (prepare.ROOT / 'script/openocd/validate-unified-live-debug.tcl').read_text()
+        self.assertIn('read_memory 0x30050000', script)
+        self.assertIn('bp 0x30050768 4 hw', script)
+        self.assertIn('step', script)
+        self.assertIn('catch {rbp 0x30050768}', script)
+        self.assertIn('catch {resume}', script)
+        for forbidden in ('write_memory', 'load_image', 'flash write',
+                          'program ', 'set_reg', 'reset run'):
+            self.assertNotIn(forbidden, script)
+
+    def test_unified_identity_probe_only_reads_required_peripherals(self):
+        probe = (prepare.ROOT / 'script/openocd/probe-unified-identity.tcl').read_text()
+        for address in ('0x0200bffc', '0x0c000000', '0x40002000',
+                        '0x4000400c', '0x30050000'):
+            self.assertIn(address, probe)
+        self.assertIn('UNIFIED_IDENTITY_OK', probe)
+        self.assertIn('catch {resume}', probe)
+        self.assertNotIn('write_memory', probe)
+        self.assertNotIn('reset run', probe)
 
 
 if __name__ == '__main__':

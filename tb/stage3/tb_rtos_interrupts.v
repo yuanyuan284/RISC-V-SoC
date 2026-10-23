@@ -1,14 +1,16 @@
 `timescale 1ns/1ps
 module tb_rtos_interrupts;
-    reg clk = 0, reset = 1, cycle = 0, strobe = 0, we = 0;
+    reg clk = 0, reset = 1, stop_time = 0, cycle = 0, strobe = 0, we = 0;
     reg [31:0] address = 0, data = 0;
     reg [3:0] sel = 15;
     reg [2:1] sources = 0;
     wire [31:0] cr, pr;
     wire ca, pa, ti, si, ei;
     integer count;
+    reg [63:0] frozen_time;
     always #20 clk = ~clk;
-    rtos_clint clint(.clk(clk), .reset(reset), .cycle(cycle && !address[24]),
+    rtos_clint clint(.clk(clk), .reset(reset), .stop_time(stop_time),
+        .cycle(cycle && !address[24]),
         .strobe(strobe), .write_enable(we), .address(address[15:0]),
         .select(sel), .write_data(data), .read_data(cr), .ack(ca),
         .timer_irq(ti), .software_irq(si));
@@ -18,7 +20,7 @@ module tb_rtos_interrupts;
         .sources(sources), .external_irq(ei));
     initial if ($test$plusargs("WAVE")) begin
         $dumpfile("rtos_interrupts.vcd");
-        $dumpvars(0, clk, reset, cycle, strobe, we, address, data, sel,
+        $dumpvars(0, clk, reset, stop_time, cycle, strobe, we, address, data, sel,
                   cr, ca, pr, pa, sources, ti, si, ei,
                   clint.mtime, clint.mtimecmp, clint.msip,
                   plic.priority1, plic.priority2, plic.threshold,
@@ -65,6 +67,14 @@ module tb_rtos_interrupts;
         repeat(30) @(posedge clk);
         expect_read('hbffc, 1);
         $display("PASS CLINT byte writes MSIP MTIP and 64-bit rollover");
+        @(negedge clk); stop_time = 1; frozen_time = clint.mtime;
+        repeat(5) @(posedge clk); #1;
+        if (clint.mtime !== frozen_time) $fatal(1, "mtime advanced while debug stopped time");
+        @(negedge clk); stop_time = 0;
+        @(posedge clk); #1;
+        if (clint.mtime !== frozen_time + 1'b1)
+            $fatal(1, "mtime did not resume after debug stopped time");
+        $display("PASS CLINT debug stop-time and resume");
         write('h01000004, 1, 15); write('h01000008, 2, 15);
         write('h01002000, 6, 15); sources = 3;
         repeat(3) @(posedge clk); #1;

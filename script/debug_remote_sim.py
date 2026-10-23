@@ -16,12 +16,18 @@ def main():
     parser.add_argument('--cwd', type=Path, default=ROOT / 'build/stage3')
     parser.add_argument('--image-bytes', type=int)
     parser.add_argument('--wave', action='store_true')
+    parser.add_argument('--fast-boot-crc', action='store_true')
+    parser.add_argument('--progress', action='store_true')
     args = parser.parse_args()
     command = [args.vvp, str(args.image)]
     if args.image_bytes is not None:
         command.append(f'+image_bytes={args.image_bytes}')
     if args.wave:
         command.append('+WAVE')
+    if args.fast_boot_crc:
+        command.append('+FAST_BOOT_CRC')
+    if args.progress:
+        command.append('+PROGRESS')
     proc = subprocess.Popen(command, cwd=args.cwd,
                             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                             stderr=sys.stderr, bufsize=65536)

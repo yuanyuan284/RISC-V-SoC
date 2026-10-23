@@ -32,17 +32,15 @@ if {$image_size == 0 || $flash_offset < $user_start ||
 set first_sector [expr {$flash_offset & ~($sector_size - 1)}]
 set last_sector [expr {($flash_offset + $image_size - 1) & ~($sector_size - 1)}]
 if {$flash_expected_before_image ne ""} {
-    if {$first_sector != $last_sector} {
-        error "Expected-before guard requires an image within one sector"
-    }
     if {![file isfile $flash_expected_before_image]} {
         error "Expected-before sector not found: $flash_expected_before_image"
     }
     set expected_file [open $flash_expected_before_image rb]
-    set expected_before [read $expected_file]
+    set expected_region [read $expected_file]
     close $expected_file
-    if {[string length $expected_before] != $sector_size} {
-        error "Expected-before sector must be 4096 bytes"
+    set expected_size [expr {$last_sector - $first_sector + $sector_size}]
+    if {[string length $expected_region] != $expected_size} {
+        error "Expected-before image must contain every complete target sector"
     }
 }
 set sectors {}
@@ -77,8 +75,13 @@ foreach item $sectors {
     if {[string length $before] != $sector_size} {
         error "Incomplete sector backup: $before_path"
     }
-    if {$flash_expected_before_image ne "" && $before ne $expected_before} {
-        error [format "Expected-before mismatch in sector 0x%05x; no write issued" $sector]
+    if {$flash_expected_before_image ne ""} {
+        set expected_begin [expr {$sector - $first_sector}]
+        set expected_before [string range $expected_region $expected_begin \
+            [expr {$expected_begin + $sector_size - 1}]]
+        if {$before ne $expected_before} {
+            error [format "Expected-before mismatch in sector 0x%05x; no write issued" $sector]
+        }
     }
     set image_begin [expr {$sector - $flash_offset}]
     if {$image_begin < 0} { set image_begin 0 }

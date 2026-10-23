@@ -1,6 +1,6 @@
 // Single-hart, 25 MHz mtime and SiFive-compatible machine interrupt registers.
 module rtos_clint(
-    input wire clk, reset, cycle, strobe, write_enable,
+    input wire clk, reset, stop_time, cycle, strobe, write_enable,
     input wire [15:0] address,
     input wire [3:0] select,
     input wire [31:0] write_data,
@@ -20,7 +20,7 @@ module rtos_clint(
             mtime <= 0; mtimecmp <= 64'hffffffffffffffff; msip <= 0;
         end else begin
             ack <= request;
-            mtime <= mtime + 1'b1;
+            if (!stop_time) mtime <= mtime + 1'b1;
             if (request) begin
                 case (address)
                     16'h0000: read_data <= {31'b0, msip};

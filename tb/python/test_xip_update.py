@@ -36,15 +36,34 @@ class XipUpdateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'does not match old image'):
             make_plan(bytes(self.before), self.old, self.new)
 
-    def test_rejects_identical_corrupt_or_oversize_image(self):
+    def test_rejects_identical_corrupt_or_slot_overflow_image(self):
         with self.assertRaisesRegex(ValueError, 'identical'):
             make_plan(bytes(self.before), self.old, self.old)
         corrupt = bytearray(self.new)
         corrupt[-1] ^= 1
         with self.assertRaisesRegex(ValueError, 'CRC32'):
             make_plan(bytes(self.before), self.old, bytes(corrupt))
-        with self.assertRaisesRegex(ValueError, '4096'):
-            make_plan(bytes(self.before), self.old, image(b'\x13' * SECTOR_SIZE))
+        with self.assertRaisesRegex(ValueError, 'XIP header size'):
+            make_plan(bytes(self.before), self.old, image(b'\x13' * 65524))
+
+    def test_four_sector_update_preserves_other_flash_and_erased_tail(self):
+        large = image(b'R' * (3 * SECTOR_SIZE + 100))
+        plan = make_plan(bytes(self.before), self.old, large)
+        self.assertEqual(plan['manifest']['sector_count'], 4)
+        self.assertEqual(plan['manifest']['physical_sector'], '0x50000..0x53fff')
+        self.assertEqual(len(plan['old_sector']), 4 * SECTOR_SIZE)
+        self.assertEqual(plan['new_sector'][:len(large)], large)
+        self.assertEqual(plan['new_sector'][len(large):],
+                         b'\xff' * (4 * SECTOR_SIZE - len(large)))
+        self.assertEqual(plan['expected_flash'][0x100], 0x42)
+        self.assertEqual(plan['expected_flash'][0x54000:], self.before[0x54000:])
+        verify_after(plan, plan['expected_flash'])
+
+    def test_four_sector_update_rejects_unexpected_old_tail(self):
+        self.before[PROVISIONAL_START + 2 * SECTOR_SIZE] = 0
+        with self.assertRaisesRegex(ValueError, 'does not match old image'):
+            make_plan(bytes(self.before), self.old,
+                      image(b'R' * (3 * SECTOR_SIZE + 100)))
 
     def test_full_readback_rejects_unrelated_change(self):
         plan = make_plan(bytes(self.before), self.old, self.new)

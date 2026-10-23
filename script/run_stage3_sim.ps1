@@ -1,4 +1,4 @@
-param([ValidateSet('memory','smoke','uart')][string]$Test = 'memory',
+param([ValidateSet('memory','smoke','uart','boundary-header','boundary')][string]$Test = 'memory',
       [switch]$CompileOnly, [switch]$Waves)
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'common.ps1')
@@ -31,6 +31,8 @@ try {
     if ($CompileOnly) { return }
     $options = @()
     if ($Test -eq 'smoke') { $options += '+SMOKE' }
+    if ($Test -eq 'boundary-header') { $options += '+BOUNDARY_HEADER' }
+    if ($Test -eq 'boundary') { $options += '+BOUNDARY' }
     if ($Waves) { $options += '+WAVE' }
     & $Vvp "$Test.vvp" @options
     if ($LASTEXITCODE) { throw "Stage-3 $Test simulation failed" }

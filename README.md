@@ -1,12 +1,20 @@
 # RISC-V SoC：UART 加载、FreeRTOS 与独立 JTAG 调试
 
+**当前实板状态（2026-10-23）：** 合并版完整 JTAG/GDB 回归、三次板载 Type-C 断电冷启动，以及重插 Type-C 后的 10 分钟连续运行均通过。三次冷启动各自捕获 BootROM、FreeRTOS 自检、UART IRQ 和三条递增心跳；最后一次上电后的 120 秒观察也通过。用户确认外接 IoTelic CPU JTAG 已从板端取下，期间未用 TD 下载。PotatoPie V3.0 的 AL-Link Mini 是**板载**下载器，不能把这一条件写成“板上没有任何调试器”。此前 Type-C/USB 间歇失联和串口零字节的失败记录保留；重插后只读 FPGA ID、冷启动和十分钟观察均通过。长期可靠性和 USB 失联根因仍需更长时间观察。详见 [合并实验](docs/stage3/UNIFIED.md)。
+
 本项目在安路 **EF2L45LG144B** FPGA 上实现 VexRiscv、8 KiB BootROM、64 KiB RAM 和 UART。电脑把 C 程序编译成 RISC-V BIN，经串口下载到 RAM；CPU 校验完成后跳到应用执行。修改应用只需重新编译和上传软件，无需重新综合 FPGA 硬件。
 
 当前主线是 **Stage 3**。2026-10-13 实板已验证两份 42424 字节应用的下载、CRC32、RAM 执行和 newlib `printf/snprintf`，包括 `FLOAT=3.25`、`errors=0`、`STAGE3 PASS`。完整记录见 [实板验收](docs/stage3/HARDWARE_VALIDATION.md)。Stage 1/2 保留为历史实验，不能把它们的小容量参数当成当前系统参数。
 
 **FreeRTOS V11.1.0 已于 2026-10-15 在真实 FPGA 上运行。** 新 `stage3_rtos_top` 加入 CLINT 定时器/软件中断和精简 PLIC，1000 Hz tick 驱动抢占式任务调度；寄存器保存、嵌套临界区、队列、ISR 通知和真实 UART 中断均通过，三次后续心跳持续增长。TD 25 MHz 时序 0 setup/hold。通过原 BootROM + UART 下载 15544B BIN，不需要独立 JTAG 调试器。原理、构建和实板证据见 [FreeRTOS](docs/stage3/FREERTOS.md)。
 
-**独立 RISC-V JTAG 已于 2026-10-18 完整实板通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性；报告为 `mode=hardware/full_suite_passed=true`。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 仅配置 FPGA SRAM，不写 Flash。真实 RTL 仿真与 TD 25 MHz 时序此前也已通过。UART-only、独立 JTAG 和 RTOS 仍使用各自 CPU/位流，RTOS 位流不含独立 JTAG，不宣称已合并。证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)。
+**合并实验（配置 Flash 已更新，上电后 FreeRTOS 持续运行）：** 同一颗候选 CPU 集成 FreeRTOS 中断/CSR、4 KiB 单路指令缓存和独立 CPU JTAG，并接上 Flash XIP、写控制器与 RTOS 外设。TD 布局为 **1105/1120 mslice**，25 MHz 时序 0 setup/hold 违例。15908 B FreeRTOS XIP 镜像已持久写入 MCU 用户区物理 `0x50000..0x53fff`；合并位流也已持久烧入配置 Flash，TD `verify_spi` 和写前/后各两次整片 512 KiB 读回通过，MCU 用户区 0 字节变化。预先开启 COM3 监听后重上电，同一次监听捕获 `BOOT FLASH`、FreeRTOS 启动、UART IRQ、自检通过和三次递增心跳。CPU JTAG 已读到 TAP `0x10002fff` 和外设标识，完成合并版全 64 KiB RAM/GDB 实板回归；板载 Type-C 重插后又完成三次冷启动验收。用户确认板端外接 CPU JTAG 已取下，期间未用 TD 下载；板载 AL-Link 仍在板上。详见 [合并实验](docs/stage3/UNIFIED.md)。
+
+同日 COM3 持续运行验收观察到 588 条递增心跳，覆盖约 600 秒，最大间隔 1.038 秒，未见重启。独立 IoTelic CPU JTAG 在持久合并系统上完成 RAM/寄存器/单步/断点、GDB ELF 与 C 源码、全 65536 字节图案下载和逐字节读回、换码缓存一致性；报告 `full_suite_passed=true`，复位后 COM3 再次看到 BootROM、FreeRTOS 自检与心跳。后来三次板载 Type-C 断电冷启动均通过；此前间歇失联的原因尚未完全定位，仍需更长周期观察。
+
+**合并 RTL 仿真超时已定位并处理：** 完整 15908 B 镜像的 BootROM CRC 是长时间 CPU 软件循环，`script/run_unified_modelsim.ps1` 用 ModelSim 10.1c 复跑全长 CRC、XIP 和 FreeRTOS 自检通过（约 391 秒）；`script/run_unified_sim.ps1 -Test jtag-bootrom` 用不改应用字节的仿真专用 64 字节 CRC 前缀，在单次 Icarus RTL 运行中完成 BootROM、FreeRTOS 自检和 OpenOCD JTAG 暂停/单步/硬件断点。后者**不代表全镜像 CRC 已在同一次运行中检查**；生产 `.xip` 和实板 Flash 未改。见 [合并实验](docs/stage3/UNIFIED.md)。
+
+**独立 RISC-V JTAG 已于 2026-10-18 在独立调试位流上完整实板通过，并于 2026-10-23 在合并位流上复测通过。** IoTelic FT2232HL + OpenOCD/GDB 在 100 kHz 下完成全 64 KiB 下载/逐字节读回、ELF、指令/源码单步、软硬件断点、变量检查、复位保留 RAM 和换代码后缓存一致性。CPU 自带 TAP 接 FPGA 普通 I/O，不经过安路用户扫描链；AL-Link 配置 FPGA，独立 CPU JTAG 调试运行中的 SoC。旧位流报告与合并版报告分别保留，后者还验证了复位回 XIP FreeRTOS 启动与心跳；证据和复现见 [JTAG 调试](docs/stage3/JTAG_DEBUG.md)及[合并实验](docs/stage3/UNIFIED.md)。
 
 **Flash 上电启动状态（2026-10-20）：位流与 XIP 应用已写入片内 Flash；用户确认开发板断电重上电且未用 TD 下载位流后，CPU JTAG 证实 XIP 应用仍在运行。** 原有 UART/RTOS/JTAG 变体仍是独立工程，不应把它们的 SRAM 下载结果当作本变体的持久启动证据。
 
@@ -141,7 +149,7 @@ python .\script\run_tests.py
 
 脚本执行综合、布局布线和时序检查，报告须为 0 setup/hold 错误。输出为 `build/stage3/stage3_uart.bit`。时序通过与实板功能通过是两项不同的验证。
 
-可选 `run_stage3_sim.ps1 -Test smoke`（真实波特率短程序）及 `-Test uart`（仿真加速后两份完整程序）运行时间较长；旧记录中的这两项未完成，不计作已通过。历史 Stage 2 入口为 `build_stage2_firmware.ps1`、`build_stage2_td.ps1`、`run_stage2_sim.ps1`、`run_stage2_jtag_sim.ps1`。Stage 1 使用 `build_td.ps1`。
+可选 `run_stage3_sim.ps1 -Test smoke`（真实波特率短程序）、`-Test boundary-header`（零长、未对齐、超限、错误入口/魔数及坏 CRC 拒收；恰好 61440B 的头被接收；最小 4 字节镜像从 RAM 取指，复位后正常重载）、`-Test uart`（仿真加速后两份完整程序）及 `-Test boundary`（先做上述边界检查，再做最大 61440B 上传、RAM 末字检查和复位重载）。`boundary` 是独立的逐字节整机慢测，不包含在日常 `memory` 测试中。2026-10-22 主机 99 项测试、更新后的 `boundary-header` RTL 仿真和真实波特率 `smoke` 均通过；主机测试还覆盖 1..4 字节填充、最大镜像及相邻长度。最大帧 `boundary` 本轮持续运行约 45 分钟仍未结束，已主动停止，**不能计为整机或实板最大帧验收通过**。该慢测现每 4096 字节刷新进度，便于下次观察。历史 Stage 2 入口为 `build_stage2_firmware.ps1`、`build_stage2_td.ps1`、`run_stage2_sim.ps1`、`run_stage2_jtag_sim.ps1`。Stage 1 使用 `build_td.ps1`。
 
 2026-10-14 在不含旧产物的源码副本中重新验证：26 项 Python 测试通过；Stage 2/3 固件可重建，Stage 3 BIN 与实板版本哈希相同；完整 ROM/RAM 仿真、JTAG 加载器及 Stage 2 JTAG SoC 仿真通过；Stage 3 UART testbench 编译通过；TD 完成 Stage 3 综合、布局布线及位流生成，setup/hold 错误均为 0。本轮没有重新板测，也没有把两项长 UART 仿真计作通过。
 

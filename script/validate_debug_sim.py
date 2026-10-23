@@ -73,9 +73,10 @@ def input_hashes(tests, adapter=None):
 
 
 class LoggedProcess:
-    def __init__(self, command, log, ready_text=None):
+    def __init__(self, command, log, ready_text=None, kill_tree=False):
         self.ready = threading.Event()
         self.ready_text = ready_text
+        self.kill_tree = kill_tree
         self.proc = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE,
                                      stderr=subprocess.STDOUT, text=True,
                                      encoding='utf-8', errors='replace')
@@ -107,6 +108,11 @@ class LoggedProcess:
             raise RuntimeError(f'Process exited with code {result}; inspect build/debug logs')
 
     def stop(self):
+        if self.proc.poll() is None:
+            if self.kill_tree and os.name == 'nt':
+                subprocess.run(['taskkill', '/PID', str(self.proc.pid), '/T', '/F'],
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                               check=False)
         if self.proc.poll() is None:
             self.proc.terminate()
             try:

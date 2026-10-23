@@ -76,7 +76,8 @@ module stage3_rtos_soc(
         .i_wb_adr(address), .i_wb_dat(write_data), .i_wb_sel(select),
         .i_wb_we(write_enable), .i_wb_cyc(cycle && uart_select), .i_wb_stb(strobe),
         .o_wb_dat(uart_data), .o_wb_ack(uart_ack));
-    rtos_clint clint(.clk(clk), .reset(reset), .address(address[15:0]),
+    rtos_clint clint(.clk(clk), .reset(reset), .stop_time(1'b0),
+        .address(address[15:0]),
         .cycle(cycle && clint_select), .strobe(strobe), .write_enable(write_enable),
         .select(select), .write_data(write_data), .read_data(clint_data), .ack(clint_ack),
         .timer_irq(timer_irq), .software_irq(software_irq));

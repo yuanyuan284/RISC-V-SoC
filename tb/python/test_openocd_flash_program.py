@@ -240,6 +240,37 @@ class OpenOcdFlashProgramTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(list(after.values())[0][4:8], b'JTAG')
 
+    def test_expected_before_guard_checks_every_touched_sector_before_write(self):
+        old = bytearray(b'\xff' * 8192)
+        old[4096] = 0
+        result, before, after = self.run_script(
+            bytes(old), b'ABCD', 0x60ffe,
+            expected_before=b'\xff' * 8192)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('Expected-before mismatch in sector 0x61000', result.stderr)
+        self.assertEqual(len(before), 2)
+        self.assertFalse(after)
+
+    def test_expected_before_guard_accepts_matching_two_sector_region(self):
+        old = b'\xff' * 8192
+        result, before, after = self.run_script(
+            old, b'ABCD', 0x60ffe, expected_before=old,
+            require_all_backups=True, page_supported=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(len(before), 2)
+        self.assertEqual(len(after), 2)
+        self.assertIn('FLASH_PROGRAM_OK offset=0x60ffe image_bytes=4', result.stderr)
+
+    def test_expected_before_guard_rejects_incomplete_sector_region(self):
+        result, before, after = self.run_script(
+            b'\xff' * 8192, b'ABCD', 0x60ffe,
+            expected_before=b'\xff' * 4096)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('Expected-before image must contain every complete target sector',
+                      result.stderr)
+        self.assertFalse(before)
+        self.assertFalse(after)
+
     def test_full_sector_replacement_erases_old_tail(self):
         old = bytearray(b'\xff' * 8192)
         old[:24] = b'A' * 24
